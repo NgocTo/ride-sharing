@@ -25,43 +25,68 @@
         @yield('header')
     </header>
     <div class="container">
-        <div class="row">
-            <aside class="col-4-md">
-                <div>
-                    
-                </div>
-                <nav class="navbar navbar-expand-lg navbar-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <!-- <i class="fas fa-bars"></i> -->
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Your ride history</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Payment methods</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Favourites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Regulations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Settings</a>
-                        </li>
-                    </ul>
-                </div>
-                </nav>
-            </aside>
-            <main class="col-8-md">
-                @yield('content')
-            </main>
+        <aside>
+            <!-- <div>
+                
             </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Your ride history</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Payment methods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Regulations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            </nav> -->
+
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+
+        </aside>
+        <main class="col-8-md">
+            @yield('content')
+        </main>
+    <!-- Dark Overlay element -->
+    <div class="overlay"></div>
     </div>
     <hr />
+    <script src="{{ asset('js/script.js') }}"></script>
     <footer class="container text-right">
         <p>Copyright by JAWA</p>
     </footer>
