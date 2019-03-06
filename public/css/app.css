@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -517,7 +517,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4095,15 +4095,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(19, 112, 176, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4303,8 +4303,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10660,13 +10660,15 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.wrapper {
-  display: block;
+.text-green {
+  color: #15AA35;
+}
+
+.bg-green {
+  background-color: #15AA35;
 }
 
 aside {
-  min-width: 250px;
-  max-width: 250px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -10697,12 +10699,24 @@ aside {
   opacity: 1;
 }
 
-#dismiss {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  /* top right corner of the sidebar */
-  top: 10px;
-  right: 10px;
+#profile {
+  padding: 1rem 0;
+}
+
+#profile div img {
+  border-radius: 50%;
+  width: 40%;
+  height: auto;
+}
+
+#profile h2 {
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 992px) {
+  aside {
+    position: relative;
+    border-right: 1px solid #ADADAD;
+  }
 }
 

@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('username', "Test")
+@section('heading', 'Users')
 @section('content')
     @foreach($users as $u)
         <p>{{ $u->firstName }}</p>

@@ -21,20 +21,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-    <header class="container">
-        @yield('header')
-    </header>
-    <div class="container">
+    <div class="container-fluid row">
         <aside>
-            <!-- <div>
-                
-            </div>
-            <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                <i class="fas fa-bars"></i>
+                <!-- <i class="fas fa-bars"></i> -->
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <div class="collapse navbar-collapse flex-column" id="navbarNav">
+                <!-- Profile -->
+                <div class="bg-green text-center text-white" id="profile">
+                    <div><img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture"></div>
+                    <h2 class="font-weight-bold h4">@yield('username')</h2>
+
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Become a rider</label>
+                    </div>
+                </div>
                 <ul class="navbar-nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Your ride history</a>
@@ -53,41 +58,18 @@
                     </li>
                 </ul>
             </div>
-            </nav> -->
-
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-            </div>
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-
-
+            </nav>
         </aside>
-        <main class="col-8-md">
+        <main class="col">
+            <h1 class="text-green text-center">@yield('heading')</h1>
             @yield('content')
         </main>
-    <!-- Dark Overlay element -->
-    <div class="overlay"></div>
+        <!-- Dark Overlay element -->
+        <div class="overlay"></div>
     </div>
     <hr />
     <script src="{{ asset('js/script.js') }}"></script>
-    <footer class="container text-right">
+    <footer class="container-fluid text-right">
         <p>Copyright by JAWA</p>
     </footer>
 </body>

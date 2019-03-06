@@ -12,13 +12,13 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-.wrapper {
-  display: block;
+.text-green {
+  color: $green;
 }
-
+.bg-green {
+  background-color: $green;
+}
 aside {
-  min-width: 250px;
-  max-width: 250px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -26,7 +26,6 @@ aside {
   /* top layer */
   z-index: 9999;
 }
-
 .overlay {
   display: none;
   position: fixed;
@@ -46,12 +45,35 @@ aside {
   display: block;
   opacity: 1;
 }
+#profile {
+  padding: 1rem 0;
+}
+#profile div img {
+  border-radius: 50%;
+  width: 40%;
+  height: auto;
+}
+#profile h2 {
+  padding: 0.5rem 0;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+  
+}
 
-#dismiss {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  /* top right corner of the sidebar */
-  top: 10px;
-  right: 10px;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  aside {
+    position: relative;
+    border-right: 1px solid $light;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  
 }
