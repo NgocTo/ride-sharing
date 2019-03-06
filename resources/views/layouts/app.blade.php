@@ -68,7 +68,8 @@
         <div class="overlay"></div>
     </div>
     <hr />
-    <script src="{{ asset('js/script.js') }}"></script>
+    
+    @yield('script')
     <footer class="container-fluid text-right">
         <p>Copyright by JAWA</p>
     </footer>

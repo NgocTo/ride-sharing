@@ -10713,6 +10713,11 @@ aside {
   padding: 0.5rem 0;
 }
 
+#map {
+  height: 20rem;
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   aside {
     position: relative;
