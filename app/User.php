@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstName', 'lastName', 'password',
     ];
 
     /**
@@ -38,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+}
+class DriverInfo {
+    protected $table ='driverInfo';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
+}
+class VehicleInfo {
+    protected $table ='vehicleId';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
 }

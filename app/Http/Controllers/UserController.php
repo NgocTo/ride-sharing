@@ -14,6 +14,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        // $driverInfo = Driver::all();
+        // $data;
+        // $data->users = $users;
+        // $data->driverInfo = $driverInfo;
         return view('users.index')->with('users', $users);
 
         // return view ('users.index');
