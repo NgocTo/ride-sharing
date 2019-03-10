@@ -18,12 +18,37 @@
   
 
   <button type="submit" class="btn btn-primary btn-block">Log in</button>
-  <div class="text-center">
+<div class="text-center">
+<div>
+  <div class="line"></div>
     <p class=" p-3 m-3">OR</p>
-  </div>
+</div>
+    <p class="text-center">Don't have an account?</p>
 </form>
+<button class="text-center signup bg-green">
+Sign Up
+</button>
 
 <style>
+
+  .signup{
+    margin:0;
+    text-decoration: none;
+    border:none;
+    font-weight:bold;
+    font-size:20px;
+    color:white;
+    width:100%;
+    padding:10x;
+    height:60px;
+  }
+  .line{
+width: 112px;
+height: 47px;
+border-bottom: 1px solid black;
+position: relative; 
+display:inline-block;
+}
 
   .btn{
     /* font-weight:600; */
