@@ -30,3 +30,7 @@ Route::get('/5', function () {
     return view('5');
 });
 Route::resource('/users', 'UserController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
