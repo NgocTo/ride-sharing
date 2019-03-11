@@ -8,12 +8,12 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body"> -->
-                <h2 class="text-green text-center font-weight-bold">Sign Up</h2>
+                <h2 class="text-green text-center font-weight-bold">Create an account</h2>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
+                            <label for="name">{{ __('First name') }}</label>
 
                             <!-- <div class="col-md-6"> -->
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">{{ __('E-Mail Address') }}</label>
+                            <label for="email">{{ __('Last name') }}</label>
 
                             <!-- <div class="col-md-6"> -->
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -67,7 +67,7 @@
                             <button type="submit" class="btn btn-primary text-center btn-block">
                                     {{ __('Register') }}
                                 </button>
-                               
+                                <p class=" text-center p-3 m-3">OR</p>
                             </div>
                         </div>
                     </form>
