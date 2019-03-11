@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/angelalogin', function () {
-    return view('angelalogin');
+Route::get('/register', function () {
+    return view('register');
 });
 Route::get('/3', function () {
     return view('3');
