@@ -40,6 +40,11 @@
   /* top layer */
   z-index: 9999;
 }
+
+// form input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+//   background-color: #fff !important;
+// }
+
 .overlay {
   display: none;
   position: fixed;
@@ -82,6 +87,83 @@
   width: 100%;
 }
 
+// STEPS
+.circle {
+  position: relative;
+  width: $radio-size;
+  height: $radio-size;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 0 $stroke-width $active-color,
+    inset 0 0 0 0 $bg-color,
+    inset 0 0 0 $radio-size $active-color;
+  transition: box-shadow $duration;
+}
+
+input:checked + .step ~ .step {
+  box-shadow:
+    inset 0 0 0 $stroke-width $inactive-color,
+    inset 0 0 0 $radio-size $bg-color,
+    inset 0 0 0 $radio-size $active-color;
+}
+
+.box {
+  position: relative;
+  max-width: 30em;
+  margin: 0 auto 3em;
+  display: flex;
+  justify-content: space-between;
+
+  hr {
+    margin: 0;
+    border: none;
+    color: $inactive-color;
+
+    // &,
+    // &:before,
+    // &::after {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   z-index: -1;
+    // }
+
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   background-image: linear-gradient(
+    //     transparent calc(50% - #{$stroke-width*.5}),
+    //     currentColor calc(50% - #{$stroke-width*.5}),
+    //     currentColor calc(50% + #{$stroke-width*.5}),
+    //     transparent calc(50% + #{$stroke-width*.5})
+    //   );
+    // }
+
+    // &::after {
+    //   color: $active-color;
+    //   transform: scaleX(0);
+    //   transform-origin: 0 50%;
+    //   transition: transform $duration linear;
+    // }
+  }
+}
+
+
+@for $i from 2 through 9 {
+  .box[data-max="#{$i}"] {
+    @for $j from 1 through $i {
+      input:nth-of-type(#{$j}):checked ~ hr::after {
+        transform: scaleX(#{($j - 1) / ($i - 1)});
+      }
+    }
+  }
+}
+
+
+// END STEPS
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 

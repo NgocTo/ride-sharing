@@ -3,7 +3,17 @@
 
 @section('username', "Test")
 @section('heading', 'Users')
+@section('sidebar')
+    @parent
+@endsection
 @section('content')
+
+<div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <hr />
+</div>
+
     @foreach($users as $u)
         <p>{{ $u->firstName }}</p>
         <p>{{ $u->licenseNumber }}</p>

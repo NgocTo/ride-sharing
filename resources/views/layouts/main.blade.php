@@ -22,6 +22,7 @@
 </head>
 <body>
     <div class="container-fluid row">
+        @section('sidebar')
         <aside class="sidebar">
             <nav class="navbar-expand-lg navbar-light">
             <button class="navbar-toggler" id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +41,7 @@
                         <label class="custom-control-label" for="customSwitch1">Become a rider</label>
                     </div>
                 </div>
-                <ul class="navbar-nav flex-column">
+                <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Your ride history</a>
                     </li>
@@ -60,6 +61,7 @@
             </div>
             </nav>
         </aside>
+        @show
         <main class="col">
             <h1 class="text-green text-center">@yield('heading')</h1>
             @yield('content')
