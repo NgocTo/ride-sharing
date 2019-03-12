@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10664,11 +10664,27 @@ a.text-dark:focus {
   color: #15AA35;
 }
 
+.text-blue {
+  color: #1370B0;
+}
+
 .bg-green {
   background-color: #15AA35;
 }
 
-aside {
+.bg-blue {
+  background-color: #1370B0;
+}
+
+text-bold {
+  font-weight: 500;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.sidebar {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -10684,7 +10700,7 @@ aside {
   width: 100vw;
   height: 100vh;
   /* transparent black */
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   /* middle layer, i.e. appears below the sidebar */
   z-index: 998;
   opacity: 0;
@@ -10718,8 +10734,12 @@ aside {
   width: 100%;
 }
 
+.heading-test {
+  color: red;
+}
+
 @media (min-width: 992px) {
-  aside {
+  .sidebar {
     position: relative;
     border-right: 1px solid #ADADAD;
   }

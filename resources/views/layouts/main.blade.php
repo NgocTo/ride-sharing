@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container-fluid row">
-        <aside>
+        <aside class="sidebar">
             <nav class="navbar-expand-lg navbar-light">
             <button class="navbar-toggler" id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

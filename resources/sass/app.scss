@@ -1,6 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
 // Variables
 @import 'variables';
@@ -17,11 +17,22 @@
 .text-green {
   color: $green;
 }
+.text-blue {
+  color: $blue;
+}
 .bg-green {
   background-color: $green;
 }
-
-aside {
+.bg-blue {
+  background-color: $blue;
+}
+text-bold{
+  font-weight: 500;
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.sidebar {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -36,7 +47,7 @@ aside {
   width: 100vw;
   height: 100vh;
   /* transparent black */
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   /* middle layer, i.e. appears below the sidebar */
   z-index: 998;
   opacity: 0;
@@ -65,7 +76,9 @@ aside {
   width: 100%;
 }
 
-
+.heading-test {
+  color: red;
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   
@@ -77,7 +90,7 @@ aside {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  aside {
+  .sidebar {
     position: relative;
     border-right: 1px solid $light;
   }
