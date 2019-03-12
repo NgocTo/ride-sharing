@@ -26,7 +26,7 @@
 .bg-blue {
   background-color: $blue;
 }
-text-bold{
+.text-bold{
   font-weight: 500;
 }
 .bg-transparent{
@@ -59,6 +59,12 @@ text-bold{
   display: block;
   opacity: 1;
 }
+
+//text box shadow
+.shadow {
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+}
+
 #profile {
   padding: 1rem 0;
 }
@@ -76,9 +82,7 @@ text-bold{
   width: 100%;
 }
 
-.heading-test {
-  color: red;
-}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   

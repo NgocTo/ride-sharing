@@ -9,7 +9,7 @@
         <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
             <div class="col-md-6">    
-                <input id="email" type="email" placeholder="Enter your email" class="form-control p-3 mb-5{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" type="email" placeholder="Enter your email" class="shadow form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -21,7 +21,7 @@
         <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
             <div class="col-md-6">   
-                <input id="password" placeholder="Enter password" type="password" class="form-control p-3 mb-5{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                <input id="password" placeholder="Enter password" type="password" class="shadow form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                 @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('password') }}</strong>

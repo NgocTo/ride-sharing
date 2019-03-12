@@ -10676,7 +10676,7 @@ a.text-dark:focus {
   background-color: #1370B0;
 }
 
-text-bold {
+.text-bold {
   font-weight: 500;
 }
 
@@ -10715,6 +10715,10 @@ text-bold {
   opacity: 1;
 }
 
+.shadow {
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+}
+
 #profile {
   padding: 1rem 0;
 }
@@ -10732,10 +10736,6 @@ text-bold {
 #map {
   height: 20rem;
   width: 100%;
-}
-
-.heading-test {
-  color: red;
 }
 
 @media (min-width: 992px) {

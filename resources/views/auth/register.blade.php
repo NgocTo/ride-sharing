@@ -10,7 +10,7 @@
             <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
             <div class="col-md-6">
-                <input id="firstName" type="text" class="form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required autofocus>
+                <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required autofocus>
 
                 @if ($errors->has('firstName'))
                     <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
             <div class="col-md-6">
-                <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                <input id="email" type="text" class="shadow form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                 @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
             <div class="col-md-6">
-                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+                <input id="phone" type="text" class="shadow form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
 
                 @if ($errors->has('phone'))
                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                <input id="password" type="password" class="shadow form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                 @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                <input id="password-confirm" type="password" class="shadow form-control" name="password_confirmation" required>
             </div>
         </div>
 
@@ -91,7 +91,7 @@
                 </button>
                 <p class="text-center p-3 m-3">OR</p>
                 <p class="text-center">Have an account?</p>
-                <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle font-weight-bold">{{ __('Login') }}</a>
+                <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle text-bold">{{ __('Login') }}</a>
             </div>
         </div>
     </form>
