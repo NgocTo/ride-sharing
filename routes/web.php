@@ -14,21 +14,11 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
+
+Route::get('/1', function () {
+    return view('1');
 });
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/3', function () {
-    return view('3');
-});
-Route::get('/4', function () {
-    return view('4');
-});
-Route::get('/5', function () {
-    return view('5');
-});
+
 Route::resource('/users', 'UserController');
 
 Auth::routes();

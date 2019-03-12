@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName', 'lastName', 'password',
+        'firstName', 'lastName', 'email', 'phone', 'password',
     ];
 
     /**
@@ -38,14 +38,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
-class DriverInfo {
-    protected $table ='driverInfo';
-    protected $primaryKey = 'id';
-    public $timestamps = false;
-}
-class VehicleInfo {
-    protected $table ='vehicleId';
-    protected $primaryKey = 'id';
-    public $timestamps = false;
+
+    public function save(array $options = array()) {
+        if(isset($this->remember_token))
+            unset($this->remember_token);
+    
+        return parent::save($options);
+    }
 }
