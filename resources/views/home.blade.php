@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.main')
+
+@section('id', "$user->id" )
+@section('username', "$user->firstName $user->lastName" )
+@section('sidebar')
+    @parent
+@endsection
 
 @section('content')
 <div class="container">

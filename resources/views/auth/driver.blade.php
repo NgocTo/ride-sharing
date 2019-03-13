@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
+@section('username', 'test' )
 @section('sidebar')
 @endsection
+
 @section('content')
 <div class="container">
 <div class="form-group row">
@@ -11,34 +13,7 @@
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        <div class="form-group row">
-            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('Legal first name') }}</label>
-
-            <div class="col-md-6">
-                <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required autofocus>
-
-                @if ($errors->has('firstName'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('firstName') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Legal last name') }}</label>
-
-            <div class="col-md-6">
-                <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
-
-                @if ($errors->has('lastName'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('lastName') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
+        
         <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 

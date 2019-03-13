@@ -11,13 +11,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:api');
+    // }
     public function index()
     {
         $users = User::all();
-        // $driverInfo = Driver::all();
-        // $data;
-        // $data->users = $users;
-        // $data->driverInfo = $driverInfo;
         return view('users.index')->with('users', $users);
 
         // return view ('users.index');
@@ -53,6 +55,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        return view('users.show', ['user' => User::findOrFail($id)]);
     }
 
     /**

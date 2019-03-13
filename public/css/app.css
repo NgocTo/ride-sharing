@@ -10733,6 +10733,17 @@ a.text-dark:focus {
   padding: 0.5rem 0;
 }
 
+#profile h2 a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+}
+
+#profile h2 a:hover {
+  font-weight: 500;
+  color: #fff;
+}
+
 #map {
   height: 20rem;
   width: 100%;

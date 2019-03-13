@@ -20,9 +20,11 @@ Route::get('/1', function () {
 });
 
 Route::get('/driver', function () {
-    return view('driver');
+    return view('auth.driver');
 });
-Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController')->names([
+    'show' => 'profile'
+]);
 
 Auth::routes();
 
