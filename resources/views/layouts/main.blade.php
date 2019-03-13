@@ -34,14 +34,14 @@
                 <!-- Profile -->
                 <div class="bg-green text-center text-white" id="profile">
                     <div>
-                        <!-- <a href="{{ // route( 'profile', [ 'id' => 1 ] ) }}"> -->
+                        <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
                             <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
-                        <!-- </a> -->
+                        </a>
                     </div>
                     <h2 class="font-weight-bold h4">
-                        <!-- <a href="{{ // route( 'profile', [ 'id' => 1 ] ) }}"> -->
+                        <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
                             @yield('username')
-                        <!-- </a> -->
+                        </a>
                     </h2>
 
                     <div class="custom-control custom-switch">
