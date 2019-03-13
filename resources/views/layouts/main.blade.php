@@ -69,11 +69,9 @@
         <!-- Dark Overlay element -->
         <div class="overlay"></div>
     </div>
-    <hr />
+    
     
     @yield('script')
-    <footer class="container-fluid text-right">
-        <p>Copyright by JAWA</p>
-    </footer>
+    
 </body>
 </html>

@@ -19,6 +19,9 @@ Route::get('/1', function () {
     return view('1');
 });
 
+Route::get('/driver', function () {
+    return view('driver');
+});
 Route::resource('/users', 'UserController');
 
 Auth::routes();

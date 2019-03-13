@@ -6,13 +6,13 @@
 <div class="container">
 <div class="form-group row">
     <div class="col-md-6 offset-md-4">
-        <h2 class="text-green text-center text-bold mb-5">Create an account</h2>
+        <h2 class="text-green text-center text-bold mb-5">Driver info</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="form-group row">
-            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('Legal first name') }}</label>
 
             <div class="col-md-6">
                 <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required autofocus>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Legal last name') }}</label>
 
             <div class="col-md-6">
                 <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
