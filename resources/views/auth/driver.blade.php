@@ -8,45 +8,46 @@
 <div class="container">
 <div class="form-group row">
     <div class="col-md-6 offset-md-4">
-        <h2 class="text-green text-center text-bold mb-5">Driver info</h2>
+        <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         
         <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
 
             <div class="col-md-6">
-                <input id="email" type="text" class="shadow form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required>
 
-                @if ($errors->has('email'))
+                @if ($errors->has('firstName'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
+                        <strong>{{ $errors->first('firstName') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
 
             <div class="col-md-6">
-                <input id="phone" type="text" class="shadow form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+                <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
 
-                @if ($errors->has('phone'))
+                @if ($errors->has('lastName'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('phone') }}</strong>
+                        <strong>{{ $errors->first('lastName') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="shadow form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                <input id="dob" type="date" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required>
+                <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
 
                 @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
@@ -57,21 +58,51 @@
         </div>
 
         <div class="form-group row">
-            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+            <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
 
             <div class="col-md-6">
-                <input id="password-confirm" type="password" class="shadow form-control" name="password_confirmation" required>
+                <input id="licence" type="text" class="shadow form-control" name="licence" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+        <div class="col-md-6">
+            <select id="licence" type="number" class="shadow form-control" name="licence" required>
+                <option value="Ontario">Ontario</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="Alberta">Alberta</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Newfoundland">Newfoundland</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Quebec">Quebec</option>
+                <option value="New Brunswick">New Brunswick</option>
+         </select>
+        </div>
+            <!-- <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+
+            <div class="col-md-6">
+                <input id="province" type="number" class="shadow form-control" name="province" required>
+            </div> -->
+        </div>
+        
+
+        <div class="form-group row">
+            <label for="expire" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
+
+            <div class="col-md-6">
+                <input id="expire" type="date" class="shadow form-control" name="expire" required>
             </div>
         </div>
 
         <div class="row mb-0">
-            <div class="col-md-6 offset-md-4">
+            <div class="col-md-6 offset-md-4 mt-3">
                 <button type="submit" class="btn btn-primary text-center btn-block">
-                    {{ __('Register') }}
+                    {{ __('Car info') }}
                 </button>
-                <p class="text-center p-3 m-3">OR</p>
-                <p class="text-center">Have an account?</p>
-                <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle text-bold">{{ __('Login') }}</a>
+                <p class="text-center p-3 mt-4"><a href="#">Skip this process</a></p>
             </div>
         </div>
     </form>
