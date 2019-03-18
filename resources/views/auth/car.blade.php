@@ -8,67 +8,80 @@
 <div class="container">
 <div class="form-group row">
     <div class="col-md-6 offset-md-4">
-        <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
+        <h2 class="text-green text-center text-bold mb-3 mt-3">Car info</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         
         <div class="form-group row">
-            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
+            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
 
             <div class="col-md-6">
-                <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required>
+                
+            <select id="year" type="text" class="shadow form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" value="{{ old('year') }}" required>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+             </select>
+                <!-- <input id="year" type="text" class="shadow form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" value="{{ old('year') }}" required> -->
 
-                @if ($errors->has('firstName'))
+                @if ($errors->has('year'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('firstName') }}</strong>
+                        <strong>{{ $errors->first('year') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
+            <label for="Make" class="col-md-4 col-form-label text-md-right">{{ __('Make') }}</label>
 
             <div class="col-md-6">
-                <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
+                <input id="make" type="text" class="shadow form-control{{ $errors->has('make') ? ' is-invalid' : '' }}" name="make" value="{{ old('make') }}" required>
 
-                @if ($errors->has('lastName'))
+                @if ($errors->has('make'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('lastName') }}</strong>
+                        <strong>{{ $errors->first('make') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
+            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
 
             <div class="col-md-6">
-                <input id="dob" type="date" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required>
+                <input id="dob" type="date" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
                 <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
 
-                @if ($errors->has('password'))
+                @if ($errors->has('model'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('password') }}</strong>
+                        <strong>{{ $errors->first('model') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
+            <label for="licencePlate" class="col-md-4 col-form-label text-md-right">{{ __('Licence plate') }}</label>
 
             <div class="col-md-6">
-                <input id="licence" type="text" class="shadow form-control" name="licence" required>
+                <input id="licencePlate" type="text" class="shadow form-control" name="licencePlate" required>
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+            <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
         <div class="col-md-6">
-            <select id="licence" type="number" class="shadow form-control" name="licence" required>
+            <select id="kilometers" type="number" class="shadow form-control" name="kilometers" required>
                 <option value="Ontario">Ontario</option>
                 <option value="Manitoba">Manitoba</option>
                 <option value="Alberta">Alberta</option>
@@ -90,17 +103,17 @@
         
 
         <div class="form-group row">
-            <label for="expire" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
+            <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
 
             <div class="col-md-6">
-                <input id="expire" type="date" class="shadow form-control" name="expire" required>
+                <input id="color" type="date" class="shadow form-control" name="color" required>
             </div>
         </div>
 
         <div class="row mb-0">
             <div class="col-md-6 offset-md-4 mt-3">
-                <button type="submit" class="btn btn-primary text-center btn-block">
-                    {{ __('Car info') }}
+                <button type="submit" class=" text-bold btn btn-primary text-center btn-block">
+                    {{ __('Submit') }}
                 </button>
                 <p class="text-center p-3 mt-4"><a href="#">Skip this process</a></p>
             </div>

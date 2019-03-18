@@ -99,7 +99,7 @@
 
         <div class="row mb-0">
             <div class="col-md-6 offset-md-4 mt-3">
-                <button type="submit" class="btn btn-primary text-center btn-block">
+                <button type="submit" class=" text-bold btn btn-primary text-center btn-block">
                     {{ __('Car info') }}
                 </button>
                 <p class="text-center p-3 mt-4"><a href="#">Skip this process</a></p>

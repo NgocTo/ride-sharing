@@ -5,7 +5,7 @@
 <div class="container">
 <div class="form-group row">
     <div class="col-md-6 offset-md-4">
-        <h2 class="text-green text-center text-bold mb-5">Log in</h2>
+        <h2 class="text-green text-center text-bold mb-3 mt-3">Log in</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('login') }}">
