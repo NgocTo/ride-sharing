@@ -44,7 +44,7 @@
             <label for="Make" class="col-md-4 col-form-label text-md-right">{{ __('Make') }}</label>
 
             <div class="col-md-4 mb-3 ">
-                <input id="make" type="text" class="shadow form-control{{ $errors->has('make') ? ' is-invalid' : '' }}" name="make" value="{{ old('make') }}" required>
+                <input placeholder="Ex: Hyundai" id="make" type="text" class="shadow form-control{{ $errors->has('make') ? ' is-invalid' : '' }}" name="make" value="{{ old('make') }}" required>
 
                 @if ($errors->has('make'))
                     <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
 <!-- like 'civic''prius' look up on google. make is the brand.model is type of car -->
             <div class="col-md-4 mb-3">
-                <input id="dob" type="date" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
+                <input placeholder="Ex: Prius"id="dob" type="text" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
                 <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
 
                 @if ($errors->has('model'))
@@ -73,26 +73,14 @@
             <label for="licencePlate" class="col-md-4 col-form-label text-md-right">{{ __('Licence plate') }}</label>
 
             <div class="col-md-4 mb-3">
-                <input id="licencePlate" type="text" class="shadow form-control" name="licencePlate" required>
+                <input placeholder="Ex: ABZM 264" id="licencePlate" type="text" class="shadow form-control" name="licencePlate" required>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
         <div class="col-md-4 mb-3">
-            <select id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
-                <!-- make a text field -->
-                <option value="Ontario">Ontario</option>
-                <option value="Manitoba">Manitoba</option>
-                <option value="Alberta">Alberta</option>
-                <option value="British Columbia">British Columbia</option>
-                <option value="Newfoundland">Newfoundland</option>
-                <option value="Saskatchewan">Saskatchewan</option>
-                <option value="Nova Scotia">Nova Scotia</option>
-                <option value="Prince Edward Island">Prince Edward Island</option>
-                <option value="Quebec">Quebec</option>
-                <option value="New Brunswick">New Brunswick</option>
-         </select>
+            <input placeholder="Ex: 34,954km" id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
         </div>
             <!-- <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
 
@@ -106,15 +94,8 @@
             <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
 <!-- make color as a text field -->
             <div class="col-md-4 mb-3">
-            <select id="color" type="text" class="shadow form-control" name="color" required>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Blue">Blue</option>
-                <option value="Black">Black</option>
-                <option value="Grey">Grey</option>
-                <option value="White">White</option>
-                <option value="Yellow">Yellow</option>
-         </select>
+            <input placeholder="Ex: Red" id="color" type="text" class="shadow form-control" name="color" required>
+                
             </div>
         </div>
 
