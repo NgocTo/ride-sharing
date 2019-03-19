@@ -28,6 +28,12 @@
                     <label for="dropoff">Destination </label>
                     <input type="text" class="form-control" id="dropoff" placeholder="Your destination">
                  </div>
+
+                 <div class="col-md-4 mt-5">
+                 <button type="submit" class=" text-bold btn btn-primary btn-block text-center ">
+                    {{ __('Submit') }}
+                </button>
+                </div>
             </form>
    
 </div>
