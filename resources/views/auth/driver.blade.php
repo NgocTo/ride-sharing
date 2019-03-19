@@ -8,12 +8,11 @@
 <div class="container mt-4">
 <div class="form-group row">
     <div class="col offset">
-    <!-- <div class="col-md-6 offset-md-4"> -->
+         <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
 
         <div class="form-group row">
             <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
