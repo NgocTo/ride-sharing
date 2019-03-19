@@ -91,7 +91,7 @@
 
         <div class="form-group row mb-0">
         <div class="col-md-4 offset-md-4 mb-3">
-                <button type="submit" class="btn btn-primary text-center btn-block text-bold">
+                <button type="submit" class="btn btn-primary text-center btn-block text-bold mb-3">
                     {{ __('Register') }}
                 </button>
                 <p class="text-center">OR</p>
