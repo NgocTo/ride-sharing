@@ -31,7 +31,8 @@ $(document).ready(function () {
             // url: '/users/getDirection?origin='+ origin + '&destination=' + destination,
             url: '/users/'+origin+'/'+destination,
             // data: {origin: origin, destination: destination},
-            success: function() {
+            success: function(data) {
+                console.log(data);
                 $('#directionResponse').html(`success`);
             },
         });

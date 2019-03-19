@@ -24,7 +24,7 @@
         <input type="hidden" id="origin" name="origin" value="Sheridan College">
         <label for="destination">Destination:</label>
         <input type="text" id="destination" name="destination">
-        <a id="submit" name="submit" class="btn btn-outline-primary">Go</a>
+        <button id="submit" name="submit" class="btn btn-outline-primary">Go</button>
     </form>
     <div id="directionResponse">
 
@@ -33,9 +33,9 @@
 @section('script')
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
-    <!-- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_WYIcHlgh6jQEN_NMP31U92tbBbWqFRg&callback=initMap">
-    </script> -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
+    </script>
 @endsection
 <!-- @component('alert')
     @slot('status')

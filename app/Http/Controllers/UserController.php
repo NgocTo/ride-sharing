@@ -29,10 +29,11 @@ class UserController extends Controller
     {
         // $origin = $request->query('origin');
         // $destination = $request->query('destination');
-        $key = 'AIzaSyD_WYIcHlgh6jQEN_NMP31U92tbBbWqFRg';
-        $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.$origin.'&destination='.$destination.'&key='.$key);
+
+        $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
+        $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
         // if ($request->ajax()){
-            return response()->data; 
+            return $data; 
         // }
     }
     /**
