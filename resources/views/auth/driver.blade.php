@@ -6,11 +6,11 @@
 
 @section('content')
 <div class="container mt-4">
-<div class="form-group row">
-    <div class="col offset">
-         <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
+    <div class="form-group row">
+        <div class="col offset">
+            <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
+        </div>
     </div>
-</div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
