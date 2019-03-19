@@ -8,17 +8,16 @@
 <div class="container mt-4">
 <div class="form-group row">
     <div class="col offset">
-    <!-- <div class="col-md-6 offset-md-4"> -->
+         <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
     </div>
 </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        <h2 class="text-green text-center text-bold mb-3 mt-3">Driver info</h2>
 
         <div class="form-group row">
             <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required>
 
                 @if ($errors->has('firstName'))
@@ -32,7 +31,7 @@
         <div class="form-group row">
             <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
 
                 @if ($errors->has('lastName'))
@@ -46,7 +45,7 @@
         <div class="form-group row">
             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <input id="dob" type="date" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required>
                 <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
 
@@ -61,14 +60,14 @@
         <div class="form-group row">
             <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <input id="licence" type="text" class="shadow form-control" name="licence" required>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <select id="licence" type="number" class="shadow form-control" name="licence" required>
                 <option value="Ontario">Ontario</option>
                 <option value="Manitoba">Manitoba</option>
@@ -93,7 +92,7 @@
         <div class="form-group row">
             <label for="expire" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3 ">
                 <input id="expire" type="date" class="shadow form-control" name="expire" required>
             </div>
         </div>
