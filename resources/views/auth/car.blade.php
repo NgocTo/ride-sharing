@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
 <div class="form-group row">
     <div class="col offset">
     <!-- <div class="col-md-6 offset-md-4"> -->
@@ -81,7 +81,7 @@
         <div class="form-group row">
             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
         <div class="col-md-4">
-            <select id="kilometers" type="number" class="shadow form-control" name="kilometers" required>
+            <select id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
                 <option value="Ontario">Ontario</option>
                 <option value="Manitoba">Manitoba</option>
                 <option value="Alberta">Alberta</option>
@@ -106,7 +106,15 @@
             <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
 
             <div class="col-md-4">
-                <input id="color" type="date" class="shadow form-control" name="color" required>
+            <select id="color" type="text" class="shadow form-control" name="color" required>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Black">Black</option>
+                <option value="Grey">Grey</option>
+                <option value="White">White</option>
+                <option value="Yellow">Yellow</option>
+         </select>
             </div>
         </div>
 
