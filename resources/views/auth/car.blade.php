@@ -80,7 +80,7 @@
         <div class="form-group row">
             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
         <div class="col-md-4 mb-3">
-            <input placeholder="Ex: 34,954km" id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
+            <input placeholder="Ex: 34954km" id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
         </div>
             <!-- <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
 

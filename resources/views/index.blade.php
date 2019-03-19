@@ -24,15 +24,15 @@
                     <input type="text" class="form-control" id="pickup" placeholder="Your pickup location">
                 </div>
 
-                <div class="form-group mx-5 mt-4 mb-5">
+                <div class="form-group mx-5 mt-4 ">
                     <label for="dropoff">Destination </label>
                     <input type="text" class="form-control" id="dropoff" placeholder="Your destination">
                  </div>
 
-                 <div class="col-md-4 mt-5">
-                 <button type="submit" class=" text-bold btn btn-primary btn-block text-center ">
-                    {{ __('Submit') }}
-                </button>
+                 <div class="form-group mx-5 mt-4 mb-5">
+                    <button type="submit" class=" text-bold btn btn-primary text-center btn-block">
+                        {{ __('Submit') }}
+                    </button>
                 </div>
             </form>
    
