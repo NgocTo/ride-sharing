@@ -10921,8 +10921,10 @@ html {
 }
 
 #map {
-  height: 20rem;
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 60rem;
+  width: auto;
 }
 
 .owl-dots {
