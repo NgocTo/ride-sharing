@@ -25,6 +25,9 @@ Route::get('/driver', function () {
 Route::get('/car', function () {
     return view('auth.car');
 });
+Route::get('/index', function () {
+    return view('index');
+});
 Route::resource('/users', 'UserController')->names([
     'show' => 'profile'
 ]);
