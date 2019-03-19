@@ -3,20 +3,20 @@
 @endsection
 @section('content')
 
-<div>
+
 <!-- google map -->
 @section('script')
-    <script src="{{ asset('../public/js/script.js') }}"></script>
-    <script src="{{ asset('../public/js/map.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/map.js') }}"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
     </script>
 @endsection
-</div>
+
 
 
 <div class="container p-0 fixed-bottom bg-white">
-   
+<div id="map" class="p-0 m-0"></div>
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form>
                 <div class="form-group mx-5 mt-4">
