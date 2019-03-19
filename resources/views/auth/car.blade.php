@@ -56,7 +56,7 @@
 
         <div class="form-group row">
             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
-
+<!-- like 'civic''prius' look up on google. make is the brand.model is type of car -->
             <div class="col-md-4 mb-3">
                 <input id="dob" type="date" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
                 <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
@@ -81,6 +81,7 @@
             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
         <div class="col-md-4 mb-3">
             <select id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
+                <!-- make a text field -->
                 <option value="Ontario">Ontario</option>
                 <option value="Manitoba">Manitoba</option>
                 <option value="Alberta">Alberta</option>
@@ -103,7 +104,7 @@
 
         <div class="form-group row">
             <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
-
+<!-- make color as a text field -->
             <div class="col-md-4 mb-3">
             <select id="color" type="text" class="shadow form-control" name="color" required>
                 <option value="Red">Red</option>
