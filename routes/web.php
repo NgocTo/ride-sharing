@@ -28,7 +28,8 @@ Route::get('/car', function () {
 Route::resource('/users', 'UserController')->names([
     'show' => 'profile'
 ]);
-
+// Route::get('/users/getDirection', 'UserController@getDirection');
+Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

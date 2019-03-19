@@ -24,7 +24,17 @@ class UserController extends Controller
 
         // return view ('users.index');
     }
-
+    public function getDirection($origin, $destination)
+    // public function getDirection(Request $request)
+    {
+        // $origin = $request->query('origin');
+        // $destination = $request->query('destination');
+        $key = 'AIzaSyD_WYIcHlgh6jQEN_NMP31U92tbBbWqFRg';
+        $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.$origin.'&destination='.$destination.'&key='.$key);
+        // if ($request->ajax()){
+            return response()->data; 
+        // }
+    }
     /**
      * Show the form for creating a new resource.
      *
