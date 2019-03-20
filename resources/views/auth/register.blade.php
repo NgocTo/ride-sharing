@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+@section('heading', 'Create an Account')
 @section('sidebar')
 @endsection
 @section('content')
@@ -7,7 +8,7 @@
 
 
 <section class="testimonials_area">
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <div class="col offset">
             <h2 class="text-green text-center text-bold mt-5" id="register-heading">Create an account</h2>
             <div class="d-none text-center" id="register-pagination">
@@ -15,7 +16,7 @@
                 <span class="dots inactive"></span>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="testi_slider owl-carousel">
         <div>
             <div class="testi_item">
@@ -130,6 +131,13 @@
             <div class="testi_item">
                 <div class="container mt-4">
                     <div class="form-group row">
+                        <div class="col">
+                            <h2 class="text-center text-green text-bold h3" id="register-heading">Driver Infomation</h2>
+                            <div class="text-center" id="register-pagination">
+                                <span class="dots"></span>
+                                <span class="dots inactive"></span>
+                            </div>
+                        </div>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -186,9 +194,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+                            <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
                         <div class="col-md-4 mb-3">
-                            <select id="licence" type="number" class="shadow form-control" name="licence" required>
+                            <select id="licence" class="shadow form-control" name="licence" required>
+                                <option value="">---</option>
                                 <option value="Ontario">Ontario</option>
                                 <option value="Manitoba">Manitoba</option>
                                 <option value="Alberta">Alberta</option>
@@ -199,7 +208,7 @@
                                 <option value="Prince Edward Island">Prince Edward Island</option>
                                 <option value="Quebec">Quebec</option>
                                 <option value="New Brunswick">New Brunswick</option>
-                        </select>
+                            </select>
                         </div>
                             <!-- <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
 
@@ -236,6 +245,13 @@
             <div class="testi_item">
                 <div class="container mt-4">
                     <div class="form-group row">
+                        <div class="col offset">
+                            <h2 class="text-center text-green text-bold h3" id="register-heading">Car Infomation</h2>
+                            <div class="text-center" id="register-pagination">
+                                <span class="dots"></span>
+                                <span class="dots"></span>
+                            </div>
+                        </div>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -244,7 +260,8 @@
 
                             <div class="col-md-4 mb-3">
                                 
-                            <select id="year" type="text" class="shadow form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" value="{{ old('year') }}" required>
+                            <select id="year" class="shadow form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" required>
+                                <option value="">---</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
                                 <option value="2017">2017</option>
@@ -267,7 +284,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Make" class="col-md-4 col-form-label text-md-right">{{ __('Make') }}</label>
+                            <label for="make" class="col-md-4 col-form-label text-md-right">{{ __('Make') }}</label>
 
                             <div class="col-md-4 mb-3 ">
                                 <input id="make" type="text" class="shadow form-control{{ $errors->has('make') ? ' is-invalid' : '' }}" name="make" value="{{ old('make') }}" required>
@@ -306,8 +323,9 @@
                         <div class="form-group row">
                             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
                             <div class="col-md-4 mb-3">
-                                <select id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
+                                <select id="kilometers" class="shadow form-control" name="kilometers" required>
                                     <!-- make a text field -->
+                                    <option value="">---</option>
                                     <option value="Ontario">Ontario</option>
                                     <option value="Manitoba">Manitoba</option>
                                     <option value="Alberta">Alberta</option>
@@ -332,7 +350,8 @@
                             <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
                             <!-- make color as a text field -->
                             <div class="col-md-4 mb-3">
-                                <select id="color" type="text" class="shadow form-control" name="color" required>
+                                <select id="color" class="shadow form-control" name="color" required>
+                                    <option value="">---</option>
                                     <option value="Red">Red</option>
                                     <option value="Green">Green</option>
                                     <option value="Blue">Blue</option>

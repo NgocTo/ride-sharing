@@ -79,7 +79,7 @@
         </aside>
         @show
         <main class="col">
-            <h1 class="text-green text-center">@yield('heading')</h1>
+            <h1 class="text-green text-center mt-5">@yield('heading')</h1>
             @yield('content')
         </main>
         <!-- Dark Overlay element -->
