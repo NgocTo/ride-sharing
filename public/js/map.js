@@ -6,7 +6,8 @@ function initMap() {
   var directionsDisplay = new google.maps.DirectionsRenderer();
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 14
+    zoom: 14,
+    disableDefaultUI: true
   });
   infoWindow = new google.maps.InfoWindow;
 

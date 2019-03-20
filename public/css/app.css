@@ -10862,11 +10862,12 @@ html {
 
 .sidebar {
   height: 100vh;
-  position: fixed;
+  width: auto;
+  position: absolute;
   top: 0;
   left: 0;
   /* top layer */
-  z-index: 9999;
+  z-index: 9;
 }
 
 .overlay {
@@ -10878,7 +10879,7 @@ html {
   /* transparent black */
   background: rgba(0, 0, 0, 0.5);
   /* middle layer, i.e. appears below the sidebar */
-  z-index: 998;
+  z-index: 8;
   opacity: 0;
   /* animate the transition */
   transition: all 0.5s ease-in-out;
@@ -10921,10 +10922,14 @@ html {
 }
 
 #map {
-  margin: 0;
-  padding: 0;
-  height: 60rem;
-  width: auto;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+#direction {
+  box-shadow: 1px 1px 2px 2px #ddd;
 }
 
 .owl-dots {
@@ -10946,224 +10951,11 @@ html {
   border: 1px solid #15AA35;
 }
 
-.box[data-max="2"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="2"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="3"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="3"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.5);
-          transform: scaleX(0.5);
-}
-
-.box[data-max="3"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="4"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="4"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.3333333333);
-          transform: scaleX(0.3333333333);
-}
-
-.box[data-max="4"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.6666666667);
-          transform: scaleX(0.6666666667);
-}
-
-.box[data-max="4"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="5"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="5"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.25);
-          transform: scaleX(0.25);
-}
-
-.box[data-max="5"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.5);
-          transform: scaleX(0.5);
-}
-
-.box[data-max="5"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(0.75);
-          transform: scaleX(0.75);
-}
-
-.box[data-max="5"] input:nth-of-type(5):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="6"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="6"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.2);
-          transform: scaleX(0.2);
-}
-
-.box[data-max="6"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.4);
-          transform: scaleX(0.4);
-}
-
-.box[data-max="6"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(0.6);
-          transform: scaleX(0.6);
-}
-
-.box[data-max="6"] input:nth-of-type(5):checked ~ hr::after {
-  -webkit-transform: scaleX(0.8);
-          transform: scaleX(0.8);
-}
-
-.box[data-max="6"] input:nth-of-type(6):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="7"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="7"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.1666666667);
-          transform: scaleX(0.1666666667);
-}
-
-.box[data-max="7"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.3333333333);
-          transform: scaleX(0.3333333333);
-}
-
-.box[data-max="7"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(0.5);
-          transform: scaleX(0.5);
-}
-
-.box[data-max="7"] input:nth-of-type(5):checked ~ hr::after {
-  -webkit-transform: scaleX(0.6666666667);
-          transform: scaleX(0.6666666667);
-}
-
-.box[data-max="7"] input:nth-of-type(6):checked ~ hr::after {
-  -webkit-transform: scaleX(0.8333333333);
-          transform: scaleX(0.8333333333);
-}
-
-.box[data-max="7"] input:nth-of-type(7):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="8"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="8"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.1428571429);
-          transform: scaleX(0.1428571429);
-}
-
-.box[data-max="8"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.2857142857);
-          transform: scaleX(0.2857142857);
-}
-
-.box[data-max="8"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(0.4285714286);
-          transform: scaleX(0.4285714286);
-}
-
-.box[data-max="8"] input:nth-of-type(5):checked ~ hr::after {
-  -webkit-transform: scaleX(0.5714285714);
-          transform: scaleX(0.5714285714);
-}
-
-.box[data-max="8"] input:nth-of-type(6):checked ~ hr::after {
-  -webkit-transform: scaleX(0.7142857143);
-          transform: scaleX(0.7142857143);
-}
-
-.box[data-max="8"] input:nth-of-type(7):checked ~ hr::after {
-  -webkit-transform: scaleX(0.8571428571);
-          transform: scaleX(0.8571428571);
-}
-
-.box[data-max="8"] input:nth-of-type(8):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
-.box[data-max="9"] input:nth-of-type(1):checked ~ hr::after {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.box[data-max="9"] input:nth-of-type(2):checked ~ hr::after {
-  -webkit-transform: scaleX(0.125);
-          transform: scaleX(0.125);
-}
-
-.box[data-max="9"] input:nth-of-type(3):checked ~ hr::after {
-  -webkit-transform: scaleX(0.25);
-          transform: scaleX(0.25);
-}
-
-.box[data-max="9"] input:nth-of-type(4):checked ~ hr::after {
-  -webkit-transform: scaleX(0.375);
-          transform: scaleX(0.375);
-}
-
-.box[data-max="9"] input:nth-of-type(5):checked ~ hr::after {
-  -webkit-transform: scaleX(0.5);
-          transform: scaleX(0.5);
-}
-
-.box[data-max="9"] input:nth-of-type(6):checked ~ hr::after {
-  -webkit-transform: scaleX(0.625);
-          transform: scaleX(0.625);
-}
-
-.box[data-max="9"] input:nth-of-type(7):checked ~ hr::after {
-  -webkit-transform: scaleX(0.75);
-          transform: scaleX(0.75);
-}
-
-.box[data-max="9"] input:nth-of-type(8):checked ~ hr::after {
-  -webkit-transform: scaleX(0.875);
-          transform: scaleX(0.875);
-}
-
-.box[data-max="9"] input:nth-of-type(9):checked ~ hr::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+@media (min-width: 768px) {
+  #direction {
+    position: static;
+    width: 40%;
+  }
 }
 
 @media (min-width: 992px) {

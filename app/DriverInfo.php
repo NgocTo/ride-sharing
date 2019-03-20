@@ -16,6 +16,6 @@ class DriverInfo extends Model
      * @var array
      */
     protected $fillable = [
-        'dob', 'licenseNumber', 'expiryDate', 'province', 'userId'
+        'dob', 'licenceNumber', 'expiryDate', 'province', 'userId'
     ];
 }

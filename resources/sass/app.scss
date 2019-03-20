@@ -36,18 +36,16 @@ html {
 .bg-transparent{
   background-color: transparent;
 }
+// SIDEBAR STYLE
 .sidebar {
   height: 100vh;
-  position: fixed;
+  width: auto;
+  position: absolute;
   top: 0;
   left: 0;
   /* top layer */
-  z-index: 9999;
+  z-index: 9;
 }
-
-// form input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
-//   background-color: #fff !important;
-// }
 
 .overlay {
   display: none;
@@ -58,7 +56,7 @@ html {
   /* transparent black */
   background: rgba(0, 0, 0, 0.5);
   /* middle layer, i.e. appears below the sidebar */
-  z-index: 998;
+  z-index: 8;
   opacity: 0;
   /* animate the transition */
   transition: all 0.5s ease-in-out;
@@ -96,13 +94,20 @@ html {
 }
 
 #map {
-  margin:0;
-  padding:0;
-  height: 60rem;
-  width: auto;
+  // margin:0;
+  // padding:0;
+  // height: 60rem;
+  // width: auto;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#direction {
+  box-shadow: 1px 1px 2px 2px #ddd;
 }
 
-// STEPS
+// CAROUSEL DOTS
 .owl-dots {
   display: none;
   content: ''
@@ -121,20 +126,6 @@ html {
   }
 }
 
-
-@for $i from 2 through 9 {
-  .box[data-max="#{$i}"] {
-    @for $j from 1 through $i {
-      input:nth-of-type(#{$j}):checked ~ hr::after {
-        transform: scaleX(#{($j - 1) / ($i - 1)});
-      }
-    }
-  }
-}
-
-
-// END STEPS
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   
@@ -142,6 +133,10 @@ html {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  #direction {
+    position: static;
+    width: 40%;
+  }
 }
 
 // Large devices (desktops, 992px and up)

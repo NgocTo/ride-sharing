@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('sidebar')
+    @parent
 @endsection
 @section('content')
 
@@ -14,18 +15,18 @@
 @endsection
 
 
-
-<div class="container p-0 fixed-bottom bg-white">
 <div id="map" class="p-0 m-0"></div>
+<div id="direction" class="p-0 fixed-bottom bg-white">
+
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form>
                 <div class="form-group mx-5 mt-4">
-                    <label for="pickup">Pickup </label>
+                    <label for="pickup">Pickup</label>
                     <input type="text" class="form-control" id="pickup" placeholder="Your pickup location">
                 </div>
 
                 <div class="form-group mx-5 mt-4 ">
-                    <label for="dropoff">Destination </label>
+                    <label for="dropoff">Destination</label>
                     <input type="text" class="form-control" id="dropoff" placeholder="Your destination">
                  </div>
 
@@ -45,3 +46,10 @@
     /* body{background-color:red;} */
 </style>
 @endsection
+
+@component('alert')
+    @slot('status')
+        success
+    @endslot
+    <div><strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.</div>
+@endcomponent

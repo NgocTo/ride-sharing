@@ -1,9 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.map')
 
 @section('username', "Test")
 @section('heading', 'Users')
 @section('sidebar')
-    @parent
 @endsection
 @section('content')
 
@@ -37,9 +36,3 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
     </script>
 @endsection
-<!-- @component('alert')
-    @slot('status')
-        success
-    @endslot
-    <div><strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.</div>
-@endcomponent -->

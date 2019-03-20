@@ -141,35 +141,6 @@
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
-                        <div class="form-group row">
-                            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
-
-                            <div class="col-md-4 mb-3">
-                                <input id="firstName" type="text" class="shadow form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required>
-
-                                @if ($errors->has('firstName'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('firstName') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
-
-                            <div class="col-md-4 mb-3">
-                                <input id="lastName" type="text" class="shadow form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
-
-                                @if ($errors->has('lastName'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('lastName') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group row">
                             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
 
@@ -186,30 +157,30 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
+                            <label for="licenceNumber" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
 
                             <div class="col-md-4 mb-3">
-                                <input id="licence" type="text" class="shadow form-control" name="licence" required>
+                                <input id="licenceNumber" type="text" class="shadow form-control" name="licenceNumber" required>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="licence" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
-                        <div class="col-md-4 mb-3">
-                            <select id="licence" class="shadow form-control" name="licence" required>
-                                <option value="">---</option>
-                                <option value="Ontario">Ontario</option>
-                                <option value="Manitoba">Manitoba</option>
-                                <option value="Alberta">Alberta</option>
-                                <option value="British Columbia">British Columbia</option>
-                                <option value="Newfoundland">Newfoundland</option>
-                                <option value="Saskatchewan">Saskatchewan</option>
-                                <option value="Nova Scotia">Nova Scotia</option>
-                                <option value="Prince Edward Island">Prince Edward Island</option>
-                                <option value="Quebec">Quebec</option>
-                                <option value="New Brunswick">New Brunswick</option>
-                            </select>
-                        </div>
+                            <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+                            <div class="col-md-4 mb-3">
+                                <select id="province" class="shadow form-control" name="province" required>
+                                    <option value="">---</option>
+                                    <option value="Ontario">Ontario</option>
+                                    <option value="Manitoba">Manitoba</option>
+                                    <option value="Alberta">Alberta</option>
+                                    <option value="British Columbia">British Columbia</option>
+                                    <option value="Newfoundland">Newfoundland</option>
+                                    <option value="Saskatchewan">Saskatchewan</option>
+                                    <option value="Nova Scotia">Nova Scotia</option>
+                                    <option value="Prince Edward Island">Prince Edward Island</option>
+                                    <option value="Quebec">Quebec</option>
+                                    <option value="New Brunswick">New Brunswick</option>
+                                </select>
+                            </div>
                             <!-- <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
 
                             <div class="col-md-6">
@@ -219,10 +190,10 @@
                         
 
                         <div class="form-group row">
-                            <label for="expire" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
+                            <label for="expiryDate" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
 
                             <div class="col-md-4 mb-3 ">
-                                <input id="expire" type="date" class="shadow form-control" name="expire" required>
+                                <input id="expiryDate" type="date" class="shadow form-control" name="expiryDate" required>
                             </div>
                         </div>
 
@@ -298,11 +269,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
+                            <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
                             <!-- like 'civic''prius' look up on google. make is the brand.model is type of car -->
                             <div class="col-md-4 mb-3">
-                                <input id="dob" type="date" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
-                                <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" required> -->
+                                <input id="model" type="date" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required>
+                                <!-- <input id="dob" type="password" class="shadow form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" required> -->
 
                                 @if ($errors->has('model'))
                                     <span class="invalid-feedback" role="alert">

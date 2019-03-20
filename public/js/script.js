@@ -11,11 +11,15 @@ $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {
         // open sidebar
-        // $('.sidebar').addClass('active');
+        $('.sidebar').addClass('active');
         $('.sidebar').toggleClass('bg-white');
-        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        // $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        $('#sidebarCollapse').remove();
+        $('.overlay').addClass('active');
     });
+    $('.overlay').on('click', function() {
 
+    })
     $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

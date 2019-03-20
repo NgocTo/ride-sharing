@@ -28,66 +28,63 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <!-- <div class="container-fluid row"> -->
-        @section('sidebar')
-        <aside class="sidebar">
-            <nav class="navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <!-- <i class="fas fa-bars"></i> -->
-            </button>
-            
-            <div class="collapse navbar-collapse flex-column" id="navbarNav">
-                <!-- Profile -->
-                <div class="bg-green text-center text-white" id="profile">
-                    <div>
-                        <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
-                            <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
-                        </a>
-                    </div>
-                    <h2 class="font-weight-bold h4">
-                        <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
-                            @yield('username')
-                        </a>
-                    </h2>
-
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Become a rider</label>
-                    </div>
+@section('sidebar')
+<aside class="sidebar">
+    <button class="navbar-toggler" id="sidebarCollapse" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+    </button>
+    <nav class="navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse flex-column" id="navbar">
+            <!-- Profile -->
+            <div class="bg-green text-center text-white" id="profile">
+                <div>
+                    <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
+                        <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
+                    </a>
                 </div>
-                <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My ride history</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Payment methods</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Favourites</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Regulations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                </ul>
+                <h2 class="font-weight-bold h4">
+                    <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
+                        @yield('username')
+                    </a>
+                </h2>
+
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Become a rider</label>
+                </div>
             </div>
-            </nav>
-        </aside>
-        @show
-        <main class="col">
-            <h1 class="text-green text-center mt-5">@yield('heading')</h1>
-            @yield('content')
-        </main>
-        <!-- Dark Overlay element -->
-        <div class="overlay"></div>
-    </div>
+            <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My ride history</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Payment methods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favourites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Regulations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+@show
+
+<main>
+    <h1 class="text-green text-center mt-5">@yield('heading')</h1>
+    @yield('content')
+</main>
+
+<!-- Dark Overlay element -->
+<div class="overlay"></div>
     
     
-    @yield('script')
+@yield('script')
     
 </body>
 </html>
