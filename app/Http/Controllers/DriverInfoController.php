@@ -1,29 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+
 use App\DriverInfo;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class DriverInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:api');
-    // }
     public function index()
     {
-        $users = User::all();
-        return view('users.index')->with('users', $users);
-
-        // return view ('users.index');
+        //
+        $data = DriverInfo::all();
+        return view('drivers.index', ['data'=>$data]);
     }
 
     /**
@@ -50,22 +43,21 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\DriverInfo  $driverInfo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(DriverInfo $driverInfo)
     {
         //
-        return view('users.show', ['user' => User::findOrFail($id)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\DriverInfo  $driverInfo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(DriverInfo $driverInfo)
     {
         //
     }
@@ -74,10 +66,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\DriverInfo  $driverInfo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, DriverInfo $driverInfo)
     {
         //
     }
@@ -85,10 +77,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\DriverInfo  $driverInfo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DriverInfo $driverInfo)
     {
         //
     }

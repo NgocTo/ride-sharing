@@ -25,7 +25,8 @@ Route::get('/driver', function () {
 Route::resource('/users', 'UserController')->names([
     'show' => 'profile'
 ]);
-
+Route::resource('drivers', 'DriverInfoController');
+// Route::resource('photos', 'PhotoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
