@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\DriverInfo;
+use App\VehicleInfo;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -25,7 +26,18 @@ class UserController extends Controller
 
         // return view ('users.index');
     }
+    public function getDirection($origin, $destination)
+    // public function getDirection(Request $request)
+    {
+        // $origin = $request->query('origin');
+        // $destination = $request->query('destination');
 
+        $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
+        $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
+        // if ($request->ajax()){
+            return $data; 
+        // }
+    }
     /**
      * Show the form for creating a new resource.
      *

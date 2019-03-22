@@ -4,10 +4,14 @@
 
 // Variables
 @import 'variables';
+@import 'owl';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+html {
+  overflow-x: hidden;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -32,18 +36,16 @@
 .bg-transparent{
   background-color: transparent;
 }
+// SIDEBAR STYLE
 .sidebar {
   height: 100vh;
-  position: fixed;
+  width: auto;
+  position: absolute;
   top: 0;
   left: 0;
   /* top layer */
-  z-index: 9999;
+  z-index: 9;
 }
-
-// form input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
-//   background-color: #fff !important;
-// }
 
 .overlay {
   display: none;
@@ -54,7 +56,7 @@
   /* transparent black */
   background: rgba(0, 0, 0, 0.5);
   /* middle layer, i.e. appears below the sidebar */
-  z-index: 998;
+  z-index: 8;
   opacity: 0;
   /* animate the transition */
   transition: all 0.5s ease-in-out;
@@ -92,87 +94,37 @@
 }
 
 #map {
-  height: 20rem;
-  width: 100%;
+  // margin:0;
+  // padding:0;
+  // height: 60rem;
+  // width: auto;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#direction {
+  box-shadow: 1px 1px 2px 2px #ddd;
 }
 
-// STEPS
-.circle {
-  position: relative;
-  width: $radio-size;
-  height: $radio-size;
+// CAROUSEL DOTS
+.owl-dots {
+  display: none;
+  content: ''
+}
+.dots {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  cursor: pointer;
-  box-shadow:
-    inset 0 0 0 $stroke-width $active-color,
-    inset 0 0 0 0 $bg-color,
-    inset 0 0 0 $radio-size $active-color;
-  transition: box-shadow $duration;
-}
+  display: inline-block;
+  background-color: $green;
+  margin: 0 0.5rem;
 
-input:checked + .step ~ .step {
-  box-shadow:
-    inset 0 0 0 $stroke-width $inactive-color,
-    inset 0 0 0 $radio-size $bg-color,
-    inset 0 0 0 $radio-size $active-color;
-}
-
-.box {
-  position: relative;
-  max-width: 30em;
-  margin: 0 auto 3em;
-  display: flex;
-  justify-content: space-between;
-
-  hr {
-    margin: 0;
-    border: none;
-    color: $inactive-color;
-
-    // &,
-    // &:before,
-    // &::after {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   z-index: -1;
-    // }
-
-    // &::before,
-    // &::after {
-    //   content: '';
-    //   background-image: linear-gradient(
-    //     transparent calc(50% - #{$stroke-width*.5}),
-    //     currentColor calc(50% - #{$stroke-width*.5}),
-    //     currentColor calc(50% + #{$stroke-width*.5}),
-    //     transparent calc(50% + #{$stroke-width*.5})
-    //   );
-    // }
-
-    // &::after {
-    //   color: $active-color;
-    //   transform: scaleX(0);
-    //   transform-origin: 0 50%;
-    //   transition: transform $duration linear;
-    // }
+  &.inactive {
+    background-color: transparent;
+    border: 1px solid $green;
   }
 }
-
-
-@for $i from 2 through 9 {
-  .box[data-max="#{$i}"] {
-    @for $j from 1 through $i {
-      input:nth-of-type(#{$j}):checked ~ hr::after {
-        transform: scaleX(#{($j - 1) / ($i - 1)});
-      }
-    }
-  }
-}
-
-
-// END STEPS
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
@@ -181,6 +133,10 @@ input:checked + .step ~ .step {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  #direction {
+    position: static;
+    width: 40%;
+  }
 }
 
 // Large devices (desktops, 992px and up)

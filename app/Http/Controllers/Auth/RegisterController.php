@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\DriverInfo;
+use App\VehicleInfo;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -71,6 +73,33 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+        ]);
+    }
+    protected function createDriver(array $data)
+    {
+        $insertedData = User::create([
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'password' => Hash::make($data['password']),
+        ]);
+        $id = $insertedData->id;
+        DriverInfo::create([
+            'dob' => $data['dob'],
+            'licenceNumber' => $data['licenceNumber'],
+            'province' => $data['province'],
+            'expiryDate' => $data['expiryDate'],
+            'userId' => $id,
+        ]);
+        VehicleInfo::create([
+            'model' => $data['model'],
+            'carYear' => $data['carYear'],
+            'make' => $data['make'],
+            'kilometers' => $data['kilometers'],
+            'color' => $data['color'],
+            'licencePlate' => $data['licencePlate'],
+            'userId' => $id,
         ]);
     }
 }

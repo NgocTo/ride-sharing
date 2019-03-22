@@ -22,11 +22,19 @@ Route::get('/1', function () {
 Route::get('/driver', function () {
     return view('auth.driver');
 });
+Route::get('/car', function () {
+    return view('auth.car');
+});
+Route::get('/index', function () {
+    return view('index');
+});
 Route::resource('/users', 'UserController')->names([
     'show' => 'profile'
 ]);
 Route::resource('drivers', 'DriverInfoController');
 // Route::resource('photos', 'PhotoController');
+// Route::get('/users/getDirection', 'UserController@getDirection');
+Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

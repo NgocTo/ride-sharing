@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DriverInfo extends Model
+class VehicleInfo extends Model
 {
     //
-    protected $table ='driverInfo';
+    protected $table ='vehicleInfo';
     protected $primaryKey = 'id';
     public $timestamps = false;
     /**
@@ -16,6 +16,6 @@ class DriverInfo extends Model
      * @var array
      */
     protected $fillable = [
-        'dob', 'licenceNumber', 'expiryDate', 'province', 'userId'
+        'model', 'carYear', 'make', 'kilometers', 'color', 'licensePlate', 'userId'
     ];
 }

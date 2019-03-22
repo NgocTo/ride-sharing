@@ -1,0 +1,115 @@
+/* CUSTOM CSS HERE */
+.testimonials_area {
+    position: relative; }
+    .testimonials_area .owl-controls {
+      text-align: center; }
+      .testimonials_area .owl-controls .owl-nav {
+        position: relative;
+        top: 29px; }
+        .testimonials_area .owl-controls .owl-nav .owl-prev,
+        .testimonials_area .owl-controls .owl-nav .owl-next {
+          display: inline-block;
+          margin-right: 31px;
+          color: #000; }
+        .testimonials_area .owl-controls .owl-nav .owl-prev {
+          margin-right: 80px; }
+        .testimonials_area .owl-controls .owl-nav .owl-next {
+          margin-left: 80px;
+          margin-right: 0; }
+      .testimonials_area .owl-controls .owl-dots .owl-dot {
+        height: 4px;
+        width: 40px;
+        background: #eeeeee;
+        display: inline-block;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s; }
+        .testimonials_area .owl-controls .owl-dots .owl-dot:last-child {
+          margin-right: 0px; }
+        .testimonials_area .owl-controls .owl-dots .owl-dot:hover, .testimonials_area .owl-controls .owl-dots .owl-dot.active {
+          background: #3fa3a1; }
+  
+  .testi_slider {
+    margin: auto; }
+    .testi_slider .testi_item {
+      text-align: center; }
+  
+  .testi_item {
+    margin-bottom: 50px; }
+    .testi_item h4 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 10px; }
+    .testi_item .list {
+      margin-bottom: 35px; }
+    .testi_item p {
+      max-width: 570px;
+      margin: auto; }
+  
+  /* Owl Carousel v2.2.0 * Copyright 2013-2016 David Deutsch * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE) */
+   /*  Owl Carousel - Core */
+  .owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    /* position relative and z-index fix webkit rendering fonts issue */
+    position: relative;
+    z-index: 1; }
+    .owl-carousel .owl-stage {
+      position: relative;
+      -ms-touch-action: pan-Y; }
+    .owl-carousel .owl-stage:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0; }
+    .owl-carousel .owl-item {
+      position: relative;
+      min-height: 1px;
+      float: left;
+      -webkit-backface-visibility: hidden;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none; }
+    .owl-carousel .owl-nav.disabled,
+    .owl-carousel .owl-dots.disabled {
+      display: none; }
+    .owl-carousel .owl-nav .owl-prev,
+    .owl-carousel .owl-nav .owl-next,
+    .owl-carousel .owl-dot {
+      cursor: pointer;
+      cursor: hand;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+    .owl-carousel.owl-loaded {
+      display: block; }
+    .owl-carousel.owl-loading {
+      opacity: 0;
+      display: block; }
+    .owl-carousel.owl-hidden {
+      opacity: 0; }
+    .owl-carousel.owl-refresh .owl-item {
+      visibility: hidden; }
+    .owl-carousel.owl-drag .owl-item {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+    .owl-carousel.owl-grab {
+      cursor: move;
+      cursor: grab; }
+    .owl-carousel.owl-rtl {
+      direction: rtl; }
+    .owl-carousel.owl-rtl .owl-item {
+      float: right; }
+  
+  /* No Js */
+  .no-js .owl-carousel {
+    display: block; }
+  
