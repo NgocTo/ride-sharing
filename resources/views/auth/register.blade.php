@@ -5,8 +5,6 @@
 @endsection
 @section('content')
 
-
-
 <section class="testimonials_area">
     <div class="testi_slider owl-carousel">
         <div>
@@ -98,7 +96,6 @@
                             </div>
                             <label for="driver" class="col-md-2 form-check-label mb-3">I am a driver</label>
                         </div>
-
 
                         <div class="form-group row mb-0">
                         <div class="col-md-4 offset-md-4 mb-3">
@@ -271,6 +268,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 </section>
 @endsection
