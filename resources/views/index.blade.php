@@ -3,6 +3,7 @@
  
 @endsection
 @section('content')
+@section('show-heading', 'd-none')
 
 <!-- google map -->
 @section('script')
@@ -22,6 +23,14 @@ $(".alert").show();
 @endsection
 
 
+@component('alert')
+    @slot('status')
+        success
+    @endslot
+    <div>
+    <strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.
+    </div>
+@endcomponent
 
 <div id="direction" class="p-0 pb-3 fixed-bottom bg-white">
 
@@ -55,7 +64,7 @@ $(".alert").show();
 <div id="map" class="p-0 m-0">
 </div>
 @endsection
-
+<!-- 
 @component('alert')
     @slot('status')
         success
@@ -63,9 +72,4 @@ $(".alert").show();
     <div>
     <strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.
     </div>
-@endcomponent
-<style>
-.alert{
-    display:none;
-}
-</style>
+@endcomponent -->

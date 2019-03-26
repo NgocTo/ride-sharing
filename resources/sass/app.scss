@@ -125,7 +125,9 @@ html {
     border: 1px solid $green;
   }
 }
-
+.alert{
+  // display:none;
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   
@@ -138,23 +140,17 @@ html {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  // .sidebar {
-  //   position: relative;
-  //   border-right: 1px solid $light;
-  // }
-
   #direction{
    position:absolute;
    top:0;
    height:450px;
    width:40%;
   }
-  // #direction {
-  //   position: absolute;
-  //   top:3rem;
-  //   height:450px;
-  //   width:40%;
-  // }
+.alert{
+  width:50%;
+
+}
+
 }
 
 // Extra large devices (large desktops, 1200px and up)

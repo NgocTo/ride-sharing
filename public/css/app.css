@@ -10958,6 +10958,10 @@ html {
     height: 450px;
     width: 40%;
   }
+
+  .alert {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1200px) {
