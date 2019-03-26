@@ -4,16 +4,21 @@
 @endsection
 @section('content')
 
-
 <!-- google map -->
 @section('script')
 <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
+<script src="{{ asset('js/map.js') }}"></script>
 </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
-    </script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
+</script>
+<script>
+    // shows the alert
+$( "#submittrip" ).click(function() {
+$(".alert").show();
+});
+</script>
+
 @endsection
 
 
@@ -36,7 +41,7 @@
                     <input type="date" class="form-control" id="time">
                  </div>
                  <div class="form-group mx-5 mt-4 mb-4">
-                    <button type="submit" class=" text-bold btn btn-primary text-center btn-block">
+                    <button type="submit" id="submittrip" class=" text-bold btn btn-primary text-center btn-block">
                         {{ __('Submit trip') }}
                     </button>
                  </div>
@@ -62,7 +67,3 @@
     display:none;
 }
 </style>
-
-<script>
-
-</script>
