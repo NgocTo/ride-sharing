@@ -94,17 +94,20 @@ html {
 }
 
 #map {
-  // margin:0;
-  // padding:0;
-  // height: 60rem;
-  // width: auto;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
 }
-#direction {
+.direction {
   box-shadow: 1px 1px 2px 2px #ddd;
+  background-color: #fff;
+  padding-bottom: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 // CAROUSEL DOTS
@@ -126,11 +129,11 @@ html {
   }
 }
 .alert{
-  // display:none;
+  display:none;
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
-  
+
 }
 
 // Medium devices (tablets, 768px and up)
@@ -140,32 +143,24 @@ html {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  #direction{
-   position:absolute;
-   top:0;
-   height:450px;
-   width:40%;
+  .direction{
+    position:absolute;
+    top:0;
+    height:450px;
+    width:40%;
   }
-.alert{
-  width:50%;
-  position:absolute;
-  float:right;
-}
+// .alert{
+//   width:50%;
+//   position:absolute;
+//   float:right;
+// }
 
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  #direction{
-    position:absolute;
-    top:0;
-    height:450px;
-    width:30rem;
-   }
-  // #direction {
-  //   position: absolute;
-  //   top:3rem;
-  //   height:450px;
-  //   width:40rem;
-  // }
+  .direction{
+      width:30rem;
+    }
+  
 }

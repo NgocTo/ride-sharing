@@ -20,8 +20,6 @@ $(".alert").show();
 </script>
 
 @endsection
-
-
 @component('alert')
     @slot('status')
         success
@@ -31,7 +29,11 @@ $(".alert").show();
     </div>
 @endcomponent
 
-<div id="direction" class="p-0 pb-3 fixed-bottom bg-white">
+
+
+
+<div>
+    <div class="direction" class="p-0 fixed-bottom ">
 
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form>
@@ -58,10 +60,14 @@ $(".alert").show();
                    <p class="text-green">Your favourite destinations</p>
                  </div> -->
             </form>
-</div>
+                
+    </div>
+        <!-- <div class="direction"> -->
+            <div id="map" class="p-0 m-0"></div>
+        <!-- </div> -->
+ </div>
 <!-- map -->
-<div id="map" class="p-0 m-0">
-</div>
+
 @endsection
 <!-- 
 @component('alert')

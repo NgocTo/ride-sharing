@@ -10922,14 +10922,21 @@ html {
 }
 
 #map {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
 }
 
-#direction {
+.direction {
   box-shadow: 1px 1px 2px 2px #ddd;
+  background-color: #fff;
+  padding-bottom: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .owl-dots {
@@ -10951,26 +10958,21 @@ html {
   border: 1px solid #15AA35;
 }
 
+.alert {
+  display: none;
+}
+
 @media (min-width: 992px) {
-  #direction {
+  .direction {
     position: absolute;
     top: 0;
     height: 450px;
     width: 40%;
   }
-
-  .alert {
-    width: 50%;
-    position: absolute;
-    float: right;
-  }
 }
 
 @media (min-width: 1200px) {
-  #direction {
-    position: absolute;
-    top: 0;
-    height: 450px;
+  .direction {
     width: 30rem;
   }
 }

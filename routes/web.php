@@ -18,7 +18,9 @@ Route::get('/', function () {
 Route::get('/ride-history', function () {
     return view('ride-history.index');
 });
-
+Route::get('/rides', function () {
+    return view('rides.index');
+});
 Route::get('/driver', function () {
     return view('auth.driver');
 });
