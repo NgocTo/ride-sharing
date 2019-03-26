@@ -15,8 +15,8 @@ class DriverInfoController extends Controller
     public function index()
     {
         //
-        $data = DriverInfo::all();
-        return view('drivers.index', ['data'=>$data]);
+        $drivers = DriverInfo::all();
+        return view('drivers.index', ['drivers'=>$drivers]);
     }
 
     /**
@@ -26,7 +26,8 @@ class DriverInfoController extends Controller
      */
     public function create()
     {
-        //
+        return view ('auth.register');
+        
     }
 
     /**
@@ -37,7 +38,16 @@ class DriverInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+            'dob' => 'required|date',
+            'licenceNumber' => 'required',
+            'province' => 'required',
+            'expiryDate' => 'required|date',
+        ]);
+
+        $drivers = DriverInfo ::create(request(['dob', 'licenceNumber','province', 'expiryDate']));
+
+        // return redirect()->to('');
     }
 
     /**
@@ -49,6 +59,7 @@ class DriverInfoController extends Controller
     public function show(DriverInfo $driverInfo)
     {
         //
+        return view('drivers.show', ['driverInfo' => DriverInfo::findOrFail($id)]);
     }
 
     /**
