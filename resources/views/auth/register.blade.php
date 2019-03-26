@@ -1,4 +1,4 @@
-@extends('layouts.main')
+ @extends('layouts.main')
 
 @section('heading', 'Create an Account')
 @section('sidebar')
@@ -8,6 +8,7 @@
 <section class="testimonials_area">
     <div class="testi_slider owl-carousel">
         <div>
+        
             <div class="testi_item"> <!-- Create An Account -->
                 <div class="container mt-4">
                     <form method="POST" action="{{ route('register') }}">
