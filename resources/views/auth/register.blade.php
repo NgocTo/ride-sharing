@@ -1,10 +1,10 @@
  @extends('layouts.main')
 
-@section('heading', 'Create an Account')
+
 @section('sidebar')
 @endsection
 @section('content')
-
+<h2 class="text-green text-center mt-5 @yield('show-heading')">Create an account</h2>
 <section class="testimonials_area">
     <div class="testi_slider owl-carousel">
         <div>

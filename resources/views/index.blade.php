@@ -3,7 +3,6 @@
  
 @endsection
 @section('content')
-@section('show-heading', 'd-none')
 
 <!-- google map -->
 @section('script')

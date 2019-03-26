@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/1', function () {
-    return view('1');
+Route::get('/ride-history', function () {
+    return view('ride-history.index');
 });
 
 Route::get('/driver', function () {
