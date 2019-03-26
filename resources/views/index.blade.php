@@ -34,16 +34,16 @@ $(".alert").show();
 
 <div id="direction" class="p-0 pb-3 fixed-bottom bg-white">
 
-        <h2 id="findbtn" class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
+        <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form>
                 <div class="form-group mx-5 mt-4">
-                    <label for="pickup">Pickup</label>
-                    <input type="text" class="form-control" id="pickup" placeholder="Your pickup location">
+                    <label for="pickUp">Pickup</label>
+                    <input type="text" class="form-control" id="pickUp" placeholder="Your pickup location">
                 </div>
 
                 <div class="form-group mx-5 mt-4 ">
-                    <label for="dropoff">Destination</label>
-                    <input type="text" class="form-control" id="dropoff" placeholder="Your destination">
+                    <label for="dropOff">Destination</label>
+                    <input type="text" class="form-control" id="dropOff" placeholder="Your destination">
                  </div>
                  <div class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
