@@ -133,21 +133,42 @@ html {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  #direction {
-    position: static;
-    width: 40%;
-  }
+
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .sidebar {
-    position: relative;
-    border-right: 1px solid $light;
+  // .sidebar {
+  //   position: relative;
+  //   border-right: 1px solid $light;
+  // }
+
+  #direction{
+   position:absolute;
+   top:0;
+   height:450px;
+   width:40%;
   }
+  // #direction {
+  //   position: absolute;
+  //   top:3rem;
+  //   height:450px;
+  //   width:40%;
+  // }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  
+  #direction{
+    position:absolute;
+    top:0;
+    height:450px;
+    width:30rem;
+   }
+  // #direction {
+  //   position: absolute;
+  //   top:3rem;
+  //   height:450px;
+  //   width:40rem;
+  // }
 }

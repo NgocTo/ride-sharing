@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('sidebar')
-    @parent
+ 
 @endsection
 @section('content')
 
@@ -22,7 +22,7 @@ $(".alert").show();
 @endsection
 
 
-<div id="map" class="p-0 m-0"></div>
+
 <div id="direction" class="p-0 pb-3 fixed-bottom bg-white">
 
         <h2 id="findbtn" class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
@@ -51,7 +51,9 @@ $(".alert").show();
                  </div> -->
             </form>
 </div>
-
+<!-- map -->
+<div id="map" class="p-0 m-0">
+</div>
 @endsection
 
 @component('alert')

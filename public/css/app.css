@@ -10951,17 +10951,21 @@ html {
   border: 1px solid #15AA35;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #direction {
-    position: static;
+    position: absolute;
+    top: 0;
+    height: 450px;
     width: 40%;
   }
 }
 
-@media (min-width: 992px) {
-  .sidebar {
-    position: relative;
-    border-right: 1px solid #ADADAD;
+@media (min-width: 1200px) {
+  #direction {
+    position: absolute;
+    top: 0;
+    height: 450px;
+    width: 30rem;
   }
 }
 
