@@ -76,7 +76,7 @@
 @show
 
 <main>
-    <h1 class="text-green text-center mt-5">@yield('heading')</h1>
+    <h1 class="text-green text-center mt-5 @yield('show-heading')">@yield('heading')</h1>
     @yield('content')
 </main>
 
