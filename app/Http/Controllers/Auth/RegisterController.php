@@ -65,41 +65,52 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'firstName' => $data['firstName'],
+    //         'lastName' => $data['lastName'],
+    //         'email' => $data['email'],
+    //         'phone' => $data['phone'],
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+    // }
     protected function create(array $data)
     {
-        return User::create([
-            'firstName' => $data['firstName'],
-            'lastName' => $data['lastName'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
-    protected function createDriver(array $data)
-    {
-        $insertedData = User::create([
-            'firstName' => $data['firstName'],
-            'lastName' => $data['lastName'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'password' => Hash::make($data['password']),
-        ]);
-        $id = $insertedData->id;
-        DriverInfo::create([
-            'dob' => $data['dob'],
-            'licenceNumber' => $data['licenceNumber'],
-            'province' => $data['province'],
-            'expiryDate' => $data['expiryDate'],
-            'userId' => $id,
-        ]);
-        VehicleInfo::create([
-            'model' => $data['model'],
-            'carYear' => $data['carYear'],
-            'make' => $data['make'],
-            'kilometers' => $data['kilometers'],
-            'color' => $data['color'],
-            'licencePlate' => $data['licencePlate'],
-            'userId' => $id,
-        ]);
+        if (isset($data['ifDriver'])) {
+            $insertedUser = User::create([
+                'firstName' => $data['firstName'],
+                'lastName' => $data['lastName'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'password' => Hash::make($data['password']),
+            ]);
+            $id = $insertedUser->id;
+            DriverInfo::create([
+                'dob' => $data['dob'],
+                'licenceNumber' => $data['licenceNumber'],
+                'province' => $data['province'],
+                'expiryDate' => $data['expiryDate'],
+                'userId' => $id,
+            ]);
+            VehicleInfo::create([
+                'carYear' => $data['carYear'],
+                'make' => $data['make'],
+                'model' => $data['model'],
+                'licencePlate' => $data['licencePlate'],
+                'kilometers' => $data['kilometers'],
+                'color' => $data['color'],
+                'userId' => $id,
+            ]);
+            return $insertedUser;
+        } else if (!isset($data['ifDriver'])) {
+            return User::create([
+                'firstName' => $data['firstName'],
+                'lastName' => $data['lastName'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'password' => Hash::make($data['password']),
+            ]);
+        }
     }
 }

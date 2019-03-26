@@ -17,14 +17,14 @@ $(document).ready(function () {
         })
     }
     
-    $('#driver').click(function(){
-        if ( $('#driver').prop('checked') == true ){
+    $('#ifDriver').click(function(){
+        if ( $('#ifDriver').prop('checked') == true ){
             // $('#register-heading').html('Create an account');
             $('#register-submit').html('Next');
             $('#register-submit').click(function(){
                 $('.testi_slider').trigger('next.owl.carousel');
             })
-        } else if ( $('#driver').prop('checked') == false ) {
+        } else if ( $('#ifDriver').prop('checked') == false ) {
             $('#register-submit').html('Register');
         }
     });

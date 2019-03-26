@@ -6,13 +6,12 @@
 @section('content')
 <h2 class="text-green text-center mt-5 @yield('show-heading')">Create an account</h2>
 <section class="testimonials_area">
-    <div class="testi_slider owl-carousel">
-        <div>
-        
-            <div class="testi_item"> <!-- Create An Account -->
-                <div class="container mt-4">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="testi_slider owl-carousel">
+            <div>
+                <div class="testi_item"> <!-- Create An Account -->
+                    <div class="container mt-4">
                         <div class="form-group row">
                             <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
@@ -93,9 +92,9 @@
 
                         <div class="form-check row">
                             <div class="offset-md-4 col-md-2">
-                                <input type="checkbox" id="driver" class="form-check-input" name="driver" value="driver">
+                                <input type="checkbox" id="ifDriver" class="form-check-input" name="ifDriver">
                             </div>
-                            <label for="driver" class="col-md-2 form-check-label mb-3">I am a driver</label>
+                            <label for="ifDriver" class="col-md-2 form-check-label mb-3">I am a driver</label>
                         </div>
 
                         <div class="form-group row mb-0">
@@ -108,26 +107,23 @@
                                 <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle text-bold">{{ __('Login') }}</a>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div>
-            <div class="testi_item"> <!-- Driver Info -->
-                <div class="container mt-4">
-                    <div class="form-group row">
-                        <div class="col">
-                            <h2 class="text-center text-green text-bold h3" id="register-heading">Driver Infomation</h2>
-                            <div class="text-center" id="register-pagination">
-                                <span class="dots"></span>
-                                <span class="dots inactive"></span>
+            <div>
+                <div class="testi_item"> <!-- Driver Info -->
+                    <div class="container mt-4">
+                        <div class="form-group row">
+                            <div class="col">
+                                <h2 class="text-center text-green text-bold h3" id="register-heading">Driver Infomation</h2>
+                                <div class="text-center" id="register-pagination">
+                                    <span class="dots"></span>
+                                    <span class="dots inactive"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
                         <div class="form-group row">
                             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
 
@@ -173,38 +169,35 @@
 
                         <div class="row mb-0">
                             <div class="col-md-4 offset-md-4 mt-3">
-                                <button type="submit" class=" text-bold btn btn-primary text-center btn-block" id="driver-submit">
+                                <button type="submit" class="text-bold btn btn-primary text-center btn-block" id="driver-submit">
                                     {{ __('Car info') }}
                                 </button>
                                 <p class="text-center p-3 mt-4"><a href="#" class="register-back">Back</a>   |   <a href="#">Skip this process</a></p>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div>
-            <div class="testi_item"> <!-- Car Info -->
-                <div class="container mt-4">
-                    <div class="form-group row">
-                        <div class="col offset">
-                            <h2 class="text-center text-green text-bold h3" id="register-heading">Car Infomation</h2>
-                            <div class="text-center" id="register-pagination">
-                                <span class="dots"></span>
-                                <span class="dots"></span>
+            <div>
+                <div class="testi_item"> <!-- Car Info -->
+                    <div class="container mt-4">
+                        <div class="form-group row">
+                            <div class="col offset">
+                                <h2 class="text-center text-green text-bold h3" id="register-heading">Car Infomation</h2>
+                                <div class="text-center" id="register-pagination">
+                                    <span class="dots"></span>
+                                    <span class="dots"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
                         <div class="form-group row">
-                            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
+                            <label for="carYear" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
 
                             <div class="col-md-4 mb-3">
                                 
-                            <select id="year" class="shadow form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" required>
+                            <select id="carYear" class="shadow form-control{{ $errors->has('carYear') ? ' is-invalid' : '' }}" name="carYear" required>
                                 <option value="" disabled selected>Select vehicle year</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
@@ -231,7 +224,7 @@
                         <div class="form-group row">
                             <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter model (Ex: Civic)" id="model" type="text" class="shadow form-control name="model" required>
+                                <input placeholder="Enter model (Ex: Civic)" id="model" type="text" class="shadow form-control" name="model" required>
                             </div>
                         </div>
 
@@ -259,18 +252,16 @@
 
                         <div class="row mb-0">
                             <div class="col-md-4 offset-md-4 mt-3">
-                                <button type="submit" class=" text-bold btn btn-primary text-center btn-block" id="car-submit">
+                                <button type="submit" class="text-bold btn btn-primary text-center btn-block" id="car-submit">
                                     {{ __('Submit') }}
                                 </button>
                                 <p class="text-center p-3 mt-4"><a href="#" class="register-back">Back</a>   |   <a href="#">Skip this process</a></p>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-
-        
-    </div>
+    </form>
 </section>
 @endsection
