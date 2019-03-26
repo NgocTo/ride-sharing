@@ -16,6 +16,6 @@ class VehicleInfo extends Model
      * @var array
      */
     protected $fillable = [
-        'model', 'carYear', 'make', 'kilometers', 'color', 'licensePlate', 'userId'
+        'model', 'carYear', 'make', 'kilometers', 'color', 'licencePlate', 'userId'
     ];
 }
