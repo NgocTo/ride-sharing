@@ -62,11 +62,9 @@ $(".alert").show();
             </form>
                 
     </div>
-        <!-- <div class="direction"> -->
-            <div id="map" class="p-0 m-0"></div>
-        <!-- </div> -->
- </div>
-<!-- map -->
+    <div id="map" class="p-0 m-0"></div>
+</div>
+<div id="directionResponse"></div>
 
 @endsection
 <!-- 

@@ -3,6 +3,7 @@
 @section('username', "Test")
 @section('heading', 'Users')
 @section('sidebar')
+    @parent
 @endsection
 @section('content')
 

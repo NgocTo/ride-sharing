@@ -26,19 +26,5 @@ $(document).ready(function () {
         }
       });
 
-    $('#submit').on('click', function (e) {
-        e.preventDefault();
-        var origin = $('#origin').val();
-        var destination = $('#destination').val();
-        $.ajax({
-            type: "GET",
-            // url: '/users/getDirection?origin='+ origin + '&destination=' + destination,
-            url: '/users/'+origin+'/'+destination,
-            // data: {origin: origin, destination: destination},
-            success: function(data) {
-                console.log(data);
-                $('#directionResponse').html(`success`);
-            },
-        });
-    });
+    
 });

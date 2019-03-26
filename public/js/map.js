@@ -1,11 +1,14 @@
 
 console.log("mapjs");
 var map, infoWindow;
+var response;
+var pos;
 function initMap() {
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
+
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    // center: {lat: -34.397, lng: 150.644},
     zoom: 14,
     disableDefaultUI: true
   });
@@ -14,11 +17,14 @@ function initMap() {
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
       var marker = new google.maps.Marker({position: pos, map: map});
+      // infoWindow.setPosition(pos);
+      // infoWindow.setContent('Location found.');
+      // infoWindow.open(map);
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -57,3 +63,23 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
+
+$('#submitTrip').on('click', function (e) {
+  e.preventDefault();
+  if ($('#pickUp').val()) {
+    var origin = $('#pickUp').val();
+  } else {
+    var origin = pos; 
+  }
+  console.log(origin);
+  var destination = $('#dropOff').val();
+  $.ajax({
+      type: "GET",
+      url: '/users/'+origin+'/'+destination,
+      success: function(data) {
+          response = data;
+          $('#directionResponse').html(response.routes);
+          console.log(response);
+      },
+  });
+});
