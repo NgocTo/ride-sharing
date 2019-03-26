@@ -10961,6 +10961,8 @@ html {
 
   .alert {
     width: 50%;
+    position: absolute;
+    float: right;
   }
 }
 

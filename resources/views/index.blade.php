@@ -15,7 +15,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
 </script>
 <script>
     // shows the alert
-$( "#submittrip" ).click(function() {
+$( "#submitTrip" ).click(function() {
 $(".alert").show();
 });
 </script>
@@ -50,7 +50,7 @@ $(".alert").show();
                     <input type="date" class="form-control" id="time">
                  </div>
                  <div class="form-group mx-5 mt-4 mb-4">
-                    <button type="submit" id="submittrip" class=" text-bold btn btn-primary text-center btn-block">
+                    <button type="submit" id="submitTrip" class=" text-bold btn btn-primary text-center btn-block">
                         {{ __('Submit trip') }}
                     </button>
                  </div>
