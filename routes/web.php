@@ -10,10 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Welcome Routing - to be changed into loading screen with logo
 Route::get('/', function () {
     return view('welcome');
 });
+// Landing page Routing
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index', function () {
+    return view('index');
+});
+
+// AUTH Routing
+Auth::routes();
 
 Route::get('/ride-history', function () {
     return view('ride-history.index');
@@ -21,23 +29,13 @@ Route::get('/ride-history', function () {
 Route::get('/rides', function () {
     return view('rides.index');
 });
-Route::get('/driver', function () {
-    return view('auth.driver');
-});
-Route::get('/car', function () {
-    return view('auth.car');
-});
-Route::get('/index', function () {
-    return view('index');
-});
 
+// Test Routing
 Route::resource('/users', 'UserController')->names([
     'show' => 'profile'
 ]);
 Route::resource('drivers', 'DriverInfoController');
-// Route::resource('photos', 'PhotoController');
-// Route::get('/users/getDirection', 'UserController@getDirection');
-Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// UserController Routing
+Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
+Route::get('/users/{terms}', 'UserController@fillDropdown');
