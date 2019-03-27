@@ -1,4 +1,4 @@
- @extends('layouts.main')
+  @extends('layouts.main')
 
 
 @section('sidebar')
@@ -117,8 +117,8 @@
                     <div class="container mt-4">
                         <div class="form-group row">
                             <div class="col">
-                                <h2 class="text-center text-green text-bold h3" id="register-heading">Driver Infomation</h2>
-                                <div class="text-center" id="register-pagination">
+                                <h2 class="text-center text-green text-bold h3">Driver Infomation</h2>
+                                <div class="text-center">
                                     <span class="dots"></span>
                                     <span class="dots inactive"></span>
                                 </div>
@@ -128,7 +128,7 @@
                             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth ') }}</label>
 
                             <div class="col-md-4 mb-3">
-                                <input id="dob" type="date" class="shadow form-control" name="dob" required>
+                                <input id="dob" type="date" class="shadow form-control" name="dob">
                             </div>
                         </div>
 
@@ -136,14 +136,14 @@
                             <label for="licenceNumber" class="col-md-4 col-form-label text-md-right">{{ __('Driver licence number') }}</label>
 
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter drivers licence number" id="licenceNumber" type="text" class="shadow form-control" name="licenceNumber" required>
+                                <input placeholder="Enter drivers licence number" id="licenceNumber" type="text" class="shadow form-control" name="licenceNumber">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="province" class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
                             <div class="col-md-4 mb-3">
-                                <select placeholder="Choose a province"id="province" class="shadow form-control" name="province" required>
+                                <select id="province" class="shadow form-control" name="province">
                                     <option value="" disabled selected>Select your province</option>
                                     <option value="Ontario">Ontario</option>
                                     <option value="Manitoba">Manitoba</option>
@@ -163,7 +163,7 @@
                             <label for="expiryDate" class="col-md-4 col-form-label text-md-right">{{ __('Date of expiration') }}</label>
 
                             <div class="col-md-4 mb-3 ">
-                                <input id="expiryDate" type="date" class="shadow form-control" name="expiryDate" required>
+                                <input id="expiryDate" type="date" class="shadow form-control" name="expiryDate">
                             </div>
                         </div>
 
@@ -185,8 +185,8 @@
                     <div class="container mt-4">
                         <div class="form-group row">
                             <div class="col offset">
-                                <h2 class="text-center text-green text-bold h3" id="register-heading">Car Infomation</h2>
-                                <div class="text-center" id="register-pagination">
+                                <h2 class="text-center text-green text-bold h3">Car Infomation</h2>
+                                <div class="text-center">
                                     <span class="dots"></span>
                                     <span class="dots"></span>
                                 </div>
@@ -197,7 +197,7 @@
 
                             <div class="col-md-4 mb-3">
                                 
-                            <select id="carYear" class="shadow form-control{{ $errors->has('carYear') ? ' is-invalid' : '' }}" name="carYear" required>
+                            <select id="carYear" class="shadow form-control{{ $errors->has('carYear') ? ' is-invalid' : '' }}" name="carYear">
                                 <option value="" disabled selected>Select vehicle year</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
@@ -217,14 +217,14 @@
                             <label for="make" class="col-md-4 col-form-label text-md-right">{{ __('Make') }}</label>
 
                             <div class="col-md-4 mb-3 ">
-                                <input placeholder="Enter make (Ex: Honda)" id="make" type="text" class="shadow form-control" name="make" value="{{ old('make') }}" required>
+                                <input placeholder="Enter make (Ex: Honda)" id="make" type="text" class="shadow form-control" name="make" value="{{ old('make') }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter model (Ex: Civic)" id="model" type="text" class="shadow form-control" name="model" required>
+                                <input placeholder="Enter model (Ex: Civic)" id="model" type="text" class="shadow form-control" name="model">
                             </div>
                         </div>
 
@@ -232,21 +232,21 @@
                             <label for="licencePlate" class="col-md-4 col-form-label text-md-right">{{ __('Licence plate') }}</label>
 
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter licence plate"id="licencePlate" type="text" class="shadow form-control" name="licencePlate" required>
+                                <input placeholder="Enter licence plate" id="licencePlate" type="text" class="shadow form-control" name="licencePlate">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="kilometers" class="col-md-4 col-form-label text-md-right">{{ __('Kilometers') }}</label>
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter odometer value" id="kilometers" type="text" class="shadow form-control" name="kilometers" required>
+                                <input placeholder="Enter odometer value" id="kilometers" type="text" class="shadow form-control" name="kilometers">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Color') }}</label>
                             <div class="col-md-4 mb-3">
-                                <input placeholder="Enter vehicle colour" id="color" type="text" class="shadow form-control" name="color" required>
+                                <input placeholder="Enter vehicle colour" id="color" type="text" class="shadow form-control" name="color">
                             </div>
                         </div>
 
