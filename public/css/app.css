@@ -10906,6 +10906,21 @@ html {
   height: auto;
 }
 
+.img-container {
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container img {
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 #profile h2 {
   padding: 0.5rem 0;
 }

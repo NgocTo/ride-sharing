@@ -22,30 +22,26 @@
 <!-- next section -->
 <div class="form-group row m-0 p-2 shadow-sm border-green-left mb-3">
         
-        <div class="row">
-            <div class="col-4">
-                <img src="img/angela-1.jpg">
-            </div>
+    <div class="col-4">
+        <div class="img-container"><img src="{{ asset('img/angela-1.jpg') }}"></div>
+    </div>
 
-             <div class="col-8">
-                 <p>David Smithe</p>
-            </div>     
+    <div class="col-8">
+            <p>David Smithe</p>
+    </div>     
         
-        </div> 
 </div>
 
 <div class="form-group row m-0 p-2 shadow-sm border-blue-left mb-3">
         
-        <div class="row">
-            <div class="col-4">
-                <img src="img/angela-1.jpg">
-            </div>
+    <div class="col-4">
+        <div class="img-container"><img src="{{ asset('img/angela-1.jpg') }}"></div>
+    </div>
 
-             <div class="col-8">
-                 <p>David Smithe</p>
-            </div>     
+    <div class="col-8">
+            <p>David Smithe</p>
+    </div>     
         
-        </div> 
 </div>
 
 
