@@ -10989,6 +10989,14 @@ html {
   border-radius: 34px;
 }
 
+.border-green-left {
+  border-left: 8px solid #15AA35;
+}
+
+.border-blue-left {
+  border-left: 8px solid #1370B0;
+}
+
 .slider:before {
   position: absolute;
   content: "";

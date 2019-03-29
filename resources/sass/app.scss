@@ -155,7 +155,12 @@ html {
   transition: .4s;
    border-radius: 34px;
 }
-
+.border-green-left{
+  border-left: 8px solid $green;
+}
+.border-blue-left{
+  border-left: 8px solid $blue;
+}
 .slider:before {
   position: absolute;
   content: "";
