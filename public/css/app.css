@@ -10966,6 +10966,12 @@ html {
   display: none;
 }
 
+.switch-container {
+  position: absolute;
+  right: 0;
+  margin: 0.5rem;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -11010,7 +11016,7 @@ html {
 }
 
 input:checked + .slider {
-  background-color: #green;
+  background-color: #15AA35;
 }
 
 input:focus + .slider {

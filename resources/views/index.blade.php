@@ -27,7 +27,15 @@ $(".alert").show();
     <strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.
     </div>
 @endcomponent
-
+<div class="switch-container">
+<form action="users/setSession" method="post">
+    <label class="switch">
+        <input type="checkbox" id="togBtn" name="togBtn">
+        <div class="slider round">
+        </div>
+    </label>
+</form>
+</div>
 
 <div>
     <div class="direction" class="p-0">
@@ -35,17 +43,18 @@ $(".alert").show();
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form>
             <div class="form-group mx-5 mt-4">
-                 <label class="switch">
-                     <input type="checkbox" id="togBtn">
-                     <div class="slider round">
-                     </div>
-                </label>
+
+                @if(Session::has('driver'))
+                    //{{ Session::get('bookingConfirmed')->time }}
+                    //show driver fields
+                @endif
 
                 </div>
 
                 <div class="form-group mx-5 mt-4">
                     <label for="pickUp">Pickup</label>
-                    <input type="text" class="form-control" id="pickUp" placeholder="Your pickup location">
+                    <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
+                    <span id="result"></span>
                 </div>
 
                 <div class="form-group mx-5 mt-4 ">

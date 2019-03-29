@@ -133,7 +133,14 @@ html {
 .alert{
   display:none;
 }
+
 // SWITCH
+
+.switch-container{
+  position: absolute;
+  right:0;
+  margin: 0.5rem;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -175,7 +182,7 @@ html {
 }
 
 input:checked + .slider {
-  background-color:#green;
+  background-color:$green;
 }
 
 input:focus + .slider {
