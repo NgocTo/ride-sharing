@@ -64,22 +64,47 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-$('#submitTrip').on('click', function (e) {
-  e.preventDefault();
-  if ($('#pickUp').val()) {
-    var origin = $('#pickUp').val();
-  } else {
-    var origin = pos; 
-  }
-  console.log(origin);
-  var destination = $('#dropOff').val();
-  $.ajax({
-      type: "GET",
-      url: '/users/'+origin+'/'+destination,
-      success: function(data) {
-          response = data;
-          $('#directionResponse').html(response.routes);
-          console.log(response);
-      },
+
+// $(document).ready(function(){
+
+  $('#submitTrip').on('click', function (e) {
+    e.preventDefault();
+    if ($('#pickUp').val()) {
+      var origin = $('#pickUp').val();
+    } else {
+      var origin = pos; 
+    }
+    console.log(origin);
+    var destination = $('#dropOff').val();
+    $.ajax({
+        type: "GET",
+        url: '/users/'+origin+'/'+destination,
+        success: function(data) {
+            response = data;
+            $('#directionResponse').html(response.routes);
+            console.log(response);
+        },
+    });
   });
-});
+
+  $('#pickUp').on('input', function() {
+    var terms = $('#pickUp');
+    // $.ajax({
+    //   type: "GET",
+    //   url: '/users/'+terms,
+    //   dataType: 'json',
+    //   success: function(data) {
+    //     return {
+    //       results: $.map(data, function (d) {
+    //         console.log("success");
+    //         return {
+    //           text: d.text,
+    //           id: d.id
+    //         }
+    //       })
+    //     };
+    //   },
+    // });
+  });
+
+// });

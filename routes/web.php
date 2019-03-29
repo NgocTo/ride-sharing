@@ -39,3 +39,5 @@ Route::resource('drivers', 'DriverInfoController');
 // UserController Routing
 Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
 Route::get('/users/{terms}', 'UserController@fillDropdown');
+
+Route::post('/users/setSession', 'UserController@setSession');
