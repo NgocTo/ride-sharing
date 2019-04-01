@@ -29,31 +29,33 @@
 </head>
 <body>
 @section('sidebar')
-    <aside id="mySidenav" class="sidenav">
-        <!-- Use any element to open the sidenav -->
-        <button class="openClick" id="mySidenav" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="openClick"><i class="fas fa-bars"></i></span></button>
-        <!-- Profile -->
-        <div class="bg-green text-center text-white" id="profile">
-            <div>
-                <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
-                    <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
-                </a>
-            </div>
-            <h2 class="font-weight-bold h4">
-                <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
-                    @yield('username')
-                </a>
-            </h2>
+<aside class="sidebar">
+    <button class="navbar-toggler" id="sidebarCollapse" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+    </button>
+    <nav class="navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse flex-column" id="navbar">
+            <!-- Profile -->
+            <div class="bg-green text-center text-white" id="profile">
+                <div>
+                    <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
+                        <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
+                    </a>
+                </div>
+                <h2 class="font-weight-bold h4">
+                    <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
+                        @yield('username')
+                    </a>
+                </h2>
 
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1">Become a rider</label>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Become a rider</label>
+                </div>
             </div>
-        </div>
-        <a href="javascript:void(0)" class="closebtn">&times;</a>
-        <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
+            <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Ride history</a>
+                    <a class="nav-link" href="#">My ride history</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Payment methods</a>
@@ -67,18 +69,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Settings</a>
                 </li>
-        </ul>
-    </aside>
-
-    <div id="overlay"></div>
-    @show
-    <main>
-        <h1 class="text-green text-center mt-5 d-none">@yield('heading')</h1>
-        @yield('content')
-    </main>
-    <!-- Dark Overlay element -->   
-    <!-- <div class="overlay"></div> -->
-</div>
+            </ul>
+        </div>
+    </nav>
+</aside>
+@show
 
 <main>
     <!-- <h1 class="text-green text-center mt-5 @yield('show-heading')">@yield('heading')</h1> -->

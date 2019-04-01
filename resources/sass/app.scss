@@ -47,56 +47,24 @@ html {
   z-index: 9;
 }
 
-// .sidenav {
-//   height: 100%; /* 100% Full-height */
-//   width: 0;
-//   position: fixed; /* Stay in place */
-//   z-index: 1; /* Stay on top */
-//   top: 0; /* Stay at the top */
-//   left: 0;
-//   background-color: #15aa35; /* Green*/
-//   overflow-x: hidden; /* Disable horizontal scroll */
-//   padding-top: 60px; /* Place content 60px from the top */
-//   transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
-// }
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #000000;
+.overlay {
+  display: none;
+  position: fixed;
+  /* full screen */
+  width: 100vw;
+  height: 100vh;
+  /* transparent black */
+  background: rgba(0, 0, 0, 0.5);
+  /* middle layer, i.e. appears below the sidebar */
+  z-index: 8;
+  opacity: 0;
+  /* animate the transition */
+  transition: all 0.5s ease-in-out;
+}
+/* display .overlay when it has the .active class */
+.overlay.active {
   display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.overlay-active {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  opacity: 1;
 }
 
 //text box shadow
