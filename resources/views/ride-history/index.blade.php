@@ -8,7 +8,7 @@
 
 <div class="container p-0">
     <div class="form-group row m-0">
-        <div class="btn-group btn-group-toggle col" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle col p-0" data-toggle="buttons">
             <label class="btn btn-white text-primary active p-4">
                 <input type="radio" name="options" id="past" autocomplete="off"checked> Past
             </label>
@@ -23,16 +23,17 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
-        <p class="rating">8.9</p>
+           <p class="rating">8.9</p>
+           <i class="fas fa-star"></i>
     </div>
 
     <div class="col-8">
         
             <p class="name mb-2">David Smithe</p>
-            <p class="mb-1">Pickup: Sheridan College Trafalgar campus</p>
-            <p class="mb-1">Drop off: Square One Go bus terminal</p>
-            <p class="mb-1">Date: April 5 2019</p>
-            <p class="mb-1">Pickup time: 1:15pm</p>
+            <p><strong>Pickup:</strong> Sheridan College Trafalgar campus</p>
+            <p><strong>Drop off:</strong> Square One Go bus terminal</p>
+            <p><strong>Date:</strong> April 5 2019</p>
+            <p><strong>Pickup time:</strong> 1:15pm</p>
 
     </div>     
         
@@ -43,15 +44,16 @@
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman1.jpg') }}"></div>
         <p class="rating">8.6</p>
+        <i class="fas fa-star"></i>
 
     </div>
 
     <div class="col-8">
-            <p class="name">Julia Doe</p>
-            <p>Pickup:Sheridan College Trafalgar campus</p>
-            <p>Drop off:Square One Go bus terminal</p>
-            <p>Date:April 5 2019</p>
-            <p>Pickup time:1:15pm</p>
+            <p class="name mb-2">Julia Doe</p>
+            <p><strong>Pickup: </strong>Sheridan College Trafalgar campus</p>
+            <p><strong>Drop off: </strong>Square One Go bus terminal</p>
+            <p><strong>Date: </strong>April 5 2019</p>
+            <p><strong>Pickup time: </strong>1:15pm</p>
     </div>     
       
 </div>
@@ -61,15 +63,15 @@
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
         <p class="rating">9.1</p>
-
+        <i class="fas fa-star"></i>
     </div>
 
     <div class="col-8">
-            <p class="name">Allison Chung</p>
-            <p>Pickup:Sheridan College Trafalgar campus</p>
-            <p>Drop off:Square One Go bus terminal</p>
-            <p>Date:April 5 2019</p>
-            <p>Pickup time:1:15pm</p>
+            <p class="name mb-2">Allison Chung</p>
+            <p><strong>Pickup: </strong>Sheridan College Trafalgar campus</p>
+            <p><strong>Drop off: </strong>Square One Go bus terminal</p>
+            <p><strong>Date: </strong>April 5 2019</p>
+            <p><strong>Pickup time: </strong>1:15pm</p>
     </div>     
       
 </div>

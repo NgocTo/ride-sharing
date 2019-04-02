@@ -10911,11 +10911,23 @@ html {
   font-weight: 500;
 }
 
+.fas {
+  font-size: 20px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 3px;
+}
+
 .rating {
+  display: inline;
   font-size: 30px;
   font-weight: 500;
   margin: 10px;
-  width: 40px;
   position: relative;
 }
 
