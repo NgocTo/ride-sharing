@@ -207,7 +207,7 @@ p{
   left: 0;
   right: 0;
   bottom: 0;
-  width:95px;
+  width:115px;
   background-color: #202020;
   -webkit-transition: .4s;
   transition: .4s;
@@ -224,7 +224,7 @@ p{
   content: "";
   height: 26px;
   width: 26px;
-  left: 10px;
+  left: 5px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
@@ -243,7 +243,7 @@ input:focus + .slider {
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
-  transform: translateX(55px);
+  transform: translateX(80px);
 }
 
 /*------ ADDED CSS ---------*/
@@ -255,14 +255,20 @@ input:checked + .slider:before {
  position: absolute;
  transform: translate(-50%,-50%);
  top: 50%;
- left: 50%;
- font-size: 10px;
- font-family: Verdana, sans-serif;
+ left: 55%;
+ font-size: 16px;
 }
 
 input:checked + .slider:after
 {  
   content:'Driver';
+  display: block;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  font-size: 16px;
+  top: 50%;
+  left: 45%;
+  
 }
 
 /*--------- END --------*/
