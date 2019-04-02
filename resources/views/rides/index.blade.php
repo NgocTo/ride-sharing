@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<h2 class="text-white bg-green text-center m-0 p-4">Ride History</h2>
+<h2 class="text-white bg-green text-center m-0 p-4">Rides</h2>
 
 <div class="container p-0">
     <div class="form-group row m-0">
@@ -23,15 +23,15 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
-        <p class="rating">8.9</p>
+        <p>8.9</p>
     </div>
 
     <div class="col-8">
             <p class="name">David Smithe</p>
-            <p>Pickup: Sheridan College Trafalgar campus</p>
-            <p>Drop off: Square One Go bus terminal</p>
-            <p>Date: April 5 2019</p>
-            <p>Pickup time: 1:15pm</p>
+            <p>Pickup:Sheridan College Trafalgar campus</p>
+            <p>Drop off:Square One Go bus terminal</p>
+            <p>Date:April 5 2019</p>
+            <p>Pickup time:1:15pm</p>
     </div>     
         
 </div>
@@ -40,7 +40,7 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman1.jpg') }}"></div>
-        <p class="rating">8.6</p>
+        <p>8.6</p>
 
     </div>
 
@@ -58,7 +58,7 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
-        <p class="rating">9.1</p>
+        <p>9.1</p>
 
     </div>
 
