@@ -16,6 +16,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
 $( "#submitTrip" ).click(function() {
 $(".alert").show();
 });
+// toggle rider and driver
+$( "#toggleBtn" ).click(function() {
+  $( "#driverDate" ).toggle();
+});
 </script>
 
 @endsection
@@ -30,9 +34,9 @@ $(".alert").show();
 <div class="switch-container">
 <form action="users/setSession" method="post">
     <label class="switch">
-        <input type="checkbox" id="togBtn" name="togBtn">
-        <div class="slider round">
-        </div>
+        <input type="checkbox" id="toggleBtn" name="togBtn">
+        <span class="slider round">
+</span>
     </label>
 </form>
 </div>
@@ -61,7 +65,7 @@ $(".alert").show();
                     <label for="dropOff">Destination</label>
                     <input type="text" class="form-control" id="dropOff" placeholder="Your destination">
                  </div>
-                 <div class="form-group mx-5 mt-4 ">
+                 <div id="driverDate" class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
                     <input type="date" class="form-control" id="time">
                  </div>

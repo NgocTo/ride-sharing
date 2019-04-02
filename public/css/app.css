@@ -10932,6 +10932,10 @@ html {
   min-height: 100%;
 }
 
+#driverDate {
+  display: none;
+}
+
 #profile h2 {
   padding: 0.5rem 0;
 }
@@ -11016,6 +11020,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 95px;
   background-color: #202020;
   transition: 0.4s;
   border-radius: 34px;
@@ -11034,7 +11039,7 @@ html {
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
+  left: 10px;
   bottom: 4px;
   background-color: white;
   transition: 0.4s;

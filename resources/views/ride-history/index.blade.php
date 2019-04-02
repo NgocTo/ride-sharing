@@ -27,11 +27,13 @@
     </div>
 
     <div class="col-8">
-            <p class="name">David Smithe</p>
-            <p>Pickup: Sheridan College Trafalgar campus</p>
-            <p>Drop off: Square One Go bus terminal</p>
-            <p>Date: April 5 2019</p>
-            <p>Pickup time: 1:15pm</p>
+        
+            <p class="name mb-2">David Smithe</p>
+            <p class="mb-1">Pickup: Sheridan College Trafalgar campus</p>
+            <p class="mb-1">Drop off: Square One Go bus terminal</p>
+            <p class="mb-1">Date: April 5 2019</p>
+            <p class="mb-1">Pickup time: 1:15pm</p>
+
     </div>     
         
 </div>
