@@ -23,15 +23,15 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
-        <p>8.9</p>
+        <p class="rating">8.9</p>
     </div>
 
     <div class="col-8">
             <p class="name">David Smithe</p>
-            <p>Pickup:Sheridan College Trafalgar campus</p>
-            <p>Drop off:Square One Go bus terminal</p>
-            <p>Date:April 5 2019</p>
-            <p>Pickup time:1:15pm</p>
+            <p>Pickup: Sheridan College Trafalgar campus</p>
+            <p>Drop off: Square One Go bus terminal</p>
+            <p>Date: April 5 2019</p>
+            <p>Pickup time: 1:15pm</p>
     </div>     
         
 </div>
@@ -40,7 +40,7 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman1.jpg') }}"></div>
-        <p>8.6</p>
+        <p class="rating">8.6</p>
 
     </div>
 
@@ -58,7 +58,7 @@
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
-        <p>9.1</p>
+        <p class="rating">9.1</p>
 
     </div>
 
