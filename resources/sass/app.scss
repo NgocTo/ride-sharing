@@ -289,6 +289,9 @@ input:checked + .slider:after
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+.rhContainer{
+  margin-top:45px;
+}
   .direction{
     position:absolute;
     top:0;

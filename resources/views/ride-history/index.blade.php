@@ -6,10 +6,10 @@
 
 <h2 class="text-white bg-green text-center m-0 p-4">Ride History</h2>
 
-<div class="container p-0">
+<div class="container p-0 rhContainer">
     <div class="form-group row m-0">
         <div class="btn-group btn-group-toggle col p-0" data-toggle="buttons">
-            <label class="btn btn-white text-primary active p-4">
+            <label class="btn btn-primary text-white active p-4">
                 <input type="radio" name="options" id="past" autocomplete="off"checked> Past
             </label>
            
