@@ -44,8 +44,8 @@ $(".alert").show();
             <form>
             <div class="form-group mx-5 mt-4">
 
-                @if(Session::has('driver'))
-                    //{{ Session::get('bookingConfirmed')->time }}
+                @if(Session::has('user'))
+                    //{{ Session::get('user')->ifDriver }}
                     //show driver fields
                 @endif
 

@@ -25,11 +25,7 @@ class UserController extends Controller
         return view('users.index')->with('users', $users);
     }
     public function getDirection($origin, $destination)
-    // public function getDirection(Request $request)
     {
-        // $origin = $request->query('origin');
-        // $destination = $request->query('destination');
-
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
         $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
         // if ($request->ajax()){
@@ -40,7 +36,7 @@ class UserController extends Controller
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
         $data = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' . $terms . '&types=geocode&key'.$key);
-        
+        return $data; 
         $arr = array();
         $i=0;
         foreach(json_decode($data)->predictions as $prediction){
@@ -54,7 +50,8 @@ class UserController extends Controller
         return json_encode($arr);
     }
     public function setSession() {
-        
+        Session::set('driver', true);
+        return "{success: true}";
     }
     /**
      * Show the form for creating a new resource.

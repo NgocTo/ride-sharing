@@ -26,5 +26,16 @@ $(document).ready(function () {
         }
       });
 
-    
+      $('#togBtn').on('click', function (e) {
+        e.preventDefault();
+        if ($('#togBtn').prop('checked')) {
+          $.ajax({
+              type: "GET",
+              url: '/users/setSession',
+              success: function(data) {
+                  console.log(data);
+              },
+          });
+        }
+      });
 });

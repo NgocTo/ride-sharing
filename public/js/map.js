@@ -1,20 +1,22 @@
 
 console.log("mapjs");
 var map, infoWindow;
+var directionsDisplay;
+var directionsService;
 var response;
 var pos;
+var currentAddress;
 function initMap() {
-  var directionsService = new google.maps.DirectionsService();
-  var directionsDisplay = new google.maps.DirectionsRenderer();
+  
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
 
   map = new google.maps.Map(document.getElementById('map'), {
-    // center: {lat: -34.397, lng: 150.644},
+    center: {lat: 55.585901, lng: -105.750596},
     zoom: 14,
-    disableDefaultUI: true
+    // disableDefaultUI: true
   });
-  infoWindow = new google.maps.InfoWindow;
 
-  // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       pos = {
@@ -22,28 +24,36 @@ function initMap() {
         lng: position.coords.longitude
       };
       var marker = new google.maps.Marker({position: pos, map: map});
-      // infoWindow.setPosition(pos);
-      // infoWindow.setContent('Location found.');
-      // infoWindow.open(map);
       map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-      directionsDisplay.setMap(map);
-
-        var onClickHandler = function() {
-          calcRoute(directionsService, directionsDisplay);
-        };
-        document.getElementById('submit').addEventListener('click', onClickHandler);
-    });
+      geocodePosition(pos);
+      
+    }, showError)
   } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
+    alert("Geolocation is not supported by this browser.");
+  }
+  directionsDisplay.setMap(map);
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("An unknown error occurred.");
+      break;
   }
 }
 
-function calcRoute(directionsService, directionsDisplay) {
-  var origin = $('#origin').val();
-  var destination = $('#destination').val();
+function calcRoute(origin, destination) {
+  // origin = $('#pickUp').val();
+  // destination = $('#dropOff').val();
   var request = {
     origin: origin,
     destination: destination,
@@ -56,55 +66,56 @@ function calcRoute(directionsService, directionsDisplay) {
   });
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
+function geocodePosition(pos) {
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      currentAddress = responses[0].formatted_address;
+    } else {
+      alert('Cannot determine address at this location.');
+    }
+  });
 }
 
 
-// $(document).ready(function(){
-
-  $('#submitTrip').on('click', function (e) {
-    e.preventDefault();
-    if ($('#pickUp').val()) {
-      var origin = $('#pickUp').val();
-    } else {
-      var origin = pos; 
-    }
-    console.log(origin);
-    var destination = $('#dropOff').val();
-    $.ajax({
-        type: "GET",
-        url: '/users/'+origin+'/'+destination,
-        success: function(data) {
-            response = data;
-            $('#directionResponse').html(response.routes);
-            console.log(response);
-        },
-    });
+$('#submitTrip').on('click', function (e) {
+  e.preventDefault();
+  if ($('#pickUp').val()) {
+    var origin = $('#pickUp').val();
+  } else {
+    var origin = currentAddress; 
+  }
+  console.log(origin);
+  var destination = $('#dropOff').val();
+  $.ajax({
+      type: "GET",
+      url: '/users/'+origin+'/'+destination,
+      success: function(data) {
+          response = data;
+          $('#directionResponse').html(response.routes);
+          calcRoute(origin, destination);
+          console.log(response);
+      },
   });
-
-  $('#pickUp').on('input', function() {
-    var terms = $('#pickUp');
-    // $.ajax({
-    //   type: "GET",
-    //   url: '/users/'+terms,
-    //   dataType: 'json',
-    //   success: function(data) {
-    //     return {
-    //       results: $.map(data, function (d) {
-    //         console.log("success");
-    //         return {
-    //           text: d.text,
-    //           id: d.id
-    //         }
-    //       })
-    //     };
-    //   },
-    // });
+});
+$('#pickUp').on('input', function() {
+  var terms = $('#pickUp').val();
+  console.log(terms);
+  $.ajax({
+    type: "GET",
+    url: '/users/'+terms,
+    success: function(data) {
+      // return {
+      //   results: $.map(data, function (d) {
+          console.log(data);
+          // return {
+          //   text: d.text,
+          //   id: d.id
+          // }
+        // })
+      // };
+    },
   });
-
-// });
+});
