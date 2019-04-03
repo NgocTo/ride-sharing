@@ -12,7 +12,6 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
 </script>
 <script>
-    // shows the alert
 
 // toggle rider and driver
 $( "#toggleBtn" ).click(function() {
@@ -72,9 +71,6 @@ $( "#toggleBtn" ).click(function() {
                     </button>
                  </div>
                
-                 <!-- <div class="form-group text-center m-3">
-                   <p class="text-green">Your favourite destinations</p>
-                 </div> -->
             </form>
                 
     </div>

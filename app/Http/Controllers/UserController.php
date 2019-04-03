@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Session;
 use App\User;
 use App\DriverInfo;
 use App\VehicleInfo;
@@ -42,9 +41,14 @@ class UserController extends Controller
        
         return json_encode($arr);
     }
-    public function setSession() {
-        // Session::set('driver', true);
-        // return "{success: true}";
+    public function checkDriver(Request $request) {
+        // $ifDriver = Session::get('ifDriver');
+        if($request->session()->has('ifDriver')) {
+            echo $request->session()->get('ifDriver');
+        }
+        else {
+            echo 'No data in the session';
+        }
     }
     /**
      * Show the form for creating a new resource.

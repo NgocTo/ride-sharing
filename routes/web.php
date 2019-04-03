@@ -40,7 +40,8 @@ Route::resource('drivers', 'DriverInfoController');
 Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
 Route::get('/users/{terms}', 'UserController@fillDropdown');
 
-// Route::get('/users', 'UserController@setSession');
+// Check if user is driver
+Route::get('/checkDriver', 'UserController@checkDriver');
 
 // RideController Routing
 Route::get('/rides/', 'RideController@index'); //localhost:8000/rides/

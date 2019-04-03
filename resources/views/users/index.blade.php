@@ -6,20 +6,7 @@
     @parent
 @endsection
 @section('content')
-
-<div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <hr />
-</div>
-
-    @foreach($users as $u)
-        <p>{{ $u->firstName }}</p>
-        <!-- <p>{{ $u->licenseNumber }}</p> -->
-    @endforeach
-    <hr />
-
-
+    <p>{{$session}}</p> 
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex enim eligendi laudantium, nostrum dignissimos dolorum quis, iste dolorem reprehenderit perspiciatis tempora cum dicta expedita excepturi exercitationem dolore consequatur aspernatur fugiat!</p>
     <div id="map"></div>
     <form method="GET">
@@ -28,15 +15,9 @@
         <input type="text" id="destination" name="destination">
         <button id="submit" name="submit" class="btn btn-outline-primary">Go</button>
     </form>
-    <div id="directionResponse">
 
     </div>
 @endsection
 @section('script')
     <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
-    </script>
- 
 @endsection
