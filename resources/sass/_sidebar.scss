@@ -1,0 +1,65 @@
+// SIDEBAR STYLE
+.sidenav {
+    height: 100vh; /* 100% Full-height */
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: white; 
+    overflow-x: hidden;
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  .sidenav ul {
+    padding-left: 10% !important; 
+  }
+   /* The navigation menu links */
+  .sidenav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+    &:hover {
+    font-weight:500;
+    }
+  }
+   
+   /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .openClick {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    transition: 0.3s;
+    & > span > i {
+    border-radius: 50%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: white;
+    }
+  }
+  #profile {
+    padding: 1rem 0;
+  }
+  #profile div img {
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+  }
+  .overlay-active {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
