@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Session;
 use App\User;
 use App\DriverInfo;
 use App\VehicleInfo;
@@ -24,14 +25,6 @@ class UserController extends Controller
         $users = User::all();
         return view('users.index')->with('users', $users);
     }
-    // public function getDirection($origin, $destination)
-    // {
-    //     $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
-    //     $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
-    //     // if ($request->ajax()){
-    //         return $data; 
-    //     // }
-    // }
     public function fillDropdown($terms)
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';

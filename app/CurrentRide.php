@@ -15,6 +15,6 @@ class CurrentRide extends Model
      * @var array
      */
     protected $fillable = [
-        'userId', 'startPos', 'endPos', 'startTime', 'date'
+        'userId', 'startPos', 'endPos', 'startTime', 'date', 'estimatedPrice'
     ];
 }

@@ -43,5 +43,11 @@ Route::get('/users/{terms}', 'UserController@fillDropdown');
 // Route::get('/users', 'UserController@setSession');
 
 // RideController Routing
+Route::get('/rides/', 'RideController@index'); //localhost:8000/rides/
+Route::get('/rides/create', 'RideController@create'); //localhost:8000/rides/
 Route::get('/rides/{terms}', 'RideController@fillDropdown');
 Route::get('/rides/{origin}/{destination}', 'RideController@getDirection');
+
+Route::get('/rides/rideinfo', function() {
+    return view('rides.rideinfo');
+}); 

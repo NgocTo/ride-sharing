@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\CurrentRide;
+use Session;
 use Illuminate\Http\Request;
 
 class RideController extends Controller
 {
+    public function index() 
+    {
+        $sessionId = session()->getId();
+        // return currentRide row 
+    }
     public function create()
     {
         //
@@ -25,7 +31,6 @@ class RideController extends Controller
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
         $data = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' . urlencode($terms) . '&types=geocode&key='.$key);
-        // return $data; 
         $arr = array();
         $i=0;
         foreach(json_decode($data)->predictions as $prediction){

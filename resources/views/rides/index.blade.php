@@ -45,9 +45,9 @@
     </div>
 
     <div class="col-8">
-    @foreach($currentRides as $c)
-        <p>{{ $c->startPos }}</p>
-    @endforeach
+        @foreach($currentRides as $c)
+            <p>{{ $c->startPos }}</p>
+        @endforeach
     </div>     
       
 </div>
