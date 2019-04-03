@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class RideController extends Controller
 {
-    public function index() 
+    public function index(Request $request) 
     {
-        $sessionId = session()->getId();
+        echo ($request->session()-> has ('id'));
+        // $sessionId = session()->getId();
         // return currentRide row 
     }
     public function create()
