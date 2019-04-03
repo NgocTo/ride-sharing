@@ -29,11 +29,10 @@ $( "#toggleBtn" ).click(function() {
     </div>
 @endcomponent
 <div class="switch-container">
-<form action="users/setSession" method="post">
+<form action="users/checkDriver" method="post">
     <label class="switch">
         <input type="checkbox" id="toggleBtn" name="togBtn">
-        <span class="slider round">
-</span>
+        <span class="slider round"></span>
     </label>
 </form>
 </div>
@@ -44,8 +43,9 @@ $( "#toggleBtn" ).click(function() {
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form id="directionForm">
                 <div class="form-group mx-5 mt-4">
-                @if(Session::has('user'))
-                    //{{ Session::get('user')->ifDriver }}
+                    <p>{{ session()->get('id') }}</p>
+                @if(session()->has('id'))
+                    <p>{{ session()->get('ifDriver') }}</p>
                     //show driver fields
                 @endif
                 </div>

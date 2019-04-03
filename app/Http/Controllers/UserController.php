@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Session;
+use Auth;
 use App\DriverInfo;
 use App\VehicleInfo;
 use Illuminate\Http\Request;
@@ -49,6 +51,16 @@ class UserController extends Controller
         else {
             echo 'No data in the session';
         }
+    }
+    public function storeDriver() {
+        if (Auth::check())
+        {
+            $userId = Auth::id();
+            $ifDriver = Auth::user()->ifDriver;
+            echo $ifDriver;
+        }
+        // $request->session()->put('ifDriver', true);
+        // echo "Data has been added to session";
     }
     /**
      * Show the form for creating a new resource.

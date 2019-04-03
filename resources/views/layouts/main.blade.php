@@ -45,6 +45,16 @@
                 </a>
             </h2>
 
+            
+            <div class="switch-container">
+            <form id="checkDriverForm">
+                <label class="switch">
+                    <input type="checkbox" id="toggleBtn" name="togBtn">
+                    <span class="slider round"></span>
+                </label>
+            </form>
+            </div>
+
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="customSwitch1">
                 <label class="custom-control-label" for="customSwitch1">Become a rider</label>

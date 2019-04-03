@@ -4,14 +4,21 @@ namespace App\Http\Controllers;
 
 use App\CurrentRide;
 use Session;
+use Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class RideController extends Controller
 {
-    public function index(Request $request) 
+    public function index() 
     {
-        echo ($request->session()-> has ('id'));
-        // $sessionId = session()->getId();
+        if (Auth::check())
+        {
+            $userId = Auth::id();
+            $data = DB::table('currentRides')->where('userId', '=', $userId)->get();
+            // var_dump($data);
+            return view('rides.index')->with('currentRides', $data);
+        }
         // return currentRide row 
     }
     public function create()
