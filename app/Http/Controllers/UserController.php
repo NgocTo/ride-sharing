@@ -50,8 +50,8 @@ class UserController extends Controller
         return json_encode($arr);
     }
     public function setSession() {
-        Session::set('driver', true);
-        return "{success: true}";
+        // Session::set('driver', true);
+        // return "{success: true}";
     }
     /**
      * Show the form for creating a new resource.

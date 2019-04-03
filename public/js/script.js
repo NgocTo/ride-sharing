@@ -1,25 +1,21 @@
 $(document).ready(function () {
 
-    // $('#dismiss').on('click', function () {
-    //     // hide sidebar
-    //     $('.sidebar').removeClass('active');
-    //     $('.sidebar').removeClass('bg-white');
-    //     $('.sidebar').addClass('bg-transparent');
-    //     // $('a[aria-expanded=true]').attr('aria-expanded', 'true');
-    //     $('.sidebar').collapse("toggle");
-    // });
-
-    $('#sidebarCollapse').on('click', function () {
-        // open sidebar
-        $('.sidebar').addClass('active');
-        $('.sidebar').toggleClass('bg-white');
-        // $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        $('#sidebarCollapse').remove();
-        $('.overlay').addClass('active');
+    /* Set the width of the side navigation to 250px */
+    $(".openClick").click(function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      $("#overlay").addClass("overlay-active");
     });
-    $('.overlay').on('click', function() {
 
-    })
+    /* Set the width of the side navigation to 0 */
+    $(".closebtn, #overlay").click(function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      $("#overlay").removeClass("overlay-active");
+    });
+    
+    $('#submitTrip').click(function() {
+      $('.alert').show();
+      $('.alert').fadeOut();
+    });
     $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -13,9 +13,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
 </script>
 <script>
     // shows the alert
-$( "#submitTrip" ).click(function() {
-$(".alert").show();
-});
+
 // toggle rider and driver
 $( "#toggleBtn" ).click(function() {
   $( "#driverDate" ).toggle();

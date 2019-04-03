@@ -1,4 +1,4 @@
-@extends('layouts.map')
+@extends('layouts.main')
 
 @section('username', "Test")
 @section('heading', 'Users')
