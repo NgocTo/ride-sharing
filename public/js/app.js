@@ -49154,8 +49154,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! c:\xampp\htdocs\webdev\ride-sharing\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! c:\xampp\htdocs\webdev\ride-sharing\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\xampp\htdocs\xampp\GITHUB\ride-sharing\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\xampp\GITHUB\ride-sharing\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 5be5beae341e768a3c25a188bcb012987197d988
 
 
 /***/ })
