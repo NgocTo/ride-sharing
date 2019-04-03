@@ -4,6 +4,7 @@
 
 // Variables
 @import 'variables';
+@import 'sidebar';
 @import 'owl';
 
 // Bootstrap
@@ -16,93 +17,6 @@ html {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-// Assuming text-green is for h1?
-
-.text-green {
-  color: $green;
-}
-.text-blue {
-  color: $blue;
-}
-.bg-green {
-  background-color: $green;
-}
-.bg-blue {
-  background-color: $blue;
-}
-.text-bold{
-  font-weight: 500;
-}
-.bg-transparent{
-  background-color: transparent;
-}
-// SIDEBAR STYLE
-.sidenav {
-  height: 100vh; /* 100% Full-height */
-  width: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: white; 
-  overflow-x: hidden;
-  transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
-}
-.sidenav ul {
-  padding-left: 10% !important; 
-}
- /* The navigation menu links */
-.sidenav a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: #000000;
-  display: block;
-  transition: 0.3s;
-  &:hover {
-  font-weight:500;
-  }
-}
- 
- /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.openClick {
-  position: absolute;
-  border: none;
-  background-color: transparent;
-  transition: 0.3s;
-  & > span > i {
-  border-radius: 50%;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  background-color: white;
-  }
-}
-#profile {
-  padding: 1rem 0;
-}
-#profile div img {
-  border-radius: 50%;
-  width: 50%;
-  height: auto;
-}
-.overlay-active {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
- 
-
 
 //text box shadow
 .shadow {
@@ -322,45 +236,4 @@ input:checked + .slider:after
 
 /*--------- END --------*/
 
-
-
-
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
-
-}
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-}
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-.rhContainer{
-  margin-top:45px;
-}
-  .direction{
-    position:absolute;
-    top:0;
-    height:450px;
-    width:40%;
-  }
-// .alert{
-//   width:50%;
-//   position:absolute;
-//   float:right;
-// }
-
-}
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .direction{
-      width:30rem;
-    }
-  
-}
- /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
- @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+@import 'mediaqueries';
