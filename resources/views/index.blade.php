@@ -41,29 +41,28 @@ $(".alert").show();
     <div class="direction" class="p-0">
 
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
-            <form>
-            <div class="form-group mx-5 mt-4">
-
+            <form id="directionForm">
+                <div class="form-group mx-5 mt-4">
                 @if(Session::has('user'))
                     //{{ Session::get('user')->ifDriver }}
                     //show driver fields
                 @endif
-
                 </div>
 
                 <div class="form-group mx-5 mt-4">
                     <label for="pickUp">Pickup</label>
                     <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
-                    <span id="result"></span>
+                    <div class="prediction-container"><div class="predictions"></div></div>
                 </div>
 
                 <div class="form-group mx-5 mt-4 ">
                     <label for="dropOff">Destination</label>
                     <input type="text" class="form-control" id="dropOff" placeholder="Your destination">
+                    <div class="prediction-container"><div class="predictions"></div></div>
                  </div>
                  <div class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
-                    <input type="date" class="form-control" id="time">
+                    <input type="datetime-local" class="form-control" id="time">
                  </div>
                  <div class="form-group mx-5 mb-4">
                     <button type="submit" id="submitTrip" class=" text-bold btn btn-primary text-center btn-block">

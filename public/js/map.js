@@ -14,7 +14,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 55.585901, lng: -105.750596},
     zoom: 14,
-    // disableDefaultUI: true
+    disableDefaultUI: true
   });
 
   if (navigator.geolocation) {
@@ -79,7 +79,6 @@ function geocodePosition(pos) {
   });
 }
 
-
 $('#submitTrip').on('click', function (e) {
   e.preventDefault();
   if ($('#pickUp').val()) {
@@ -91,31 +90,40 @@ $('#submitTrip').on('click', function (e) {
   var destination = $('#dropOff').val();
   $.ajax({
       type: "GET",
-      url: '/users/'+origin+'/'+destination,
+      url: '/rides/'+origin+'/'+destination,
       success: function(data) {
           response = data;
           $('#directionResponse').html(response.routes);
           calcRoute(origin, destination);
-          console.log(response);
       },
   });
 });
-$('#pickUp').on('input', function() {
-  var terms = $('#pickUp').val();
-  console.log(terms);
+$('#directionForm input:text').on('input', fillDropDown);
+$('.predictions').on('click', function(){
+  $('.prediction').on('click', fillTextInput);
+})
+
+function fillDropDown(e) {
+  var terms = $(this).val();
   $.ajax({
-    type: "GET",
-    url: '/users/'+terms,
-    success: function(data) {
-      // return {
-      //   results: $.map(data, function (d) {
-          console.log(data);
-          // return {
-          //   text: d.text,
-          //   id: d.id
-          // }
-        // })
-      // };
+    type: 'GET',
+    url: '/rides/'+terms,
+    success: function(response) {
+      var output = '';
+      var data = JSON.parse(response);
+      $.map(data, function (d) {
+        output += `<div class="prediction">${d.text}</div>`;
+      })
+      e.currentTarget.nextElementSibling.children[0].innerHTML = output;
+      e.currentTarget.nextElementSibling.children[0].classList.add('shadow');
     },
   });
-});
+}
+function fillTextInput(e) {
+  e.stopPropagation();
+  console.log($(this));
+  var current = e.currentTarget.innerText;
+  e.currentTarget.parentNode.parentNode.previousSibling.previousSibling.value = current;
+  $('.predictions').html('');
+  $('.predictions').removeClass('shadow');
+}

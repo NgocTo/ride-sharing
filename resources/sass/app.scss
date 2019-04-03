@@ -71,6 +71,12 @@ html {
 .shadow {
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
 }
+.border {
+  border-left: 1px solid $light;
+  border-right: 1px solid $light;
+  border-bottom: 1px solid $light;
+  border-radius: 5px;
+}
 
 #profile {
   padding: 1rem 0;
@@ -128,6 +134,21 @@ html {
 #profile h2 a:hover {
   font-weight: 500;
   color: #fff;
+}
+.prediction-container {
+  position: relative;
+}
+.predictions {
+  position: absolute !important;
+  top: 0.2rem;
+  background-color: white;
+  & > * {
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  & > *:not(:last-child) {
+    border-bottom: 1px solid $light;
+  }
 }
 #submitTrip{
   margin-top:35px;
