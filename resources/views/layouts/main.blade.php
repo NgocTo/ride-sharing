@@ -31,18 +31,16 @@
 @section('sidebar')
     <button class="openClick" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="openClick"><i class="fas fa-bars shadow"></i></span></button>
     <aside id="mySidenav" class="sidenav">
-        <!-- Use any element to open the sidenav -->
+        @if (isset($user)) 
         <!-- Profile -->
         <div class="bg-green text-center text-white" id="profile">
             <div>
-                <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}" class="text-center">
+                <a href="{{ route( 'user.index' ) }}" class="text-center">
                    <img src="{{ asset('img/default-profile.jpg') }}" alt="profile picture">
                 </a>
             </div>
             <h2 class="font-weight-bold h4">
-                <a href="{{ route( 'profile', [ 'id' => 1 ] ) }}">
-                   @yield('username')
-                </a>
+                <a href="{{ route( 'user.index' ) }}">{{$user->firstName}} {{$user->lastName}}</a>
             </h2>
 
             
@@ -77,14 +75,32 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Settings</a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">Logout</a>
+                <form id="frm-logout" class="text-right"action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
         </ul>
+        
+        @else 
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">Register</a>
+            </li>
+        </ul>
+        @endif
     </aside>
 
    <div id="overlay"></div>
 @show
 
 <main>
-    <!-- <h1 class="text-green text-center mt-5 @yield('show-heading')">@yield('heading')</h1> -->
     @yield('content')
 </main>
 

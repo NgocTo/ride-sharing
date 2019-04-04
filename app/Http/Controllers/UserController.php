@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\User;
-use Session;
 use Auth;
 use App\DriverInfo;
 use App\VehicleInfo;
@@ -23,8 +22,19 @@ class UserController extends Controller
     // }
     public function index()
     {
-        $users = User::all();
-        return view('users.index')->with('users', $users);
+        if (Auth::check()){
+            $user = new \stdClass();
+            $user->id = Auth::user()->id;
+            $user->firstName = Auth::user()->firstName;
+            $user->lastName = Auth::user()->lastName;
+            $user->email = Auth::user()->email;
+            $user->phone = Auth::user()->phone;
+            $user->keyword = Auth::user()->keyword;
+            $user->ifDriver = Auth::user()->ifDriver;
+            return view('user.index')->with('user', $user);
+        } else {
+            return view('user.index');
+        }
     }
     public function fillDropdown($terms)
     {
@@ -44,23 +54,32 @@ class UserController extends Controller
         return json_encode($arr);
     }
     public function checkDriver(Request $request) {
-        // $ifDriver = Session::get('ifDriver');
-        if($request->session()->has('ifDriver')) {
-            echo $request->session()->get('ifDriver');
-        }
-        else {
-            echo 'No data in the session';
+        // if($request->session()->has('ifDriver')) {
+        //     echo $request->session()->get('ifDriver');
+        // }
+        // else {
+        //     echo 'No data in the session';
+        // }
+        if (Auth::check()){
+            $ifDriver = Auth::user()->ifDriver;
+            if ($ifDriver === 1) {
+                return true;
+            }
+        } else {
+            return false;
         }
     }
+
+    // Not needed
     public function storeDriver() {
         if (Auth::check())
         {
             $userId = Auth::id();
             $ifDriver = Auth::user()->ifDriver;
             echo $ifDriver;
+            $request->session()->put('ifDriver', $ifDriver);
+            // echo "Data has been added to session";
         }
-        // $request->session()->put('ifDriver', true);
-        // echo "Data has been added to session";
     }
     /**
      * Show the form for creating a new resource.
@@ -91,7 +110,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('users.show', ['user' => User::findOrFail($id)]);
+        // return view('user.show', ['user' => User::findOrFail($id)]);
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('sidebar')
- 
+    @parent
 @endsection
 @section('content')
 
@@ -43,14 +43,6 @@ $( "#toggleBtn" ).click(function() {
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form id="directionForm">
             @csrf
-                <div class="form-group mx-5 mt-4">
-                    <p>{{ session()->get('id') }}</p>
-                @if(session()->has('id'))
-                    <p>{{ session()->get('ifDriver') }}</p>
-                    //show driver fields
-                @endif
-                </div>
-
                 <div class="form-group mx-5 mt-4">
                     <label for="pickUp">Pickup</label>
                     <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">

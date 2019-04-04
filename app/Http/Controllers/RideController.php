@@ -32,7 +32,8 @@ class RideController extends Controller
     public function store(Request $request)
     {
         //
-        $origin = $request->input('origin');
+        // $origin = $request->input('origin');
+        $origin = $request->all();
         return json_encode($origin);
     }
     public function getDirection($origin, $destination)

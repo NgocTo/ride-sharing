@@ -11,11 +11,13 @@
 |
 */
 // Welcome Routing - to be changed into loading screen with logo
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/home', 'HomeController@index')->name('home');
+
 // Landing page Routing
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 Route::get('/index', function () {
     return view('index');
 });
@@ -31,9 +33,7 @@ Route::get('/rides', function () {
 });
 
 // Test Routing
-Route::resource('/users', 'UserController')->names([
-    'show' => 'profile'
-]);
+Route::resource('/user', 'UserController');
 Route::resource('drivers', 'DriverInfoController');
 
 // UserController Routing
