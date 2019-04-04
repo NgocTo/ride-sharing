@@ -36,21 +36,23 @@
         
 </div>
 
+@foreach($currentRides as $c)
 <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
-        
+    
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
         <p>9.1</p>
-
     </div>
-
+    
     <div class="col-8">
-        @foreach($currentRides as $c)
-            <p>{{ $c->startPos }}</p>
-        @endforeach
-    </div>     
+            <p>Pickup: {{ $c->startPos }}</p>
+            <p>Drop off: {{ $c->endPos }}</p>
+            <p>Date: {{ $c->date }}</p>
+            <p>Pickup time:{{ $c->startTime }}</p>
+    </div> 
       
 </div>
+@endforeach  
 
 
 
