@@ -19,22 +19,6 @@
         </div> 
     </div>
 <!-- next section -->
-<div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
-        
-    <div class="col-4">
-        <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
-        <p>8.9</p>
-    </div>
-
-    <div class="col-8">
-            <p class="name">David Smithe</p>
-            <p>Pickup:Sheridan College Trafalgar campus</p>
-            <p>Drop off:Square One Go bus terminal</p>
-            <p>Date:April 5 2019</p>
-            <p>Pickup time:1:15pm</p>
-    </div>     
-        
-</div>
 
 @foreach($currentRides as $c)
 <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
