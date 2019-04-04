@@ -27,7 +27,7 @@ $(document).ready(function () {
         if ($('#togBtn').prop('checked')) {
           $.ajax({
               type: "GET",
-              url: '/users/setSession',
+              url: '/users/checkDriver',
               success: function(data) {
                   console.log(data);
               },

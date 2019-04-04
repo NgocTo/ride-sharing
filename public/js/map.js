@@ -85,6 +85,8 @@ $('#submitTrip').on('click', function (e) {
     var origin = currentAddress; 
   }
   var datetime = $('#time').val();
+  var date = moment(datetime).format('YYYY-MM-DD');
+  var time = moment(datetime).format('hh:mm:ss');
   var destination = $('#dropOff').val();
   $.ajax({
       type: 'GET',
@@ -96,7 +98,7 @@ $('#submitTrip').on('click', function (e) {
           $.ajax({
             type: 'POST',
             url: '/rides/store',
-            data:{origin: origin, destination:destination},
+            data:{origin: origin, destination:destination, date:date, time:time},
             success: function(data) {
               alert(data);
             },
@@ -105,7 +107,8 @@ $('#submitTrip').on('click', function (e) {
   });
 });
 $('#directionForm input:text').on('input', fillDropDown);
-$('.predictions').on('click', function(){
+$('.predictions').on('click', function(e){
+  e.stopPropagation();
   $('.prediction').on('click', fillTextInput);
 })
 
@@ -127,7 +130,6 @@ function fillDropDown(e) {
 }
 function fillTextInput(e) {
   e.stopPropagation();
-  console.log($(this));
   var current = e.currentTarget.innerText;
   e.currentTarget.parentNode.parentNode.previousSibling.previousSibling.value = current;
   $('.predictions').html('');

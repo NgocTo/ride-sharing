@@ -46,7 +46,7 @@ Route::get('/storeDriver', 'UserController@storeDriver');
 
 // RideController Routing
 Route::get('/rides/', 'RideController@index'); //localhost:8000/rides/
-Route::post('/rides/store', 'RideController@store'); //localhost:8000/rides/
+Route::post('/rides/store', 'RideController@store');
 Route::get('/rides/{terms}', 'RideController@fillDropdown');
 Route::get('/rides/{origin}/{destination}', 'RideController@getDirection');
 
