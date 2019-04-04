@@ -84,7 +84,7 @@ $('#submitTrip').on('click', function (e) {
   } else {
     var origin = currentAddress; 
   }
-  console.log(origin);
+  var datetime = $('#time').val();
   var destination = $('#dropOff').val();
   $.ajax({
       type: 'GET',
@@ -98,7 +98,7 @@ $('#submitTrip').on('click', function (e) {
             url: '/rides/store',
             data:{origin: origin, destination:destination},
             success: function(data) {
-              alert(data.success);
+              alert(data);
             },
         });
       },
@@ -133,3 +133,7 @@ function fillTextInput(e) {
   $('.predictions').html('');
   $('.predictions').removeClass('shadow');
 }
+$( document ).ready(function(){
+  var datetime = moment().format('YYYY-MM-DDThh:mm:ss');
+  $('#time').val(datetime);  
+});

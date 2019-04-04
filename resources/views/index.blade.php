@@ -51,12 +51,12 @@ $( "#toggleBtn" ).click(function() {
 
                 <div class="form-group mx-5 mt-4 ">
                     <label for="dropOff">Destination</label>
-                    <input type="text" class="form-control" id="dropOff" placeholder="Your destination">
+                    <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
                     <div class="prediction-container"><div class="predictions"></div></div>
                  </div>
-                 <div id="driverDate" class="form-group mx-5 mt-4 ">
+                 <div id="" class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
-                    <input type="datetime-local" class="form-control" id="time">
+                    <input type="datetime-local" class="form-control" id="time" name="time">
                  </div>
                  <div class="form-group mx-5 mb-4">
                     <button type="submit" id="submitTrip" class=" text-bold btn btn-primary text-center btn-block">
