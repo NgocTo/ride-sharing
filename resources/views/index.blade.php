@@ -42,6 +42,7 @@ $( "#toggleBtn" ).click(function() {
 
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
             <form id="directionForm">
+            @csrf
                 <div class="form-group mx-5 mt-4">
                     <p>{{ session()->get('id') }}</p>
                 @if(session()->has('id'))

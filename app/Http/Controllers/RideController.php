@@ -21,13 +21,19 @@ class RideController extends Controller
         }
         // return currentRide row 
     }
+    public function show($id)
+    {
+        //
+    }
     public function create()
     {
         //
     }
-    public function show($id)
+    public function store(Request $request)
     {
         //
+        $origin = $request->input('origin');
+        return json_encode($origin);
     }
     public function getDirection($origin, $destination)
     {

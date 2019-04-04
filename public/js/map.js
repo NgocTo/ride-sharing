@@ -52,8 +52,6 @@ function showError(error) {
 }
 
 function calcRoute(origin, destination) {
-  // origin = $('#pickUp').val();
-  // destination = $('#dropOff').val();
   var request = {
     origin: origin,
     destination: destination,
@@ -89,12 +87,20 @@ $('#submitTrip').on('click', function (e) {
   console.log(origin);
   var destination = $('#dropOff').val();
   $.ajax({
-      type: "GET",
+      type: 'GET',
       url: '/rides/'+origin+'/'+destination,
       success: function(data) {
           response = data;
           $('#directionResponse').html(response.routes);
           calcRoute(origin, destination);
+          $.ajax({
+            type: 'POST',
+            url: '/rides/store',
+            data:{origin: origin, destination:destination},
+            success: function(data) {
+              alert(data.success);
+            },
+        });
       },
   });
 });
