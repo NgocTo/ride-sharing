@@ -25,32 +25,36 @@ class RideController extends Controller
     {
         //
     }
-    public function create()
-    {
-        //
-    }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
-    {
-        //
-        $currentRide = new CurrentRide;
-
-        $currentRide->userId = Auth::id();
-        $currentRide->startPos = $request->input('origin');
-        $currentRide->endPos = $request->input('destination');
-        $currentRide->startTime = $request->input('time');
-        $currentRide->date = $request->input('date');
-
-        $search_url= 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins='.urlencode($currentRide->startPos).'&destinations='.urlencode($currentRide->endPos).'&key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
-        $results =  file_get_contents($search_url);
-        $results_array = json_decode($results, true);
-        
-        $currentRide->estimatedPrice = ($results_array['rows'][0]['elements'][0]['distance']['text'] ) * 0.58;
-        
-        $currentRide->save();
-        // redirect
-        Session::flash('message', '<strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.');
-        return Redirect::to('index');
-        // return view('index');
+    {         
+        if($request->ajax())
+        {
+            if (Auth::check()) {
+                $currentRide = new CurrentRide;
+                $currentRide->userId = Auth::user()->id;
+                $currentRide->startPos = $request->input('origin');
+                $currentRide->endPos = $request->input('destination');
+                $currentRide->startTime = $request->input('time');
+                $currentRide->date = $request->input('date');
+                $search_url= 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins='.urlencode($currentRide->startPos).'&destinations='.urlencode($currentRide->endPos).'&key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
+                $results =  file_get_contents($search_url);
+                $results_array = json_decode($results, true);
+                
+                $currentRide->estimatedPrice = ($results_array['rows'][0]['elements'][0]['distance']['value'] ) * 0.58 * 0.001;
+                $currentRide->completed = 0;
+                
+                $currentRide->save();
+                // redirect
+                // Session::flash('message', '<strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.');
+                return redirect('index');
+            }
+        }
     }
     public function getDirection($origin, $destination)
     {

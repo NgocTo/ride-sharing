@@ -100,7 +100,10 @@ $('#submitTrip').on('click', function (e) {
             url: '/rides/store',
             data:{origin: origin, destination:destination, date:date, time:time},
             success: function(data) {
-              alert(data);
+              $('.flash-message').html(`<button type="button" class="close" data-dismiss="alert">×</button>	
+                <p><strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.</p>`);
+              $('.flash-message').show(500);
+              hideFlashMessage($('.flash-message'));
             },
         });
       },
@@ -139,3 +142,10 @@ $( document ).ready(function(){
   var datetime = moment().format('YYYY-MM-DDThh:mm:ss');
   $('#time').val(datetime);  
 });
+
+function hideFlashMessage(message) {
+  setTimeout(function() {
+    message.hide(15000);
+    message.html('');
+  }, 5000);
+}

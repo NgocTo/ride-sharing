@@ -20,14 +20,8 @@ $( "#toggleBtn" ).click(function() {
 </script>
 
 @endsection
-@component('alert')
-    @slot('status')
-        success
-    @endslot
-    <div>
-    <strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.
-    </div>
-@endcomponent
+<div class="flash-message alert alert-success alert-block text-center fixed-top" role="alert"></div>
+
 <div class="switch-container">
 <form action="users/checkDriver" method="post">
     <label class="switch">
