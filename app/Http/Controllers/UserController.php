@@ -53,32 +53,34 @@ class UserController extends Controller
        
         return json_encode($arr);
     }
-    public function checkDriver(Request $request) {
-        // if($request->session()->has('ifDriver')) {
-        //     echo $request->session()->get('ifDriver');
-        // }
-        // else {
-        //     echo 'No data in the session';
-        // }
-        if (Auth::check()){
-            $ifDriver = Auth::user()->ifDriver;
-            if ($ifDriver === 1) {
-                return true;
-            }
+    public function setDriverMode(Request $request) {
+        if (Auth::check() && (Auth::user()->ifDriver === 1)){
+            $toggle = $request->input('toggleBtn');
+            // $request->session()->put('driverMode', true);
+            var_dump($toggle);
         } else {
-            return false;
+            return "denied";
         }
     }
 
-    // Not needed
-    public function storeDriver() {
+    // public function setDriverMode(Request $request) {
+    //     if (Auth::check()){
+    //         $ifDriver = Auth::user()->ifDriver;
+    //         if ($ifDriver === 1) {
+    //             $toggle = $request->input('toggleBtn');
+    //             $request->session()->put('driverMode', true);
+    //             return "in driver mode";
+    //         } else {
+    //             return "denied";
+    //         }
+    //     }
+    // }
+
+    public function setRiderMode() {
         if (Auth::check())
         {
-            $userId = Auth::id();
-            $ifDriver = Auth::user()->ifDriver;
-            echo $ifDriver;
-            $request->session()->put('ifDriver', $ifDriver);
-            // echo "Data has been added to session";
+            $request->session()->forget('driverMode');
+            return "in rider mode";
         }
     }
     /**

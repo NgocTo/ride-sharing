@@ -40,18 +40,22 @@
 
             
             <div class="switch-container">
-            <form id="checkDriverForm">
+            <form id="checkDriverForm" action=" {{route('setDriverMode')}} " method="post">
                 <label class="switch">
-                    <input type="checkbox" id="toggleBtn" name="togBtn">
+                    @if (Auth::check() && ($user->ifDriver === 1) && Session::has('driverMode'))
+                    <input type="checkbox" id="toggleBtn" name="toggleBtn" checked >
+                    @else
+                    <input type="checkbox" id="toggleBtn" name="toggleBtn" >
+                    @endif
                     <span class="slider round"></span>
                 </label>
             </form>
             </div>
 
-            <div class="custom-control custom-switch">
+            <!-- <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="customSwitch1">
                 <label class="custom-control-label" for="customSwitch1">Become a rider</label>
-            </div>
+            </div> -->
         </div>
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">

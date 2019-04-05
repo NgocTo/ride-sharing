@@ -22,14 +22,21 @@ $(document).ready(function () {
       }
     });
 
-  $('#togBtn').on('click', function (e) {
-    e.preventDefault();
-    if ($('#togBtn').prop('checked')) {
+  $('#toggleBtn').on('click', function () {
+    if ($('#toggleBtn').prop('checked') == true) {
       $.ajax({
           type: "GET",
-          url: '/users/checkDriver',
+          url: '/setDriverMode',
           success: function(data) {
-              console.log(data);
+            location.reload();
+          },
+      });
+    } else if ($('#toggleBtn').prop('checked') == false) {
+      $.ajax({
+          type: "GET",
+          url: '/setRiderMode',
+          success: function(data) {
+            location.reload();
           },
       });
     }

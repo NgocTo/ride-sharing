@@ -48,16 +48,24 @@ $( "#toggleBtn" ).click(function() {
                     <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
                     <div class="prediction-container"><div class="predictions"></div></div>
                  </div>
-                 <div id="" class="form-group mx-5 mt-4 ">
+
+                @if (Auth::check() && ($user->ifDriver === 1) && Session::has('driverMode'))
+                <div class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
                     <input type="datetime-local" class="form-control" id="time" name="time">
-                 </div>
-                 <div class="form-group mx-5 mb-4">
-                    <button type="submit" id="submitTrip" class=" text-bold btn btn-primary text-center btn-block">
+                </div>
+                <div class="form-group mx-5 mb-4">
+                    <button type="submit" id="submitTrip" class="text-bold btn btn-primary text-center btn-block">
                         {{ __('Submit trip') }}
                     </button>
-                 </div>
-               
+                </div>
+                @else
+                <div class="form-group mx-5 mb-4">
+                    <button type="submit" id="checkRide" class="text-bold btn btn-primary text-center btn-block">
+                        {{ __('See rides') }}
+                    </button>
+                </div>
+                @endif
             </form>
                 
     </div>

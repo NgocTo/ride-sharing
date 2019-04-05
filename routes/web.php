@@ -33,16 +33,15 @@ Route::get('/rides', function () {
 });
 
 // Test Routing
-Route::resource('/user', 'UserController');
 Route::resource('drivers', 'DriverInfoController');
 
 // UserController Routing
-Route::get('/users/{origin}/{destination}', 'UserController@getDirection');
-Route::get('/users/{terms}', 'UserController@fillDropdown');
+Route::resource('/user', 'UserController');
 
-// Check if user is driver
-Route::get('/checkDriver', 'UserController@checkDriver');
-Route::get('/storeDriver', 'UserController@storeDriver');
+// Set Driver Mode
+Route::post('/setDriverMode', 'UserController@setDriverMode')->name('setDriverMode'); ;
+Route::get('/setDriverMode', 'UserController@setDriverMode');
+Route::get('/setRiderMode', 'UserController@setRiderMode');
 
 // RideController Routing
 Route::get('/rides/', 'RideController@index'); //localhost:8000/rides/
