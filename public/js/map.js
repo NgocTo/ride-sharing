@@ -92,23 +92,36 @@ $('#submitTrip').on('click', function (e) {
       type: 'GET',
       url: '/rides/'+origin+'/'+destination,
       success: function(data) {
-          response = data;
-          $('#directionResponse').html(response.routes);
-          calcRoute(origin, destination);
-          $.ajax({
-            type: 'POST',
-            url: '/rides/store',
-            data:{origin: origin, destination:destination, date:date, time:time},
-            success: function(data) {
-              $('.flash-message').html(`<button type="button" class="close" data-dismiss="alert">×</button>	
-                <p><strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.</p>`);
-              $('.flash-message').show(500);
-              hideFlashMessage($('.flash-message'));
-            },
+        response = data;
+        $('#directionResponse').html(response.routes);
+        calcRoute(origin, destination);
+        $.ajax({
+          type: 'POST',
+          url: '/rides/store',
+          data:{origin: origin, destination:destination, date:date, time:time},
+          success: function(data) {
+            $('.flash-message').html(`<button type="button" class="close" data-dismiss="alert">×</button>	
+              <p><strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.</p>`);
+            $('.flash-message').show(500);
+            hideFlashMessage($('.flash-message'));
+          },
         });
       },
   });
 });
+
+$('#checkRide').on('click', function (e) {
+  e.preventDefault();
+  if ($('#pickUp').val()) {
+    var origin = $('#pickUp').val();
+  } else {
+    var origin = currentAddress; 
+  }
+  var destination = $('#dropOff').val();
+  calcRoute(origin, destination);
+});
+
+
 $('#directionForm input:text').on('input', fillDropDown);
 $('.predictions').on('click', function(e){
   e.stopPropagation();
