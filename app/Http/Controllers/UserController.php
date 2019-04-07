@@ -53,30 +53,29 @@ class UserController extends Controller
        
         return json_encode($arr);
     }
+    // public function setDriverMode(Request $request) {
+    //     if (Auth::check() && (Auth::user()->ifDriver === 1)){
+    //         $toggle = $request->input('toggleBtn');
+    //         // $request->session()->put('driverMode', true);
+    //         var_dump($toggle);
+    //     } else {
+    //         return "denied";
+    //     }
+    // }
+
     public function setDriverMode(Request $request) {
-        if (Auth::check() && (Auth::user()->ifDriver === 1)){
-            $toggle = $request->input('toggleBtn');
-            // $request->session()->put('driverMode', true);
-            var_dump($toggle);
+        if (Auth::check()){
+            $ifDriver = Auth::user()->ifDriver;
+            if ($ifDriver === 1) {
+                $request->session()->put('driverMode', 'Driver mode');
+                return "in driver mode";
+            }
         } else {
             return "denied";
         }
     }
 
-    // public function setDriverMode(Request $request) {
-    //     if (Auth::check()){
-    //         $ifDriver = Auth::user()->ifDriver;
-    //         if ($ifDriver === 1) {
-    //             $toggle = $request->input('toggleBtn');
-    //             $request->session()->put('driverMode', true);
-    //             return "in driver mode";
-    //         } else {
-    //             return "denied";
-    //         }
-    //     }
-    // }
-
-    public function setRiderMode() {
+    public function setRiderMode(Request $request) {
         if (Auth::check())
         {
             $request->session()->forget('driverMode');

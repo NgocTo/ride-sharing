@@ -40,7 +40,7 @@
 
             
             <div class="switch-container">
-            <form id="checkDriverForm" action=" {{route('setDriverMode')}} " method="post">
+            <form>
                 <label class="switch">
                     @if (Auth::check() && ($user->ifDriver === 1) && Session::has('driverMode'))
                     <input type="checkbox" id="toggleBtn" name="toggleBtn" checked >

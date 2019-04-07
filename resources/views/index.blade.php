@@ -22,15 +22,6 @@ $( "#toggleBtn" ).click(function() {
 @endsection
 <div class="flash-message alert alert-success alert-block text-center fixed-top" role="alert"></div>
 
-<div class="switch-container">
-<form action="users/checkDriver" method="post">
-    <label class="switch">
-        <input type="checkbox" id="toggleBtn" name="togBtn">
-        <span class="slider round"></span>
-    </label>
-</form>
-</div>
-
 <div>
     <div class="direction" class="p-0">
 

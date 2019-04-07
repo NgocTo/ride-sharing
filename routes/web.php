@@ -39,7 +39,7 @@ Route::resource('drivers', 'DriverInfoController');
 Route::resource('/user', 'UserController');
 
 // Set Driver Mode
-Route::post('/setDriverMode', 'UserController@setDriverMode')->name('setDriverMode'); ;
+// Route::post('/setDriverMode', 'UserController@setDriverMode')->name('setDriverMode'); ;
 Route::get('/setDriverMode', 'UserController@setDriverMode');
 Route::get('/setRiderMode', 'UserController@setRiderMode');
 
