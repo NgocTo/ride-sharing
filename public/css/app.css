@@ -11027,6 +11027,12 @@ p {
   font-weight: 500;
 }
 
+.backBtn i {
+  color: white;
+  float: left;
+  font-size: 24px;
+}
+
 .img-container img {
   border-radius: 50%;
   width: 100%;
@@ -11220,6 +11226,10 @@ input:checked + .slider:after {
 /*--------- END --------*/
 
 @media (min-width: 992px) {
+  .backBtn {
+    display: none;
+  }
+
   .direction {
     position: absolute;
     top: 0;

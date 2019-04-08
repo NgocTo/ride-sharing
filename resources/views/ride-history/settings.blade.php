@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<h2 class="text-white bg-green text-center m-0 p-4">Settings</h2>
+<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="#"><i class="fas fa-chevron-left"></i></a>Settings</h2>
 
 <div class="container p-0">
 <div class="form-group row m-0 p-4">
