@@ -68,8 +68,8 @@ $("#checkRide").click(function(){
   <!-- display available rides -->
     <div id="driversList" class="row m-0 p-0 mb-2">
 
-        <div class="col-4">
-            <div class="img-container"><img src="{{ asset('img/man1.jpg') }}"></div>
+        <div class="col-2">
+            <div class="img-containerSmall"><img src="{{ asset('img/man1.jpg') }}"></div>
             
         </div>
 

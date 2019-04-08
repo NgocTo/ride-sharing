@@ -11034,6 +11034,18 @@ p {
   min-height: 100%;
 }
 
+.img-containerSmall {
+  width: 60px;
+  height: 60px;
+}
+
+.img-containerSmall img {
+  border-radius: 50%;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 #driversList {
   display: none;
 }
