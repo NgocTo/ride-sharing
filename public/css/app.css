@@ -11005,9 +11005,26 @@ p {
 }
 
 .img-container {
-  border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+
+.fa-edit {
+  color: #1370B0 !important;
+}
+
+#settings {
+  width: 100%;
+}
+
+#settings li a {
+  text-decoration: none;
+  color: #000;
+}
+
+#settings li:hover {
+  background-color: #e6e6e6;
+  font-weight: 500;
 }
 
 .img-container img {

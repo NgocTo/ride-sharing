@@ -71,17 +71,28 @@ p{
   font-size:16px;
 }
 .img-container {
-  border-radius: 50%;
   width:100px;
   height:100px;
-  // width:100%;
-  // padding-bottom:100%;
-  // overflow:hidden;
-  // position:relative;
+
+}
+.fa-edit{
+  color:$blue !important;
+}
+#settings{
+  width:100%;
+  li{
+    a{
+      text-decoration: none;
+      color:$black;
+      }
+    &:hover {
+      background-color:rgb(230, 230, 230);
+      font-weight:500;
+    }
+  }
 }
 .img-container img {
   border-radius: 50%;
-  // position:absolute;
   width:100%;
   min-width:100%;
   min-height:100%;

@@ -31,6 +31,9 @@ Route::get('/ride-history', function () {
 Route::get('/rides', function () {
     return view('rides.index');
 });
+Route::get('/settings', function () {
+    return view('ride-history.settings');
+});
 
 // Test Routing
 Route::resource('drivers', 'DriverInfoController');
