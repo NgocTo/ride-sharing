@@ -10977,12 +10977,26 @@ p {
   margin-bottom: 3px;
 }
 
+.greenPrice {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .rating {
   display: inline;
   font-size: 30px;
   font-weight: 500;
   margin: 10px;
   position: relative;
+}
+
+.ratingSmall {
+  display: inline;
+  font-size: 20px;
+}
+
+.starSmall {
+  font-size: 16px;
 }
 
 .img-container {
@@ -11172,10 +11186,6 @@ input:checked + .slider:after {
 /*--------- END --------*/
 
 @media (min-width: 992px) {
-  .rhContainer {
-    margin-top: 45px;
-  }
-
   .direction {
     position: absolute;
     top: 0;

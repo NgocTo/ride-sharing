@@ -51,6 +51,10 @@ strong{
 p{
   margin-bottom:3px;
 }
+.greenPrice{
+  font-size:20px;
+  font-weight:500;
+}
 .rating{
   display: inline;
   font-size:30px;
@@ -58,6 +62,13 @@ p{
   margin:10px;
   // width:40px;
   position:relative;
+}
+.ratingSmall{
+  display:inline;
+  font-size:20px;
+}
+.starSmall{
+  font-size:16px;
 }
 .img-container {
   border-radius: 50%;
