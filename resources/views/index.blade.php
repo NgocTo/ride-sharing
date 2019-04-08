@@ -14,7 +14,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
 <script>
 
 // toggle rider and driver
-
+$("#driversList").hide();
 $( "#toggleBtn" ).click(function() {
   $( "#driverDate" ).toggle();
 });
@@ -66,20 +66,20 @@ $("#checkRide").click(function(){
                 @endif
             </form>
   <!-- display available rides -->
-    <div id="driversList" class="row m-0 p-0 mb-2">
+    <div id="driversList" class="row ml-4 p-0 mb-2">
 
         <div class="col-2">
             <div class="img-containerSmall"><img src="{{ asset('img/man1.jpg') }}"></div>
             
         </div>
 
-        <div class="col-5">
+        <div class="col-6">
                 <p class="name mb-0">David Smithe</p>
                 <p class="ratingSmall">8.6</p>
                 <i class="fas fa-star starSmall"></i>
                 <p><strong>Rules: </strong>Please do not have any cat hair on you, I am allergic.</p>
         </div>    
-            <div class="col-3">
+            <div class="col-4">
                 <p class="text-green greenPrice">$5.55</p>
                 <p>5 minutes away</p>
             </div>
