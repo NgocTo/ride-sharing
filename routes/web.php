@@ -52,3 +52,7 @@ Route::get('/rides/{origin}/{destination}', 'RideController@getDirection');
 Route::get('/rides/rideinfo', function() {
     return view('rides.rideinfo');
 }); 
+
+Route::get('/rides/rideconfirmation', function() {
+    return view('rides.rideconfirmation');
+}); 

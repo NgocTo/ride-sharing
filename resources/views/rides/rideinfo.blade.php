@@ -48,7 +48,7 @@
 
             <div class="form-group mx-5 mb-4">
                 <button type="submit" id="propose" class="text-bold btn btn-primary text-center btn-block">
-                    {{ __('Propse') }}
+                    {{ __('Propose') }}
                 </button>
             </div>
         </form>
