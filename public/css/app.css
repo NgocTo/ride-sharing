@@ -56,6 +56,7 @@
 }
 
 .sidenav a:hover {
+  color: #15AA35;
   font-weight: 500;
 }
 
@@ -72,7 +73,7 @@
 }
 
 .sidenav .closebtn:hover {
-  color: black;
+  color: #15AA35;
   font-weight: normal;
 }
 
@@ -91,6 +92,10 @@
   width: 2.2rem;
   height: 2.2rem;
   background-color: white;
+}
+
+element {
+  width: 300px;
 }
 
 #profile {
@@ -11010,6 +11015,10 @@ p {
   width: 100%;
   min-width: 100%;
   min-height: 100%;
+}
+
+#driversList {
+  display: none;
 }
 
 #driverDate {
