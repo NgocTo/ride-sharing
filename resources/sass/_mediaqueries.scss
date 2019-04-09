@@ -10,9 +10,9 @@
 @media (min-width: 992px) {
  
   .direction{
-    position:absolute;
+    position: static;
     top:0;
-    height:450px;
+    // height:450px;
     width:40%;
   }
 // .alert{
