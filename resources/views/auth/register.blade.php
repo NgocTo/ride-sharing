@@ -90,11 +90,12 @@
                             </div>
                         </div>
 
-                        <div class="form-check row">
+                        <div class="form-group form-check row">
                             <div class="offset-md-4 col-md-2">
                                 <input type="checkbox" id="ifDriver" class="form-check-input" name="ifDriver">
+                                <label for="ifDriver" class="form-check-label mb-3">I am a driver</label>
                             </div>
-                            <label for="ifDriver" class="col-md-2 form-check-label mb-3">I am a driver</label>
+                            
                         </div>
 
                         <div class="form-group row mb-0">
