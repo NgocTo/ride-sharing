@@ -56,7 +56,7 @@ class RideController extends Controller
                 $results =  file_get_contents($search_url);
                 $results_array = json_decode($results, true);
                 
-                $currentRide->estimatedPrice = ($results_array['rows'][0]['elements'][0]['distance']['value'] ) * 0.58 * 0.001;
+                $currentRide->estimatedPrice = ($results_array['rows'][0]['elements'][0]['distance']['value'] ) * 0.58 * 0.001 + 5;
                 $currentRide->completed = 0;
                 
                 $currentRide->save();
