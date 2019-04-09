@@ -68,6 +68,7 @@ $("#checkRide").click(function(){
   <!-- display available rides -->
   <!-- list -->
   <div id="driversList" class="row p-0 mb-2">
+@foreach($currentRides as $c)
 <ul class="list-group">
     <li class="list-group-item mx-4 p-0">
         <div class="col-3">
@@ -82,12 +83,16 @@ $("#checkRide").click(function(){
                 <p><strong>Rules: </strong>Please do not have any cat hair on you, I am allergic.</p>
         </div>    
             <div class="col-3">
-                <p class="text-green greenPrice">$5.55</p>
-                <p>5 minutes away</p>
+                <p>Pickup: {{ $c->startPos }}</p>
+                <p>Drop off: {{ $c->endPos }}</p>
+                <p>Date: {{ $c->date }}</p>
+                <p>Pickup time:{{ $c->startTime }}</p>
+                <p class="text-green greenPrice">{{ $c->estimatedPrice }}</p>
             </div>
     </div>
     </li>
-</ul>    
+</ul>
+@endforeach      
     
 </div>
 
