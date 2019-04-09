@@ -59,7 +59,7 @@
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
             <li class="nav-item">
-                <a class="nav-link" href="#">My Ride history</a>
+                <a class="nav-link" href="ride-history">My Ride history</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Payment methods</a>
@@ -71,7 +71,7 @@
                 <a class="nav-link" href="#">Regulations</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Settings</a>
+                <a class="nav-link" href="settings">Settings</a>
             </li>
             
             <li class="nav-item">
