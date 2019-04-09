@@ -144,7 +144,7 @@ $('#checkRide').on('click', function (e) {
     <a href="ride/${d.id}/${origin}/${destination}" class="ride-list">See details</a>
 </li><hr/>`
       });
-      $('#driversList').html(`<ul class="list-group">` + output + `</ul>`);
+      $('#driversList').html(`<ul class="list-group mr-4">` + output + `</ul>`);
     }
   });
 });

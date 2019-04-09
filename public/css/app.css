@@ -11132,7 +11132,7 @@ p {
 
 #driversList ul {
   overflow-y: scroll;
-  height: 100%;
+  max-height: 30rem;
 }
 
 #driversList ul li {
