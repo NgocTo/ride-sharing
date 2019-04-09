@@ -11134,6 +11134,10 @@ p {
   display: none;
 }
 
+.bg-green {
+  background-color: #15AA35;
+}
+
 #driversList ul li {
   border: none;
   display: inherit;

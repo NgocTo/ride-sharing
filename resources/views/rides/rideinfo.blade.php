@@ -3,28 +3,9 @@
 
 @endsection
 @section('content')
-
-@section('script')
-<script src="{{ asset('js/script.js') }}"></script>
-
-<script>
-console.log("ride-info page");
-
-// toggle rider and driver
-$("#driversList").hide();
-$( "#toggleBtn" ).click(function() {
-  $( "#driverDate" ).toggle();
-});
-$("#checkRide").click(function(){
-  $("#driversList").show();
-  $('.direction').css('height', '100%');
-})
-
-</script>
-
 <h2 class="text-white bg-green text-center m-0 p-4">Drivers</h2>
 
-<div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">    
+<div class="form-group row m-0 p-4 mb-3">    
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
            <p class="rating">8.9</p>
@@ -41,29 +22,26 @@ $("#checkRide").click(function(){
         <p><strong>Rules:</strong> Please do not have any cat hair on you. I am allergic.</p>
     </div>     
 </div>
-
+<!-- next section -->
 <hr>
-
 <h2 class="text-green bg-white text-center m-0 p-4">My Trip</h2>
 
 <div>
-    <div class="direction" class="p-0">
+    <div class="p-0">
         <form id="directionForm">
         <!-- @csrf -->
             <div class="form-group mx-5 mt-4">
                 <label for="pickUp">Pickup</label>
                 <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
-                <div class="prediction-container"><div class="predictions"></div></div>
             </div>
 
             <div class="form-group mx-5 mt-4 ">
                 <label for="dropOff">Destination</label>
                 <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
-                <div class="prediction-container"><div class="predictions"></div></div>
             </div>
 
             <div class="form-group mx-5 mt-4 ">
-                <label for="price">$5.55</label>
+                <h2 class="text-center text-green" id="price">$5.55</h2>
             </div>
 
             <div class="form-group mx-5 mb-4">
