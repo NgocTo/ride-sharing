@@ -1,41 +1,43 @@
 @extends('layouts.main')
 @section('sidebar')
-<script src="{{ asset('js/script.js') }}"></script>
 @endsection
-@section('content')
 @section('script')
 
+<script src="{{ asset('js/script.js') }}"></script>
 <script>
 console.log("hi");
-$(".rhContainer").hide();
-// $( "#past" ).click(function() {
-  
-//   $( "#pastRides" ).show();
-//   $( "#upcomingRides" ).hide();
-// });
-// $( "#upcoming" ).click(function() {
-//  $( "#pastRides" ).show(); 
-//  $( "#upcomingRides" ).hide();
-  
-// });
+$("#upcomingRides").hide();
 
+$( "#upcomingBtn" ).click(function() {
+ $( "#pastRides" ).hide();
+ $( "#upcomingRides" ).show(); 
+})
+ $( "#pastBtn" ).click(function() {
+ $( "#pastRides" ).show();
+ $( "#upcomingRides" ).hide();
+ })
 </script>
+@endsection
+@section('content')
 <h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="#"><i class="fas fa-chevron-left"></i></a>Ride History</h2>
 
 <div class="container p-0 rhContainer">
     <div class="form-group row m-0">
-        <div class="btn-group btn-group-toggle col p-0" data-toggle="buttons">
-            <label class="btn btn-primary text-white active p-4">
+        <!-- buttons -->
+        <div  class="btn-group btn-group-toggle col p-0" data-toggle="buttons">
+            <label id="pastBtn" class="btn btn-primary text-white active p-4">
                 <input type="radio" name="options" id="past" autocomplete="off"checked> Past
             </label>
            
-            <label class="btn btn-primary p-4">
+            <label id="upcomingBtn" class="btn btn-primary p-4">
                 <input type="radio" name="options" id="upcoming" autocomplete="off"> Upcoming
             </label>
         </div> 
     </div>
 <!-- past rides -->
-<div  id="pastRides" class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
+</div>
+<div id="pastRides">
+<div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
@@ -93,6 +95,7 @@ $(".rhContainer").hide();
     </div>     
       
 </div>
+</div>
 <!-- upcoming rides -->
 <div  id="upcomingRides" class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
         
@@ -116,3 +119,4 @@ $(".rhContainer").hide();
 
 
 </div>
+@endsection

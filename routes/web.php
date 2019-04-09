@@ -17,7 +17,7 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // Landing page Routing
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('/');
 Route::get('/index', function () {
     return view('index');
 });
