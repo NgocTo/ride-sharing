@@ -35,27 +35,21 @@ Route::get('/settings', function () {
     return view('user.settings');
 });
 
-// Test Routing
-Route::resource('drivers', 'DriverInfoController');
-
 // UserController Routing
 Route::resource('/user', 'UserController');
 
 // Set Driver Mode
-// Route::post('/setDriverMode', 'UserController@setDriverMode')->name('setDriverMode'); ;
 Route::get('/setDriverMode', 'UserController@setDriverMode');
 Route::get('/setRiderMode', 'UserController@setRiderMode');
 
 // RideController Routing
-Route::get('/getCurrentRides','RideController@index'); 
-// Route::get('/rides/rideinfo','RideController@rideinfo'); 
-// Route::get('/rides/rideconfirmation', function() {
+Route::get('/getCurrentRides','RideController@index');
 Route::get('/ride/{id}/{origin}/{destination}','RideController@rideinfo'); 
+Route::patch('/ride/updateCurrentRide/{id}','RideController@updateCurrentRide'); 
 Route::get('/rideconfirmation', function() {
     return view('rides.rideconfirmation');
 }); 
 Route::get('/rides', 'RideController@index'); //localhost:8000/rides/
-// Route::get('/rides/', 'RideController@index'); //localhost:8000/rides/
 Route::post('/rides/store', 'RideController@store');
 Route::get('/rides/{terms}', 'RideController@fillDropdown');
 Route::get('/rides/{origin}/{destination}', 'RideController@getDirection');

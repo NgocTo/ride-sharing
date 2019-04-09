@@ -66,9 +66,11 @@ p{
   font-size:20px;
 }
 .img-container {
-  width:100px;
-  height:100px;
-
+  max-width:100%;
+  height: auto;
+}
+.img-container img {
+  width: 4rem;
 }
 .fa-edit{
   color:$blue !important;

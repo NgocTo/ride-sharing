@@ -47,7 +47,7 @@ class RideController extends Controller
         {
             if (Auth::check()) {
                 $currentRide = new CurrentRide;
-                $currentRide->userId = Auth::user()->id;
+                $currentRide->driverId = Auth::user()->id;
                 $currentRide->startPos = $request->input('origin');
                 $currentRide->endPos = $request->input('destination');
                 $currentRide->startTime = $request->input('time');

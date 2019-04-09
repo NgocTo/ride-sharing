@@ -53,16 +53,7 @@ class UserController extends Controller
        
         return json_encode($arr);
     }
-    // public function setDriverMode(Request $request) {
-    //     if (Auth::check() && (Auth::user()->ifDriver === 1)){
-    //         $toggle = $request->input('toggleBtn');
-    //         // $request->session()->put('driverMode', true);
-    //         var_dump($toggle);
-    //     } else {
-    //         return "denied";
-    //     }
-    // }
-
+ 
     public function setDriverMode(Request $request) {
         if (Auth::check()){
             $ifDriver = Auth::user()->ifDriver;
