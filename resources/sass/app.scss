@@ -186,7 +186,7 @@ p{
   display: none;
 }
 .bg-green {
-  background-color: #15AA35;
+  background-color:$green;
 }
 #driversList{
   ul{
@@ -246,7 +246,7 @@ p{
 }
 
 input:checked + .slider {
-  background-color:$green;
+  background-color:$blue;
 }
 
 input:focus + .slider {

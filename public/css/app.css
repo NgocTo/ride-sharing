@@ -11194,7 +11194,7 @@ p {
 }
 
 input:checked + .slider {
-  background-color: #15AA35;
+  background-color: #1370B0;
 }
 
 input:focus + .slider {
