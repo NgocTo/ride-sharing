@@ -10999,10 +10999,6 @@ p {
   font-size: 20px;
 }
 
-.starSmall {
-  font-size: 16px;
-}
-
 .img-container {
   width: 100px;
   height: 100px;
@@ -11037,11 +11033,6 @@ p {
   width: 100%;
   min-width: 100%;
   min-height: 100%;
-}
-
-.img-containerSmall {
-  width: 60px;
-  height: 60px;
 }
 
 .img-containerSmall img {

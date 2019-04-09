@@ -130,16 +130,17 @@ $('#checkRide').on('click', function (e) {
         output += `
   <li class="list-group-item mx-4 p-0">
     <div class="col-3">
-      <div class="img-containerSmall"><img src="img/default-profile.jpg"></div>
+      <div class="img-containerSmall text-center"><img src="img/default-profile.jpg" alt="default profile"></div>
     </div>
-    <div class="col-6">
-      <p class="name mb-0">${d.startPos}</p>
+    <div class="col-7">
       <p class="name mb-0">${d.user.firstName} ${d.user.lastName}</p>
-      <p class="ratingSmall">${d.driverInfo.driverRating}</p>
-      <i class="fas fa-star starSmall"></i>
+      <p class="ratingSmall">${d.driverInfo.driverRating} <i class="fas fa-star fa-xs"></i></p>
       <p><strong>Rules: </strong>${d.driverInfo.driverRules}</p>
     </div>
-  </li>`
+    <div class="col-2 text-green text-right">
+      <p class="name mb-0">$${d.estimatedPrice}</p>
+    </div>
+  </li><hr/>`
       });
       $('#driversList').html(`<ul class="list-group">` + output + `</ul>`);
     }

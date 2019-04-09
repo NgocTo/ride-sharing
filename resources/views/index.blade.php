@@ -53,8 +53,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
                 @endif
             </form>
         <!-- display available rides -->
-        <div id="driversList" class="row p-0 mb-2"></div>
-        
+        <div id="driversList" class="p-0 mb-2"></div>
+
     </div>
 <div id="map" class="p-0 m-0"></div>
 @endsection
