@@ -73,12 +73,14 @@ class RideController extends Controller
         return $data; 
     }
 
-    public function rideinfo($id){
+    public function rideinfo($id, $origin, $destination){
         $currentRide = CurrentRide::find($id);
+        $currentRide->riderPos = $origin;
+        $currentRide->riderDes = $destination;
         $currentRide->driverId = $currentRide->userId;
         $currentRide->user = User::where('id', $currentRide->driverId)->first();
         $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
-        // var_dump($currentRide);
+        // var_dump($origin);
         return view('rides.rideinfo')->with('ride', $currentRide);
     }
 

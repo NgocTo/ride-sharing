@@ -6,6 +6,7 @@ var directionsService;
 var response;
 var pos;
 var currentAddress;
+var origin; var destination;
 function initMap() {
   
   directionsService = new google.maps.DirectionsService();
@@ -80,9 +81,9 @@ function geocodePosition(pos) {
 $('#submitTrip').on('click', function (e) {
   e.preventDefault();
   if ($('#pickUp').val()) {
-    var origin = $('#pickUp').val();
+    origin = $('#pickUp').val();
   } else {
-    var origin = currentAddress; 
+    origin = currentAddress; 
   }
   var datetime = $('#time').val();
   var date = moment(datetime).format('YYYY-MM-DD');
@@ -113,11 +114,11 @@ $('#submitTrip').on('click', function (e) {
 $('#checkRide').on('click', function (e) {
   e.preventDefault();
   if ($('#pickUp').val()) {
-    var origin = $('#pickUp').val();
+    origin = $('#pickUp').val();
   } else {
-    var origin = currentAddress; 
+    origin = currentAddress; 
   }
-  var destination = $('#dropOff').val();
+  destination = $('#dropOff').val();
   calcRoute(origin, destination);
   $.ajax({
     type: 'GET',
@@ -140,7 +141,7 @@ $('#checkRide').on('click', function (e) {
     <div class="col-2 text-green text-right">
       <p class="name mb-0">$${d.estimatedPrice}</p>
     </div>
-    <a href="ride/${d.id}" class="ride-list">See details</a>
+    <a href="ride/${d.id}/${origin}/${destination}" class="ride-list">See details</a>
 </li><hr/>`
       });
       $('#driversList').html(`<ul class="list-group">` + output + `</ul>`);

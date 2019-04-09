@@ -20,17 +20,17 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
     <div class="direction" class="p-0">
 
         <h2 class="bg-green text-white p-3 text-center m-0">Where are you going?</h2>
-            <form>
+            <form id="directionForm">
             @csrf
                 <div class="form-group mx-5 mt-4">
                     <label for="pickUp">Pickup</label>
-                    <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
+                    <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location" autocomplete="off">
                     <div class="prediction-container"><div class="predictions"></div></div>
                 </div>
 
                 <div class="form-group mx-5 mt-4 ">
                     <label for="dropOff">Destination</label>
-                    <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
+                    <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination" autocomplete="off">
                     <div class="prediction-container"><div class="predictions"></div></div>
                  </div>
 

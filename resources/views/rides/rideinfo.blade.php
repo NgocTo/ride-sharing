@@ -29,15 +29,15 @@
 <div>
     <div class="p-0">
         <form id="directionForm">
-        <!-- @csrf -->
+        @csrf
             <div class="form-group mx-5 mt-4">
                 <label for="pickUp">Pickup</label>
-                <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
+                <input type="text" class="form-control" id="pickUp" name="pickUp" value="{{ $ride->riderPos }}" placeholder="Your pickup location">
             </div>
 
             <div class="form-group mx-5 mt-4 ">
                 <label for="dropOff">Destination</label>
-                <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
+                <input type="text" class="form-control" id="dropOff" name="dropOff" value="{{ $ride->riderDes }}" placeholder="Your destination">
             </div>
 
             <div class="form-group mx-5 mt-4 ">
