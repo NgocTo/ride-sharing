@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group mx-5 mt-4 ">
-                <h2 class="text-center text-green" id="price">$5.55</h2>
+                <h2 class="text-center text-green" id="price">${{ $ride->estimatedPrice }}</h2>
             </div>
 
             <div class="form-group mx-5 mb-4">
