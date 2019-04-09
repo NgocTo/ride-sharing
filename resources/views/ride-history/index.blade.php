@@ -10,7 +10,7 @@ console.log("hi");
 </script>
 @endsection
 @section('content')
-<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="#"><i class="fas fa-chevron-left"></i></a>Ride History</h2>
+<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="{{ route('/') }}"><i class="fas fa-chevron-left"></i></a>Ride History</h2>
 
 <div class="container p-0 rhContainer">
     <div class="form-group row m-0">
