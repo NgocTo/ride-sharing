@@ -25,11 +25,22 @@ class RideController extends Controller
         $currentRide = new \stdClass();
         foreach ($currentRides as $currentRide) {
             $currentRide->user = User::where('id', $currentRide->driverId)->first();
-            $currentRide->driverInfo = DriverInfo::where('driverId', $currentRide->driverId)->first();
+            $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
             array_push($data, $currentRide);
         }
         return json_encode($data);
     }
+
+    public function rideinfo($id, $origin, $destination){
+        $currentRide = CurrentRide::find($id);
+        $currentRide->riderPos = $origin;
+        $currentRide->riderDes = $destination;
+        $currentRide->user = User::where('id', $currentRide->driverId)->first();
+        $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+        // var_dump($origin);
+        return view('rides.rideinfo')->with('ride', $currentRide);
+    }
+
     public function show($id)
     {
         //
@@ -72,15 +83,6 @@ class RideController extends Controller
         return $data; 
     }
 
-    public function rideinfo($id, $origin, $destination){
-        $currentRide = CurrentRide::find($id);
-        $currentRide->riderPos = $origin;
-        $currentRide->riderDes = $destination;
-        $currentRide->user = User::where('id', $currentRide->driverId)->first();
-        $currentRide->driverInfo = DriverInfo::where('driverId', $driverId)->first();
-        // var_dump($origin);
-        return view('rides.rideinfo')->with('ride', $currentRide);
-    }
 
     public function fillDropdown($terms)
     {

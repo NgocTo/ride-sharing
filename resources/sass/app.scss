@@ -125,6 +125,7 @@ p{
 }
 .prediction-container {
   position: relative;
+  z-index: 1;
 }
 .predictions {
   position: absolute !important;

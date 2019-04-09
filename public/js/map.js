@@ -127,7 +127,7 @@ $('#checkRide').on('click', function (e) {
       var output = '';
       console.log(data);
       $.each(JSON.parse(data), function(i, d) {
-        
+        console.log(d.driverInfo.driverRating);
         output += `
 <li class="list-group-item mx-4 p-0">
     <div class="col-3">
