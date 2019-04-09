@@ -3,25 +3,6 @@
 
 @endsection
 @section('content')
-
-@section('script')
-<script src="{{ asset('js/script.js') }}"></script>
-
-<script>
-console.log("ride-info page");
-
-// toggle rider and driver
-$("#driversList").hide();
-$( "#toggleBtn" ).click(function() {
-  $( "#driverDate" ).toggle();
-});
-$("#checkRide").click(function(){
-  $("#driversList").show();
-  $('.direction').css('height', '100%');
-})
-
-</script>
-
 <h2 class="text-white bg-green text-center m-0 p-4">Drivers</h2>
 
 <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">    
@@ -41,9 +22,8 @@ $("#checkRide").click(function(){
         <p><strong>Rules:</strong> Please do not have any cat hair on you. I am allergic.</p>
     </div>     
 </div>
-
+<!-- next section -->
 <hr>
-
 <h2 class="text-green bg-white text-center m-0 p-4">My Trip</h2>
 
 <div>
