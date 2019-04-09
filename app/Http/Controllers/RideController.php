@@ -19,7 +19,8 @@ class RideController extends Controller
             // var_dump($data);
             return view('rides.index')->with('currentRides', $data);
         }
-        // return currentRide row 
+        $data = DB::table('currentRides')->get();
+        return view('index')->with('currentRides', $data);
     }
     public function show($id)
     {
