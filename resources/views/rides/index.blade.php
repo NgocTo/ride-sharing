@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<h2 class="text-white bg-green text-center m-0 p-4">Rides</h2>
+<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="{{ route('/') }}"><i class="fas fa-chevron-left"></i></a>Rides</h2>
 
 <div class="container p-0">
     <div class="form-group row m-0">

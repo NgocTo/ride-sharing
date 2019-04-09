@@ -11,19 +11,7 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
 </script>
-<script>
 
-// toggle rider and driver
-$("#driversList").hide();
-$( "#toggleBtn" ).click(function() {
-  $( "#driverDate" ).toggle();
-});
-$("#checkRide").click(function(){
-  $("#driversList").show();
-  $('.direction').css('height', '100%');
-})
-
-</script>
 
 @endsection
 <div class="flash-message alert alert-success alert-block text-center fixed-top" role="alert"></div>
