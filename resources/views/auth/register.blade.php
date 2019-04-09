@@ -103,7 +103,7 @@
                                     {{ __('Register') }}
                                 </button>
                                 <p class="text-center">OR</p>
-                                <p class="text-center mb-4">Have an account?</p>
+                                <p class="text-center mb-4"><a href="{{ route('login') }}" >Have an account?</a></p>
                                 <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle text-bold">{{ __('Login') }}</a>
                             </div>
                         </div>

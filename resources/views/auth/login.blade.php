@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <p class=" text-center">OR</p>
-                <p class="text-center mb-4">Don't have an account?</p>
+                <p class="text-center mb-4"><a href="{{ route('register') }}" >Don't have an account?</a></p>
                 <a href="{{ route('register') }}" class="btn btn-block bg-green text-white align-middle text-bold">{{ __('Sign Up') }}</a>
             </div>
         </div>
