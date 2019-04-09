@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CurrentRide;
+use App\User;
+use App\DriverInfo;
 use Session;
 use Auth;
 use Illuminate\Support\Facades\DB;
@@ -10,17 +12,24 @@ use Illuminate\Http\Request;
 
 class RideController extends Controller
 {
-    public function index() 
+    public function index(Request $request) 
     {
-        if (Auth::check())
-        {
-            $userId = Auth::id();
-            $data = DB::table('currentRides')->where('userId', '=', $userId)->get();
-            // var_dump($data);
-            return view('rides.index')->with('currentRides', $data);
+        // if ( Auth::check() && (Auth::user()->ifDriver === 1) && ($request->session()->has('driverMode')))
+        // {
+        //     $userId = Auth::id();
+        //     $data = DB::table('currentRides')->where('userId', '=', $userId)->get();
+        //     return view('rides.index')->with('currentRides', $data);
+        // }
+        $currentRides = CurrentRide::take(5)->get();
+        $data = array();
+        $currentRide = new \stdClass();
+        foreach ($currentRides as $currentRide) {
+            $currentRide->driverId = $currentRide->userId;
+            $currentRide->user = User::where('id', $currentRide->driverId)->first();
+            $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+            array_push($data, $currentRide);
         }
-        $data = DB::table('currentRides')->get();
-        return view('index')->with('currentRides', $data);
+        return json_encode($data);
     }
     public function show($id)
     {

@@ -47,6 +47,7 @@ Route::get('/setDriverMode', 'UserController@setDriverMode');
 Route::get('/setRiderMode', 'UserController@setRiderMode');
 
 // RideController Routing
+Route::get('/getCurrentRides','RideController@index'); 
 Route::get('/rides/rideinfo','RideController@rideinfo'); 
 Route::get('/rides/rideconfirmation', function() {
     return view('rides.rideconfirmation');

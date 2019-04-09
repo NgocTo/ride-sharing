@@ -119,6 +119,31 @@ $('#checkRide').on('click', function (e) {
   }
   var destination = $('#dropOff').val();
   calcRoute(origin, destination);
+  $.ajax({
+    type: 'GET',
+    url: '/getCurrentRides',
+    success: function(data) {
+      var output = '';
+      console.log(data);
+      $.each(JSON.parse(data), function(i, d) {
+        
+        output += `
+  <li class="list-group-item mx-4 p-0">
+    <div class="col-3">
+      <div class="img-containerSmall"><img src="img/default-profile.jpg"></div>
+    </div>
+    <div class="col-6">
+      <p class="name mb-0">${d.startPos}</p>
+      <p class="name mb-0">${d.user.firstName} ${d.user.lastName}</p>
+      <p class="ratingSmall">${d.driverInfo.driverRating}</p>
+      <i class="fas fa-star starSmall"></i>
+      <p><strong>Rules: </strong>${d.driverInfo.driverRules}</p>
+    </div>
+  </li>`
+      });
+      $('#driversList').html(`<ul class="list-group">` + output + `</ul>`);
+    }
+  });
 });
 
 

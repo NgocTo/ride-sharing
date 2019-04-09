@@ -7,10 +7,10 @@
 <!-- google map -->
 @section('script')
 <script src="{{ asset('js/script.js') }}"></script>
-<!-- <script src="{{ asset('js/map.js') }}"></script>
+<script src="{{ asset('js/map.js') }}"></script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo&callback=initMap">
-</script> -->
+</script>
 <script>
 
 // toggle rider and driver
@@ -27,7 +27,6 @@ $("#checkRide").click(function(){
 
 @endsection
 <div class="flash-message alert alert-success alert-block text-center fixed-top" role="alert"></div>
-
 
 
     <div class="direction" class="p-0">
@@ -66,58 +65,7 @@ $("#checkRide").click(function(){
                 @endif
             </form>
   <!-- display available rides -->
-  <!-- list -->
-  <div id="driversList" class="row p-0 mb-2">
-<ul class="list-group">
-    <li class="list-group-item mx-4 p-0">
-        <div class="col-3">
-            <div class="img-containerSmall"><img src="{{ asset('img/man1.jpg') }}"></div>
-            
-        </div>
-
-        <div class="col-6">
-                <p class="name mb-0">David Smithe</p>
-                <p class="ratingSmall">8.6</p>
-                <i class="fas fa-star starSmall"></i>
-                <p><strong>Rules: </strong>Please do not have any cat hair on you, I am allergic.</p>
-        </div>    
-            <div class="col-3">
-                <p class="text-green greenPrice">$5.55</p>
-                <p>5 minutes away</p>
-            </div>
-    </div>
-    </li>
-</ul>    
-    
+  <div id="driversList" class="row p-0 mb-2"></div>
 </div>
-
-
-<!-- old one commented out, just in case -->
-<!-- <div id="driversList" class="row p-0 mx-2 mb-2">
-
-  
-        <div class="col-3">
-            <div class="img-containerSmall"><img src="{{ asset('img/man1.jpg') }}"></div>
-            
-        </div>
-
-        <div class="col-6">
-                <p class="name mb-0">David Smithe</p>
-                <p class="ratingSmall">8.6</p>
-                <i class="fas fa-star starSmall"></i>
-                <p><strong>Rules: </strong>Please do not have any cat hair on you, I am allergic.</p>
-        </div>    
-            <div class="col-3">
-                <p class="text-green greenPrice">$5.55</p>
-                <p>5 minutes away</p>
-            </div>
-    </div>
- 
-    
-</div> -->
-
-    <div id="map" class="p-0 m-0"></div>
-
-<div id="directionResponse"></div>
-
+<div id="map" class="p-0 m-0"></div>
 @endsection
