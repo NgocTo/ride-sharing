@@ -37,7 +37,6 @@
             <h2 class="font-weight-bold h4">
                 <a href="{{ route( 'user.index' ) }}">{{$user->firstName}} {{$user->lastName}}</a>
             </h2>
-
             
             <div class="switch-container">
             <form>

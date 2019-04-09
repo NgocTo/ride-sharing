@@ -78,8 +78,10 @@ $( "#upcoming" ).click(function() {
         
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
+        
         <p class="rating">9.1</p>
         <i class="fas fa-star"></i>
+
     </div>
 
     <div class="col-8">

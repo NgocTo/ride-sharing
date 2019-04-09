@@ -28,7 +28,14 @@ html {
   border-bottom: 1px solid $light;
   border-radius: 5px;
 }
-
+#settings{
+  li{
+    i{
+      color:$blue;
+      
+    }
+  }
+}
 .name{
   font-size:20px;
   font-weight:500;
@@ -50,7 +57,7 @@ p{
   display: inline;
   font-size:30px;
   font-weight:500;
-  margin:10px;
+  // margin:10px;
   // width:40px;
   position:relative;
 }
@@ -182,7 +189,7 @@ p{
 // SWITCH
 
 .switch-container{
-  position: absolute;
+  // position: absolute;
   right:0;
   margin: 0.5rem;
 }

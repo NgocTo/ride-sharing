@@ -170,10 +170,6 @@ element {
   margin: auto;
 }
 
-.testi_slider .testi_item {
-  text-align: center;
-}
-
 .testi_item {
   margin-bottom: 50px;
 }
@@ -10965,6 +10961,10 @@ html {
   border-radius: 5px;
 }
 
+#settings li i {
+  color: #1370B0;
+}
+
 .name {
   font-size: 20px;
   font-weight: 500;
@@ -10991,7 +10991,6 @@ p {
   display: inline;
   font-size: 30px;
   font-weight: 500;
-  margin: 10px;
   position: relative;
 }
 
@@ -11136,7 +11135,6 @@ p {
 }
 
 .switch-container {
-  position: absolute;
   right: 0;
   margin: 0.5rem;
 }
