@@ -128,7 +128,7 @@ $('#checkRide').on('click', function (e) {
       $.each(JSON.parse(data), function(i, d) {
         
         output += `
-  <li class="list-group-item mx-4 p-0">
+<li class="list-group-item mx-4 p-0">
     <div class="col-3">
       <div class="img-containerSmall text-center"><img src="img/default-profile.jpg" alt="default profile"></div>
     </div>
@@ -140,7 +140,8 @@ $('#checkRide').on('click', function (e) {
     <div class="col-2 text-green text-right">
       <p class="name mb-0">$${d.estimatedPrice}</p>
     </div>
-  </li><hr/>`
+    <a href="ride/${d.id}" class="ride-list">See details</a>
+</li><hr/>`
       });
       $('#driversList').html(`<ul class="list-group">` + output + `</ul>`);
     }

@@ -11197,6 +11197,15 @@ input:checked + .slider:before {
   transform: translateX(80px);
 }
 
+.ride-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
 /*------ ADDED CSS ---------*/
 
 .slider:after {

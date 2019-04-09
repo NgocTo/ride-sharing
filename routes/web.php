@@ -50,7 +50,7 @@ Route::get('/setRiderMode', 'UserController@setRiderMode');
 Route::get('/getCurrentRides','RideController@index'); 
 // Route::get('/rides/rideinfo','RideController@rideinfo'); 
 // Route::get('/rides/rideconfirmation', function() {
-Route::get('/ride','RideController@rideinfo'); 
+Route::get('/ride/{id}','RideController@rideinfo'); 
 Route::get('/rideconfirmation', function() {
     return view('rides.rideconfirmation');
 }); 

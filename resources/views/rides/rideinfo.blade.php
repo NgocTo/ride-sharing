@@ -12,7 +12,7 @@
            <i class="fas fa-star"></i>
     </div>
     <div class="col-8">
-        <p><span class="name mb-2">David Smithe</span> is going</p>
+        <p><span class="name mb-2">{{ $ride->user->firstName }} {{ $ride->user->lastName }}</span> is going</p>
         <p><strong>From:</strong> Sheridan College Trafalgar campus</p>
         <p><strong>To:</strong> Square One Go bus terminal</p>
         <p><strong>Date:</strong> April 5 2019</p>
