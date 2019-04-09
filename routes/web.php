@@ -32,7 +32,7 @@ Route::get('/rides', function () { //to be removed
     return view('rides.index');
 });
 Route::get('/settings', function () {
-    return view('ride-history.settings');
+    return view('user.settings');
 });
 
 // Test Routing

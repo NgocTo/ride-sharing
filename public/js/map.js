@@ -183,7 +183,7 @@ $( document ).ready(function(){
 
 function hideFlashMessage(message) {
   setTimeout(function() {
-    message.hide(15000);
+    message.hide(500);
     message.html('');
   }, 5000);
 }

@@ -73,7 +73,16 @@ class RideController extends Controller
         return $data; 
     }
 
-    public function rideinfo(){
+    public function rideinfo(Request $request){
+        // $currentRides = CurrentRide::take(5)->get();
+        // $data = array();
+        // $currentRide = new \stdClass();
+        // foreach ($currentRides as $currentRide) {
+        //     $currentRide->driverId = $currentRide->userId;
+        //     $currentRide->user = User::where('id', $currentRide->driverId)->first();
+        //     $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+        //     array_push($data, $currentRide);
+        // }
         return view('rides.rideinfo');
     }
 

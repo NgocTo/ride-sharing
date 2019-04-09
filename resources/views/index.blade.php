@@ -34,7 +34,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
                     <div class="prediction-container"><div class="predictions"></div></div>
                  </div>
 
-                @if (Auth::check() && ($user->ifDriver === 1) && Session::has('driverMode'))
+                @if (Auth::check() && Session::has('driverMode'))
                 <div class="form-group mx-5 mt-4 ">
                     <label for="time">When are you going?</label>
                     <input type="datetime-local" class="form-control" id="time" name="time">
