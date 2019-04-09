@@ -11100,6 +11100,7 @@ p {
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-height: 90%;
 }
 
 .owl-dots {
@@ -11129,7 +11130,7 @@ p {
   background-color: #15AA35;
 }
 
-#driversList {
+#driversList ul {
   overflow-y: scroll;
   height: 100%;
 }
@@ -11237,6 +11238,12 @@ input:checked + .slider:after {
 }
 
 /*--------- END --------*/
+
+@media (min-width: 768px) {
+  .direction {
+    max-height: 90%;
+  }
+}
 
 @media (min-width: 992px) {
   .direction {
