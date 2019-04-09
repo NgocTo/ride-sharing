@@ -31,17 +31,18 @@
 
 <div>
     <div class="p-0">
-        <form action="{{url('ride/updateCurrentRide/$ride->id')}}" method="post" id="directionForm">
+        <form action="{{url('ride/updateCurrentRide/' . $ride->id)}}" method="post" id="proposeForm">
         @csrf
         @method('PATCH')
+            <input type="hidden" value="{{$ride->riderId}}" name="riderId" id="riderId" >
             <div class="form-group row mx-5 mt-4">
                 <label for="pickUp" class="col-lg-1 offset-lg-4">Pickup</label>
-                <input type="text" class="form-control col-lg-3" id="pickUp" name="pickUp" value="{{ $ride->riderPos }}" placeholder="Your pickup location">
+                <input type="text" class="form-control col-lg-3" id="v" name="startPos" value="{{ $ride->riderPos }}" placeholder="Your pickup location">
             </div>
 
             <div class="form-group row mx-5 mt-4 ">
                 <label for="dropOff" class="col-lg-1 offset-lg-4">Destination</label>
-                <input type="text" class="form-control col-lg-3" id="dropOff" name="dropOff" value="{{ $ride->riderDes }}" placeholder="Your destination">
+                <input type="text" class="form-control col-lg-3" id="endPos" name="endPos" value="{{ $ride->riderDes }}" placeholder="Your destination">
             </div>
 
             <div class="form-group row mx-5 mt-4">
@@ -50,7 +51,7 @@
 
             <div class="form-group row mx-5 mb-4">
                 <button type="submit" id="propose" class="text-bold btn btn-primary text-center btn-block col-lg-4 offset-lg-4">
-                    {{ __('Propose') }}
+                    {{ __('Confirm') }}
                 </button>
             </div>
         </form>

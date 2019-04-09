@@ -42,3 +42,10 @@ $(document).ready(function () {
     }
   });
 });
+
+function hideFlashMessage(message) {
+  setTimeout(function() {
+    message.hide(500);
+    message.html('');
+  }, 5000);
+}

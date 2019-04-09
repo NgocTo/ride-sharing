@@ -2,28 +2,20 @@
 @section('sidebar')
 
 @endsection
+@section('script')
+<script src="{{ asset('js/script.js') }}"></script>
+@endsection
 @section('content')
 <h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="{{ route('/') }}"><i class="fas fa-chevron-left"></i></a>Your Trip</h2>
 
-<div class="col-12">
-    <h5 class="text-center p-4"><strong>David Smithe has agreed to your proposal! Please confirm that all information is correct.</strong></h5>
+<div>
+    
 </div>
 <hr>
 
 <!-- Pull in ride info from the database -->
-<div class="p-0">
-    <div class="form-group mx-5 mt-4">
-        <label for="pickUp">Pickup Location</label>
-        <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
-        <div class="prediction-container"><div class="predictions"></div></div>
-    </div>
-
-    <div class="form-group mx-5 mt-4 ">
-        <label for="dropOff">Drop Off Location</label>
-        <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
-        <div class="prediction-container"><div class="predictions"></div></div>
-    </div>
-</div>
+<p for="pickUp">Pickup Location</p>
+<p for="dropOff">Drop Off Location</p>
 
 <!-- Horizontal Row Break -->
 <hr> 
@@ -36,14 +28,14 @@
            <i class="fas fa-star"></i>
     </div>
     <div class="col-8">
-        <p><span class="name mb-2">David Smithe</span> is going</p>
-        <p><strong>From:</strong> Sheridan College Trafalgar campus</p>
-        <p><strong>To:</strong> Square One Go bus terminal</p>
-        <p><strong>Date:</strong> April 5 2019</p>
-        <p><strong>Pickup time:</strong> 1:15pm</p>
+        <p><span class="name mb-2">{{ $ride->user->firstName }} {{ $ride->user->lastName }}</span> is going</p>
+        <p><strong>From:</strong> {{ $ride->startPos }} </p>
+        <p><strong>To:</strong> {{ $ride->endPos }}</p>
+        <p><strong>Date:</strong> {{ $ride->date }} </p>
+        <p><strong>Pickup time:</strong> {{ $ride->startTime }} </p>
     </div>   
     <div class="col-12">
-        <p><strong>Rules:</strong> Please do not have any cat hair on you. I am allergic.</p>
+        <p><strong>Rules:</strong>${{ $ride->estimatedPrice }}</p>
     </div>     
 </div>
 

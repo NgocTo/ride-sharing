@@ -15,7 +15,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbR
 
 @endsection
 <div class="flash-message alert alert-success alert-block text-center fixed-top" role="alert"></div>
-
+@if( Session::has( 'success' ))
+    @component('alert')
+    @endcomponent
+@endif
 
     <div class="direction" class="p-0">
 

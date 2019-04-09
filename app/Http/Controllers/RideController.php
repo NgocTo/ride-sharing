@@ -35,15 +35,20 @@ class RideController extends Controller
         $currentRide = CurrentRide::find($id);
         $currentRide->riderPos = $origin;
         $currentRide->riderDes = $destination;
+        $currentRide->riderId = Auth::id();
         $currentRide->user = User::where('id', $currentRide->driverId)->first();
         $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
-        // var_dump($origin);
         return view('rides.rideinfo')->with('ride', $currentRide);
     }
 
-    public function show($id)
-    {
-        //
+    public function updateCurrentRide($id, Request $request) {
+        $currentRide = CurrentRide::findOrFail($id);
+        $currentRide->update($request->all());
+        $currentRide->user = User::where('id', $currentRide->driverId)->first();
+        $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+        // redirect
+        Session::flash('success', $currentRide->user->firstName . ' ' . $currentRide->user->lastName . ' is on the way! Check out your trip details in your ride history.');
+        return view('index');
     }
     /**
      * Store a newly created resource in storage.
@@ -70,8 +75,6 @@ class RideController extends Controller
                 $currentRide->completed = 0;
                 
                 $currentRide->save();
-                // redirect
-                // Session::flash('message', '<strong>Your trip has been successfully planned!</strong> Check out your trip details in your ride history.');
                 return redirect('index');
             }
         }
