@@ -47,15 +47,15 @@ Route::get('/setDriverMode', 'UserController@setDriverMode');
 Route::get('/setRiderMode', 'UserController@setRiderMode');
 
 // RideController Routing
+Route::get('/rides/rideinfo','RideController@rideinfo'); 
+Route::get('/rides/rideconfirmation', function() {
+    return view('rides.rideconfirmation');
+}); 
 Route::get('/rides', 'RideController@index'); //localhost:8000/rides/
 Route::post('/rides/store', 'RideController@store');
 Route::get('/rides/{terms}', 'RideController@fillDropdown');
 Route::get('/rides/{origin}/{destination}', 'RideController@getDirection');
 
-Route::get('/rides/rideinfo', function() {
-    return view('rides.rideinfo');
-}); 
 
-Route::get('/rides/rideconfirmation', function() {
-    return view('rides.rideconfirmation');
-}); 
+
+

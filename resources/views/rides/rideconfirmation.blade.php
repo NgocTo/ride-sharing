@@ -6,19 +6,20 @@
 <h2 class="text-white bg-green text-center m-0 p-4">Your Trip</h2>
 
 <div class="col-12">
-    <p><strong>David Smithe has agreed to your proposal! Please confirm that all information is correct.</strong></p>
+    <h5 class="text-center p-4"><strong>David Smithe has agreed to your proposal! Please confirm that all information is correct.</strong></h5>
 </div>
+<hr>
 
 <!-- Pull in ride info from the database -->
-<div class="direction" class="p-0">
+<div class="p-0">
     <div class="form-group mx-5 mt-4">
-        <label for="pickUp">Pickup</label>
+        <label for="pickUp">Pickup Location</label>
         <input type="text" class="form-control" id="pickUp" name="pickUp" placeholder="Your pickup location">
         <div class="prediction-container"><div class="predictions"></div></div>
     </div>
 
     <div class="form-group mx-5 mt-4 ">
-        <label for="dropOff">Destination</label>
+        <label for="dropOff">Drop Off Location</label>
         <input type="text" class="form-control" id="dropOff" name="dropOff" placeholder="Your destination">
         <div class="prediction-container"><div class="predictions"></div></div>
     </div>
@@ -28,7 +29,7 @@
 <hr> 
 <h2 class="text-green bg-white text-center m-0 p-4">Driver Info</h2>
 
-<div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">    
+<div class="form-group row m-0 p-4">    
     <div class="col-4">
         <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
            <p class="rating">8.9</p>
@@ -47,7 +48,7 @@
 </div>
 
 <div class="form-group mx-5 mt-4 ">
-    <label for="price">$5.55</label>
+    <h2 class="text-center text-green">$5.55</h2>
 </div>
 
 <div class="form-group mx-5 mb-4">

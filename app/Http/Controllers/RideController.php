@@ -62,6 +62,11 @@ class RideController extends Controller
         $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
         return $data; 
     }
+
+    public function rideinfo(){
+        return view('rides.rideinfo');
+    }
+
     public function fillDropdown($terms)
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
