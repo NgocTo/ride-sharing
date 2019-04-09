@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/ride-history', function () {
     return view('ride-history.index');
 });
-Route::get('/rides', function () {
+Route::get('/rides', function () { //to be removed
     return view('rides.index');
 });
 Route::get('/settings', function () {
@@ -47,8 +47,8 @@ Route::get('/setDriverMode', 'UserController@setDriverMode');
 Route::get('/setRiderMode', 'UserController@setRiderMode');
 
 // RideController Routing
-Route::get('/rides/rideinfo','RideController@rideinfo'); 
-Route::get('/rides/rideconfirmation', function() {
+Route::get('/ride','RideController@rideinfo'); 
+Route::get('/rideconfirmation', function() {
     return view('rides.rideconfirmation');
 }); 
 Route::get('/rides', 'RideController@index'); //localhost:8000/rides/
