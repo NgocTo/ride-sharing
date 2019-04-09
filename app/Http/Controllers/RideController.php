@@ -24,9 +24,8 @@ class RideController extends Controller
         $data = array();
         $currentRide = new \stdClass();
         foreach ($currentRides as $currentRide) {
-            $currentRide->driverId = $currentRide->userId;
             $currentRide->user = User::where('id', $currentRide->driverId)->first();
-            $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+            $currentRide->driverInfo = DriverInfo::where('driverId', $currentRide->driverId)->first();
             array_push($data, $currentRide);
         }
         return json_encode($data);
@@ -47,7 +46,7 @@ class RideController extends Controller
         {
             if (Auth::check()) {
                 $currentRide = new CurrentRide;
-                $currentRide->userId = Auth::user()->id;
+                $currentRide->driverId = Auth::user()->id;
                 $currentRide->startPos = $request->input('origin');
                 $currentRide->endPos = $request->input('destination');
                 $currentRide->startTime = $request->input('time');
@@ -77,9 +76,8 @@ class RideController extends Controller
         $currentRide = CurrentRide::find($id);
         $currentRide->riderPos = $origin;
         $currentRide->riderDes = $destination;
-        $currentRide->driverId = $currentRide->userId;
         $currentRide->user = User::where('id', $currentRide->driverId)->first();
-        $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
+        $currentRide->driverInfo = DriverInfo::where('driverId', $driverId)->first();
         // var_dump($origin);
         return view('rides.rideinfo')->with('ride', $currentRide);
     }
