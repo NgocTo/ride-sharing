@@ -185,20 +185,12 @@ p{
 .flash-message {
   display: none;
 }
-#driversList{
-  ul{
-  
-    li{
-      border:none;
-      display:inherit;
-     }
-  }
-}
+
 // SWITCH
 
 .switch-container{
-  position: relative;
-  right:10px;
+  // position: absolute;
+  right:0;
   margin: 0.5rem;
 }
 .switch {

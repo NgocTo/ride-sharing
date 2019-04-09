@@ -38,11 +38,6 @@
 </div>
 @endforeach  
 
-
-
-
-
-
 <!-- 
      <div class="btn-group btn-group-toggle col" data-toggle="buttons">
             <label class="btn btn-primary active p-4">

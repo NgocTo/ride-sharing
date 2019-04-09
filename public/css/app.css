@@ -11134,14 +11134,8 @@ p {
   display: none;
 }
 
-#driversList ul li {
-  border: none;
-  display: inherit;
-}
-
 .switch-container {
-  position: relative;
-  right: 10px;
+  right: 0;
   margin: 0.5rem;
 }
 

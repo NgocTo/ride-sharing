@@ -84,7 +84,7 @@
         
         @else 
         <a href="javascript:void(0)" class="closebtn">&times;</a>
-        <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-4 lead">
+        <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
