@@ -156,6 +156,7 @@ p{
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-height:90%;
 }
 
 // CAROUSEL DOTS
@@ -183,10 +184,10 @@ p{
   background-color:$green;
 }
 #driversList{
-  overflow-y: scroll;
-  height:100%;
+ 
   ul{
-  
+    overflow-y: scroll;
+    max-height: 30rem;
     li{
       border:none;
       display:inherit;
