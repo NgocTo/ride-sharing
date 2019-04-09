@@ -7,19 +7,19 @@
 
 <div class="form-group row m-0 p-4 mb-3">    
     <div class="col-4">
-        <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
-           <p class="rating">8.9</p>
+        <div class="img-container"><img src="{{ asset('img/default-profile.jpg') }}" alt="Avatar"></div>
+           <p class="rating">{{ $ride->driverInfo->driverRating }}</p>
            <i class="fas fa-star"></i>
     </div>
     <div class="col-8">
         <p><span class="name mb-2">{{ $ride->user->firstName }} {{ $ride->user->lastName }}</span> is going</p>
-        <p><strong>From:</strong> Sheridan College Trafalgar campus</p>
-        <p><strong>To:</strong> Square One Go bus terminal</p>
-        <p><strong>Date:</strong> April 5 2019</p>
-        <p><strong>Pickup time:</strong> 1:15pm</p>
+        <p><strong>From:</strong> {{ $ride->startPos }} </p>
+        <p><strong>To:</strong> {{ $ride->endPos }}</p>
+        <p><strong>Date:</strong> {{ $ride->date }} </p>
+        <p><strong>Pickup time:</strong> {{ $ride->startTime }} </p>
     </div>   
     <div class="col-12">
-        <p><strong>Rules:</strong> Please do not have any cat hair on you. I am allergic.</p>
+        <p><strong>Rules:</strong> {{ $ride->driverInfo->driverRules }} </p>
     </div>     
 </div>
 <!-- next section -->
