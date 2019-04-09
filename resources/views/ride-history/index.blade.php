@@ -6,16 +6,7 @@
 <script src="{{ asset('js/script.js') }}"></script>
 <script>
 console.log("hi");
-$("#upcomingRides").hide();
 
-$( "#upcomingBtn" ).click(function() {
- $( "#pastRides" ).hide();
- $( "#upcomingRides" ).show(); 
-})
- $( "#pastBtn" ).click(function() {
- $( "#pastRides" ).show();
- $( "#upcomingRides" ).hide();
- })
 </script>
 @endsection
 @section('content')
