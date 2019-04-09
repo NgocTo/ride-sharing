@@ -1,26 +1,26 @@
 @extends('layouts.main')
 @section('sidebar')
-
+<script src="{{ asset('js/script.js') }}"></script>
 @endsection
 @section('content')
 @section('script')
-<script src="{{ asset('js/script.js') }}"></script>
+
 <script>
 console.log("hi");
 $(".rhContainer").hide();
-$( "#past" ).click(function() {
+// $( "#past" ).click(function() {
   
-  $( "#pastRides" ).show();
-  $( "#upcomingRides" ).hide();
-});
-$( "#upcoming" ).click(function() {
- $( "#pastRides" ).show(); 
- $( "#upcomingRides" ).hide();
+//   $( "#pastRides" ).show();
+//   $( "#upcomingRides" ).hide();
+// });
+// $( "#upcoming" ).click(function() {
+//  $( "#pastRides" ).show(); 
+//  $( "#upcomingRides" ).hide();
   
-});
+// });
 
 </script>
-<h2 class="text-white bg-green text-center m-0 p-4">Ride History</h2>
+<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="#"><i class="fas fa-chevron-left"></i></a>Ride History</h2>
 
 <div class="container p-0 rhContainer">
     <div class="form-group row m-0">

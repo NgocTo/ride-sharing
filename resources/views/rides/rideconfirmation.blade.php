@@ -3,7 +3,7 @@
 
 @endsection
 @section('content')
-<h2 class="text-white bg-green text-center m-0 p-4">Your Trip</h2>
+<h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="#"><i class="fas fa-chevron-left"></i></a>Your Trip</h2>
 
 <div class="col-12">
     <h5 class="text-center p-4"><strong>David Smithe has agreed to your proposal! Please confirm that all information is correct.</strong></h5>
