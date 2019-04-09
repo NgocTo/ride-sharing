@@ -31,41 +31,6 @@
         <li class="list-group-item"><a href="#"><i class="mr-3 fas fa-lock"></i>Privacy</a></li>
         <li class="list-group-item"><a href="#"><i class="mr-3 fas fa-question-circle"></i>Help</a></li>
     </ul>
-<!-- </div>      -->
       
 </div>
-
-<!-- <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
-        
-    <div class="col-4">
-        <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
-        <p class="rating">9.1</p>
-        <i class="fas fa-star"></i>
-    </div>
-
-    <div class="col-8">
-            <p class="name mb-2">Allison Chung</p>
-            <p><strong>Pickup: </strong>Sheridan College Trafalgar campus</p>
-            <p><strong>Drop off: </strong>Square One Go bus terminal</p>
-            <p><strong>Date: </strong>April 5 2019</p>
-            <p><strong>Pickup time: </strong>1:15pm</p>
-    </div>      -->
-      
 </div>
-
-
-
-
-
-
-<!-- 
-     <div class="btn-group btn-group-toggle col" data-toggle="buttons">
-            <label class="btn btn-primary active p-4">
-                <input type="radio" name="options" id="past" autocomplete="off"checked> Past
-            </label>
-            <label class="btn btn-primary p-4">
-                <input type="radio" name="options" id="upcoming" autocomplete="off"> Upcoming
-            </label>
-            
-        </div>
- -->
