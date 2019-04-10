@@ -20,15 +20,21 @@ $(document).ready(function () {
     $('#ifDriver').click(function(){
         if ( $('#ifDriver').prop('checked') == true ){
             // $('#register-heading').html('Create an account');
-            $('#register-submit').html('Next');
-            $('#register-submit').click(function(){
+            $('#register-submit').html(`
+            <a href="#" class="btn btn-primary text-center btn-block text-bold mb-3">Next</a>
+            `);
+            $('#register-submit').click(function(e){
+                e.preventDefault;
                 $('.testi_slider').trigger('next.owl.carousel');
             })
         } else if ( $('#ifDriver').prop('checked') == false ) {
-            $('#register-submit').html('Register');
+            $('#register-submit').html(`
+            <button type="submit" class="btn btn-primary text-center btn-block text-bold mb-3">Register</button>
+            `);
         }
     });
-    $('#driver-submit').click(function(){
+    $('#driver-submit').click(function(e){
+        e.preventDefault;
         $('.testi_slider').trigger('next.owl.carousel');
     })
 

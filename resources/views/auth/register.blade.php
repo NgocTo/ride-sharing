@@ -100,9 +100,9 @@
 
                         <div class="form-group row mb-0">
                         <div class="col-md-4 offset-md-4 mb-3">
-                                <button type="submit" class="btn btn-primary text-center btn-block text-bold mb-3" id="register-submit">
-                                    {{ __('Register') }}
-                                </button>
+                            <div id="register-submit">
+                                <button type="submit" class="btn btn-primary text-center btn-block text-bold mb-3">Register</button>
+                            </div>
                                 <p class="text-center">OR</p>
                                 <p class="text-center mb-4"><a href="{{ route('login') }}" >Have an account?</a></p>
                                 <a href="{{ route('login') }}" class="btn btn-block signup bg-green text-white align-middle text-bold">{{ __('Login') }}</a>
@@ -170,9 +170,8 @@
 
                         <div class="row mb-0">
                             <div class="col-md-4 offset-md-4 mt-3">
-                                <button type="submit" class="text-bold btn btn-primary text-center btn-block" id="driver-submit">
-                                    {{ __('Car info') }}
-                                </button>
+                                <a href="#" class="btn btn-primary text-center btn-block text-bold mb-3" id="driver-submit">Car info</a>
+                                
                                 <p class="text-center p-3 mt-4"><a href="#" class="register-back">Back</a>   |   <a href="#">Skip this process</a></p>
                             </div>
                         </div>
