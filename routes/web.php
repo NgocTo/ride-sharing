@@ -31,10 +31,10 @@ Route::get('/ride-history', function () {
 Route::get('/rides', function () { //to be removed
     return view('rides.index');
 });
-Route::get('/settings', function () {
-    return view('user.settings');
-});
-
+// Route::get('/settings', function () {
+//     return view('user.settings');
+// });
+Route::get('/settings', 'UserController@getAll');
 // UserController Routing
 Route::resource('/user', 'UserController');
 

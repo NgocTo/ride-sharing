@@ -36,6 +36,15 @@ class UserController extends Controller
             return view('user.index');
         }
     }
+    public function getAll()
+    {
+        $user = User::findOrFail(Auth::user()->id);
+        if (($user->ifDriver) === 1) {
+            $user->driverInfo = DriverInfo::where('userId', $user->id)->first();
+            $user->vehicleInfo = VehicleInfo::where('userId', $user->id)->first();
+        }
+        return view('user.settings')->with('user', $user);
+    }
     public function fillDropdown($terms)
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';

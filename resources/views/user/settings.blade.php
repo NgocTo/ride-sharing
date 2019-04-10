@@ -14,9 +14,31 @@
         </div>
     
         <div class="col-7">
-            <p class="name mb-2">John Doe<i class="fas fa-edit ml-3"></i></p>
-                <p>Toronto, ON</p>
-        </div>     
+        
+            <h3 class="h4">General</h3> 
+                <p class="name mb-2">{{$user->firstName}} {{$user->lastName}}<i class="fas fa-edit ml-3"></i></p>
+                <p>Email: {{$user->email}}</p>
+                <p>Phone: {{$user->phone}}</p>
+                <p>Rules: {{$user->keyword}}</p>
+            <h3 class="h4">Driver Information</h3> 
+            @if (isset($user->driverInfo))
+                <p>Date of birth: {{$user->driverInfo->dob}}</p>
+                <p>My licence Number: {{$user->driverInfo->licenceNumber}}</p>
+                <p>Expiry Date: {{$user->driverInfo->expiryDate}}</p>
+                <p>Province: {{$user->driverInfo->province}}</p>
+                <p>My rating: {{$user->driverInfo->driverRating}}</p>
+                <p>My rules: {{$user->driverInfo->driverRules}}</p>
+            @endif
+            <h3 class="h4">Car Information</h3> 
+            @if (isset($user->vehicleInfo))
+                <p>Model: {{$user->vehicleInfo->model}}</p>
+                <p>Car year: {{$user->vehicleInfo->carYear}}</p>
+                <p>Make: {{$user->vehicleInfo->make}}</p>
+                <p>Kilometers: {{$user->vehicleInfo->kilometers}}</p>
+                <p>Color: {{$user->vehicleInfo->color}}</p>
+                <p>Licence Plate: {{$user->vehicleInfo->licencePlate}}</p>
+            @endif
+        </div>
             
 </div>
     
