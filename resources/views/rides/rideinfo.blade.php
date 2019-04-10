@@ -2,6 +2,9 @@
 @section('sidebar')
 
 @endsection
+@section('script')
+<script src="{{ asset('js/script.js') }}"></script>
+@endsection
 @section('content')
 <h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="{{ route('/') }}"><i class="fas fa-chevron-left"></i></a>Drivers</h2>
 
@@ -61,6 +64,7 @@
                     {{ __('Login to continue') }}
                 </a>
             </div>
+            <p class="text-center">Or sign up <a href="{{ route('register') }}"> here</a><p>
             @endif
         </form>
     </div>
