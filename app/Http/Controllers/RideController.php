@@ -14,12 +14,6 @@ class RideController extends Controller
 {
     public function index(Request $request) 
     {
-        // if ( Auth::check() && (Auth::user()->ifDriver === 1) && ($request->session()->has('driverMode')))
-        // {
-        //     $userId = Auth::id();
-        //     $data = DB::table('currentRides')->where('userId', '=', $userId)->get();
-        //     return view('rides.index')->with('currentRides', $data);
-        // }
         $currentRides = CurrentRide::take(5)->get();
         $data = array();
         $currentRide = new \stdClass();
@@ -48,7 +42,7 @@ class RideController extends Controller
         $currentRide->driverInfo = DriverInfo::where('userId', $currentRide->driverId)->first();
         // redirect
         Session::flash('success', $currentRide->user->firstName . ' ' . $currentRide->user->lastName . ' is on the way! Check out your trip details in your ride history.');
-        return view('index');
+        return redirect('/');
     }
     /**
      * Store a newly created resource in storage.
@@ -75,7 +69,7 @@ class RideController extends Controller
                 $currentRide->completed = 0;
                 
                 $currentRide->save();
-                return redirect('index');
+                return redirect('/');
             }
         }
     }

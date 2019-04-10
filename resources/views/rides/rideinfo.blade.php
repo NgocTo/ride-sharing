@@ -31,6 +31,7 @@
 
 <div>
     <div class="p-0">
+
         <form action="{{url('ride/updateCurrentRide/' . $ride->id)}}" method="post" id="proposeForm">
         @csrf
         @method('PATCH')
@@ -48,12 +49,19 @@
             <div class="form-group row mx-5 mt-4">
                 <p class="h2 text-center text-green col-lg-4 offset-lg-4" id="price">${{ $ride->estimatedPrice }}</p>
             </div>
-
+            @if (Auth::check())
             <div class="form-group row mx-5 mb-4">
                 <button type="submit" id="propose" class="text-bold btn btn-primary text-center btn-block col-lg-4 offset-lg-4">
                     {{ __('Confirm') }}
                 </button>
             </div>
+            @else
+            <div class="form-group row mx-5 mb-4">
+                <a class="text-bold btn btn-primary text-center btn-block col-lg-4 offset-lg-4 text-white" href="{{ route('login') }}">
+                    {{ __('Login to continue') }}
+                </a>
+            </div>
+            @endif
         </form>
     </div>
 </div>

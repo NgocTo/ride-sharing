@@ -51,10 +51,6 @@
             </form>
             </div>
 
-            <!-- <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1">Become a rider</label>
-            </div> -->
         </div>
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <ul class="navbar-nav flex-column pl-5 pl-lg-0 mt-2 lead">
