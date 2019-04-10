@@ -14,8 +14,9 @@ console.log("hi");
 
 <div class="container p-0 rhContainer">
     <!-- buttons -->
+    
         <div class="form-group row m-0">
-            <div  class="btn-group btn-group-toggle col p-0" data-toggle="buttons">
+            <div  class="btn-group btn-group-toggle col p-0 " data-toggle="buttons">
                 <label id="pastBtn" class="btn btn-primary text-white active p-4">
                     <input type="radio" name="options" id="past" autocomplete="off"checked> Past
                 </label>
@@ -26,7 +27,7 @@ console.log("hi");
             </div> 
         </div>
     <!-- past rides -->
-   
+
     <div id="pastRides">
         <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
             <div class="col-4">
