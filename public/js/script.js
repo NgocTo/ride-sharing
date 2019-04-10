@@ -49,3 +49,14 @@ function hideFlashMessage(message) {
     message.html('');
   }, 5000);
 }
+
+$("#upcomingRides").hide();
+
+$( "#upcomingBtn" ).click(function() {
+ $( "#pastRides" ).hide();
+ $( "#upcomingRides" ).show(); 
+})
+ $( "#pastBtn" ).click(function() {
+ $( "#pastRides" ).show();
+ $( "#upcomingRides" ).hide();
+ })
