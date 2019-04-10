@@ -31,6 +31,10 @@ class UserController extends Controller
             $user->phone = Auth::user()->phone;
             $user->keyword = Auth::user()->keyword;
             $user->ifDriver = Auth::user()->ifDriver;
+            if (($user->ifDriver) === 1) {
+                $user->driverInfo = DriverInfo::where('userId', $user->id)->first();
+                $user->vehicleInfo = VehicleInfo::where('userId', $user->id)->first();
+            }
             return view('user.index')->with('user', $user);
         } else {
             return view('user.index');
