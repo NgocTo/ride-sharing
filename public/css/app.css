@@ -11244,7 +11244,19 @@ input:checked + .slider:after {
 
 /*--------- END --------*/
 
+@media (min-width: 576px) {
+  .img-container {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
 @media (min-width: 768px) {
+  .img-container {
+    max-width: 50%;
+    height: auto;
+  }
+
   .direction {
     max-height: 90%;
   }
