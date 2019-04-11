@@ -36,12 +36,17 @@ console.log("hi");
     <div id="pastRides">
         <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
             <div class="col-4">
-                <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar"></div>
+                <div class="img-container"><img src="{{ asset('img/man1.jpg') }}" alt="Avatar">
+                <div class="text-center mt-2">
                 <p class="rating">8.9</p>
                 <i class="fas fa-star"></i>
+                </div>    
+            </div>
+                
+                
             </div>
 
-            <div class="col-5">
+            <div class="col-5 text-left">
                 <p class="name mb-2">David Smithe</p>
                 <p><strong>Pickup:</strong> Sheridan College Trafalgar campus</p>
                 <p><strong>Drop off:</strong> Square One Go bus terminal</p>
@@ -71,12 +76,16 @@ console.log("hi");
     <div class="form-group row m-0 p-4 shadow-sm border-blue-left mb-3">
             
         <div class="col-4">
-            <div class="img-container"><img src="{{ asset('img/woman1.jpg') }}"></div>
-            <p class="rating">8.6</p>
-            <i class="fas fa-star"></i>
+            <div class="img-container"><img src="{{ asset('img/woman1.jpg') }}">
+            <div class="text-center mt-2">
+                <p class="rating">8.6</p>
+                <i class="fas fa-star"></i>
+                </div>    
+            </div>
+            
         </div>
 
-        <div class="col-5">
+        <div class="col-5 text-left">
                 <p class="name mb-2">Julia Doe</p>
                 <p><strong>Pickup: </strong>Sheridan College Trafalgar campus</p>
                 <p><strong>Drop off: </strong>Square One Go bus terminal</p>
@@ -107,12 +116,16 @@ console.log("hi");
     <div class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
             
         <div class="col-4">
-            <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}"></div>
-            <p class="rating">9.1</p>
-            <i class="fas fa-star"></i>
+            <div class="img-container"><img src="{{ asset('img/woman2.jpg') }}">
+            <div class="text-center mt-2">
+                <p class="rating">9.1</p>
+                <i class="fas fa-star"></i>
+                </div> 
+            </div>
+            
         </div>
 
-        <div class="col-5">
+        <div class="col-5 text-left">
                 <p class="name mb-2">Allison Chung</p>
                 <p><strong>Pickup: </strong>Sheridan College Trafalgar campus</p>
                 <p><strong>Drop off: </strong>Square One Go bus terminal</p>
@@ -144,13 +157,18 @@ console.log("hi");
     <div  id="upcomingRides" class="form-group row m-0 p-4 shadow-sm border-green-left mb-3">
             
         <div class="col-4">
-            <div class="img-container"><img src="{{ asset('img/man-with-dog.jpg') }}" alt="Avatar"></div>
-            <p class="rating">8.9</p>
-            <i class="fas fa-star"></i>
+            <div class="img-container"><img src="{{ asset('img/man-with-dog.jpg') }}" alt="Avatar">
+            <div class="text-center mt-2">
+                <p class="rating">8.9</p>
+                <i class="fas fa-star"></i>
+                </div> 
+            </div>
+            
+          
         </div>
 
-        <div class="col-4">
-                <p class="name mb-2">Noah Browne</p>
+        <div class="col-4 text-left">
+                <p class="name mb-2 ">Noah Browne</p>
                 <p><strong>Pickup:</strong>Erin Mills Town Centre</p>
                 <p><strong>Drop off:</strong>374 Blue Creek Crt</p>
                 <p><strong>Date:</strong> April 5 2019</p>
