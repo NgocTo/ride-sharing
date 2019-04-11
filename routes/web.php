@@ -25,15 +25,14 @@ Route::get('/index', function () {
 // AUTH Routing
 Auth::routes();
 
-Route::get('/ride-history', function () {
-    return view('ride-history.index');
-});
+// Route::get('/ride-history', function () {
+//     return view('ride-history.index');
+// });
+Route::get('/ride-history', 'RideController@getRideHistory'); //localhost:8000/rides/
+
 Route::get('/rides', function () { //to be removed
     return view('rides.index');
 });
-// Route::get('/settings', function () {
-//     return view('user.settings');
-// });
 Route::get('/settings', 'UserController@getAll');
 // UserController Routing
 Route::resource('/user', 'UserController');

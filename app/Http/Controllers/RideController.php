@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CurrentRide;
+use App\Ride;
 use App\User;
 use App\DriverInfo;
 use Session;
@@ -44,6 +45,32 @@ class RideController extends Controller
         Session::flash('success', $currentRide->user->firstName . ' ' . $currentRide->user->lastName . ' is on the way! Check out your trip details in your ride history.');
         return redirect('/');
     }
+    public function getRideHistory() {
+        $userId = Auth::id();
+        $rides = new \stdClass();
+        // Get rides as driver
+        $rides->pastRidesAsDriver = Ride::where('driverId', $userId)->get();
+        foreach($rides->pastRidesAsDriver as $pastRideAsDrider) { 
+            // need to get the rider who rode info as driver
+            $pastRideAsDrider->rider = User::where('id', $pastRideAsDrider->riderId)->first();
+        }
+        $rides->currentRidesAsDriver = CurrentRide::where([['riderId', $userId],['completed', '0']])->get();
+        foreach($rides->currentRidesAsDriver as $currentRideAsDrider) {
+            $currentRideAsDrider->rider = User::where('id', $currentRideAsDrider->riderId)->first();
+        }
+
+        // Get rides as rider
+        $rides->pastRidesAsRider = Ride::where('riderId', $userId)->get();
+        foreach($rides->pastRidesAsRider as $pastRideAsRider) {
+            // need to get the driver info as rider
+            $pastRideAsRider->driver = User::where('id', $pastRideAsRider->driverId)->first();
+        }
+        $rides->currentRidesAsRider = CurrentRide::where([['riderId', $userId],['completed', '0']])->get();
+        foreach($rides->currentRidesAsRider as $currentRideAsRider) {
+            $currentRideAsRider->driver = User::where('id', $currentRideAsRider->driverId)->first();
+        }
+        return view('ride-history.index')->with('rides', $rides);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -79,8 +106,6 @@ class RideController extends Controller
         $data = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin='.urlencode($origin).'&destination='.urlencode($destination).'&key='.$key);
         return $data; 
     }
-
-
     public function fillDropdown($terms)
     {
         $key = 'AIzaSyAQWLvcO1cPisBkY_Bo3w2YxbRk6pm9pVo';
