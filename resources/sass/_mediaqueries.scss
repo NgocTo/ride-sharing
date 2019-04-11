@@ -1,34 +1,27 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   
-  .img-container {
-    max-width:90%;
-    height: auto;
-  }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
-  .img-container {
-    max-width:50%;
-    height: auto;
-  }
-
-
-
-.direction{
+  .direction{
     max-height:90%;
   }
 }
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
   .direction{
     position: static;
     top:0;
+    // height:450px;
     width:40%;
   }
+// .alert{
+//   width:50%;
+//   position:absolute;
+//   float:right;
+// }
 
 }
 // Extra large devices (large desktops, 1200px and up)
@@ -36,7 +29,8 @@
   .direction{
       width:30rem;
     }
-  }
+  
+}
  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
  @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
