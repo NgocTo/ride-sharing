@@ -12,7 +12,12 @@ console.log("hi");
 @section('content')
 <h2 class="text-white bg-green text-center m-0 p-4"><a class="backBtn" href="{{ route('/') }}"><i class="fas fa-chevron-left"></i></a>Ride History</h2>
 
-<div class="container p-0 rhContainer">
+<div class="form-group row">
+    <div class="col-md-3 col-form">
+    </div>
+    
+    <div class="col-md-6 pt-0 col-form-label text-md-right">    
+    <div class="container p-0 rhContainer">
     <!-- buttons -->
     
         <div class="form-group row m-0">
@@ -162,4 +167,7 @@ console.log("hi");
 
 
 </div>
+    </div>
+</div>
+
 @endsection
